@@ -22,8 +22,7 @@ This is a team project from the company Druid about creating a new website for t
 4. Create a branch using Jira and copy the branch name
 5. Checkout the branch in your local env ```git checkout -b BRANCH_NAME```
 6. Commit your changes
-7. Push the changes
-8. Create a pull request in github, assign a reviewer
+7. Push the changes to your branch **never push to main** ```git push origin BRANCH_NAME```
 9. Add a PR description like using the template
 10. Wait for the PR to merge, if not, checkout the branch and continue working on it
 
