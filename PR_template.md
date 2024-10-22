@@ -7,12 +7,10 @@ This should be the link to the ticket
 - Feature 2 description
 
 ## Testing instruction
-Checkout branch
-Run lando start
-If setting up project for the first time
-make sure you have a dump.sql inside of root dir
-run lando db-import dump.sql
-Run lando drush deploy
-Ref: Deploy - Drush, TLDR: it combines drush cim and drush cr and some other useful commands.
-Create an article and a basic_page
-See that the contents you create have the path aliases generated automatically and match the pattern set in the DoD
+- Checkout branch
+- Reinstall frontend dependencies: ```npm i```
+- Reinstall backend dependencies: ```composer i```
+- Run: ```lando start```
+- Import db ```db-import dump.sql```
+- Deploy the backend: ```lando drush deploy```
+- Check the running port with ```lando drush info```
