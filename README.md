@@ -12,8 +12,9 @@ This is a team project from the company Druid about creating a new website for t
 6. Install backend dependencies: ```composer i```
 7. Build and start a lando docker contaienr ```lando start```
 8. To find our the backend port, run ```lando info```
+9. To change Drupal admin password ```lando drush upwd admin ”newpassword”```
 
-**Remember to pull the latest changes regularly:** ```git pull origin main```
+**Remember to pull the latest changes regularly:** ```git pull origin``` for all branches or ```git pull origin BRANCH_NAME```
 
 ### Working on a ticket
 1. Choose a ticket in the current sprint
@@ -21,7 +22,7 @@ This is a team project from the company Druid about creating a new website for t
 3. Click on the ticket
 4. Create a branch using Jira and copy the branch name
 5. Checkout the branch in your local env ```git checkout -b BRANCH_NAME```
-6. Commit your changes
+6. Commit your changes ```git commit -m "SCRUM-xx <message>"```
 7. Push the changes to your branch **never push to main** ```git push origin BRANCH_NAME```
 9. Add a PR description like using the template
 10. Wait for the PR to merge, if not, checkout the branch and continue working on it
