@@ -1,11 +1,10 @@
-import { Button } from 'react-bootstrap';
+import Home from './components/Home';
 
 function App() {
 
   return (
     <>
-      <h1>Hello world! This is team 3</h1>
-      <Button variant="primary">Click me!</Button>
+      <Home />
     </>
   )
 }
