@@ -5,12 +5,13 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
+import fetchAllFromDrupal from './lib/drupal/get-articles';
 
 const App: React.FC = () => {
+  fetchAllFromDrupal();
+
   return (
     <Router>
-      
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -19,8 +20,6 @@ const App: React.FC = () => {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
-
-  
       <footer>
         <p>Footer content here</p>
       </footer>
