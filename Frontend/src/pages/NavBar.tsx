@@ -5,14 +5,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function NavBar() {
-  const [show, setShow] = useState(false);
+const NavBar: React.FC = () => {
+  const [show, setShow] = useState<boolean>(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-    <Navbar expand={false} className="bg-body-tertiary">
+    <Navbar expand={false} className="bg-white" style={{ borderBottom: '0.5px solid #000' }}>
       <Container>
         <Navbar.Brand as={Link} to="/">Druid</Navbar.Brand>
 
@@ -26,9 +26,7 @@ function NavBar() {
           onHide={handleClose}
           className="bg-dark text-light"
         >
-          {/* Adjusted X button position */}
           <Offcanvas.Header className="bg-dark text-light">
-            {/* Adjusted the position of the close button */}
             <button 
               type="button" 
               className="btn-close btn-close-white" 
@@ -57,6 +55,6 @@ function NavBar() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavBar;
