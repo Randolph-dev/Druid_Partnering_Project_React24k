@@ -20,9 +20,6 @@ const App: React.FC = () => {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
-      <footer>
-        <p>Footer content here</p>
-      </footer>
     </Router>
   );
 };
