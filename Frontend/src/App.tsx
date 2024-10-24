@@ -1,22 +1,39 @@
-import Home from './components/Home';
-import Layout from "./pages/Layout";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import Layout from './pages/Layout';
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route>
-              <Route path="/" element={<Home />} />
-            </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
-}
+    <Router>
+      <header>
+        <nav>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+      </header>
 
-export default App
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="services" element={<Services />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+
+      <footer>
+        <p>Footer content here</p>
+      </footer>
+    </Router>
+  );
+};
+
+export default App;
