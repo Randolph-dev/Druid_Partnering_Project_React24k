@@ -1,7 +1,9 @@
 import axios from "axios";
 
+// TODO: write function to fetch articles, pages, cases, etc. from the links provided by this function
+
 // This default URL should return everything exported by the JSON API
-const drupalUrl: string = "http://127.0.0.1:51604/api/";
+const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
 
 export interface JsonApiLink {
   href: string;
