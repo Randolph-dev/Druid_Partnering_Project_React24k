@@ -5,12 +5,13 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
+import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
 
 const App: React.FC = () => {
+  fetchJsonApiLinksFromDrupal();
+
   return (
     <Router>
-      
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -19,7 +20,6 @@ const App: React.FC = () => {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
-      
     </Router>
   );
 };
