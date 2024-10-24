@@ -5,7 +5,7 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
-import fetchAllFromDrupal from './lib/drupal/get-articles';
+import fetchAllFromDrupal from './lib/drupal/drupal-api';
 
 const App: React.FC = () => {
   fetchAllFromDrupal();
