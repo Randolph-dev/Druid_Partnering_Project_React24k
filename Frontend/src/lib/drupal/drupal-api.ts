@@ -1,3 +1,4 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // TODO: write function to fetch articles, pages, cases, etc. from the links provided by this function
@@ -13,10 +14,12 @@ export interface JsonApiLinks {
   [key: string]: JsonApiLink;
 }
 
-const fetchJsonApiLinksFromDrupal = async (): Promise<JsonApiLinks> => {
-  const { data: { links } } = await axios.get<{ links: JsonApiLinks }>(drupalUrl);
-  console.log(links["node--article"]);
-  return links;
-};
+const fetchJsonApiLinksFromDrupal = createAsyncThunk(
+  'drupal/fetchJsonApiLinksFromDrupal',
+  async (): Promise<JsonApiLinks> => {
+    const { data: { links } } = await axios.get<{ links: JsonApiLinks }>(drupalUrl);
+    return links;
+  },
+)
 
 export default fetchJsonApiLinksFromDrupal;
