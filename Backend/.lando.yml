@@ -2,3 +2,26 @@ name: druidpartneringapp
 recipe: drupal11
 config:
   webroot: web
+
+services:
+  appserver:
+    type: php:8.1
+    xdebug: true
+
+  database:
+    type: mariadb:10.4
+    portforward: 3306
+
+  mautic:
+    type: php:8.1
+    webroot: mautic
+
+  mailhog:
+    type: mailhog
+    portforward: 8025
+
+proxy:
+  appserver:
+    - drupal.lndo.site
+  mautic:
+    - mautic.lndo.site
