@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Layout from './pages/Layout';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
 import Cases from './components/Cases';
+import Blog from './components/Blog';
 
 const App: React.FC = () => {
   fetchJsonApiLinksFromDrupal();
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="cases" element={<Cases />} />
           <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="blog" element={<Blog />} />
         </Route>
       </Routes>
     </Router>
