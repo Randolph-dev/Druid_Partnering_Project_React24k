@@ -18,7 +18,6 @@ const fetchJsonApiLinksFromDrupal = createAsyncThunk(
   'drupal/fetchJsonApiLinksFromDrupal',
   async (): Promise<JsonApiLinks> => {
     const { data: { links } } = await axios.get<{ links: JsonApiLinks }>(drupalUrl);
-    console.log(links);
     return links;
   },
 )

@@ -5,11 +5,11 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
-import { useDispatch } from 'react-redux';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
+import { useAppDispatch } from './hooks/hooks';
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchJsonApiLinksFromDrupal());

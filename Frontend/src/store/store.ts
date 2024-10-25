@@ -13,3 +13,4 @@ export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 
 // reference: https://redux-toolkit.js.org/tutorials/quick-start
+// TypeScript typing: https://redux-toolkit.js.org/tutorials/typescript
