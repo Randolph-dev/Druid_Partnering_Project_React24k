@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
+import { useDispatch } from 'react-redux';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
 
 const App: React.FC = () => {
-  fetchJsonApiLinksFromDrupal();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchJsonApiLinksFromDrupal());
+  }, [dispatch])
 
   return (
     <Router>
