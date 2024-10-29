@@ -6,22 +6,16 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
+import { useAppDispatch } from './hooks/hooks';
 import Cases from './components/Cases';
 import Blog from './components/Blog';
 import WorkingWithUs from './components/WorkingWithUs';
-import fetchContentFromDrupal from './lib/drupal/drupal-content-api';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
-  const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
 
   useEffect(() => {
     dispatch(fetchJsonApiLinksFromDrupal());
-  }, [dispatch])
-
-  useEffect(() => {
-    console.log(fetchContentFromDrupal(jsonApiLinks["node--article"]));
   }, [])
 
   return (
