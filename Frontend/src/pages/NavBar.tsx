@@ -54,9 +54,6 @@ const NavBar: React.FC = () => {
                 <NavDropdown.Item href="/consultation">Consultation</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link as={Link} to="/jobs" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Jobs</Nav.Link>
-              <Nav.Link as={Link} to="/cases" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Cases</Nav.Link>
-              <Nav.Link as={Link} to="/services" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Services</Nav.Link>
-              <Nav.Link as={Link} to="/working-with-us" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Working with us</Nav.Link>
               <Nav.Link as={Link} to="/blog" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Blog</Nav.Link>
               <Nav.Link as={Link} to="/contact" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Contact</Nav.Link>
               <Nav.Link as={Link} to="#" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>english | suomi</Nav.Link>

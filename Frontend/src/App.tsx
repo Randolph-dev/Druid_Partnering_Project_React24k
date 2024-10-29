@@ -7,7 +7,6 @@ import Contact from './components/Contact';
 import Layout from './pages/Layout';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
 import { useAppDispatch } from './hooks/hooks';
-import Cases from './components/Cases';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Jobs from './components/Jobs';
@@ -27,12 +26,11 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
+          <Route path="services" element={<Services />} />
           {/* the next 3 routes belongs to types service pages */}
           <Route path="projects" element={<Projects />} />
           <Route path="maintenance" element={<Maintenance />} />
           <Route path="consultation" element={<Consultation />} />
-          <Route path="cases" element={<Cases />} />
-          <Route path="services" element={<Services />} />
           <Route path="jobs" element={<Jobs />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
