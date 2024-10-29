@@ -24,8 +24,8 @@ const fetchContentFromDrupal = async (link: JsonApiLink): Promise<JsonApiContent
   const attributesOnly = data.map((item) => item.attributes);
 
   // Log the attributes and links for each content item
-  console.log("Data:", attributesOnly);
-  console.log("Links:", links);
+  // JUST FOR DEVELOP, DELETE THIS ON PRODUCTION BUILD
+  console.log(link.href, { data: attributesOnly, links });
 
   return { data: attributesOnly, links };
 }
