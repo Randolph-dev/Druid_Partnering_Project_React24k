@@ -9,8 +9,8 @@ import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
 import { useAppDispatch } from './hooks/hooks';
 import Cases from './components/Cases';
 import Blog from './components/Blog';
-import WorkingWithUs from './components/WorkingWithUs';
 import Projects from './components/Projects';
+import Jobs from './components/Jobs';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -28,7 +28,7 @@ const App: React.FC = () => {
           <Route path="projects" element={<Projects />} />
           <Route path="cases" element={<Cases />} />
           <Route path="services" element={<Services />} />
-          <Route path="working-with-us" element={<WorkingWithUs />} />
+          <Route path="jobs" element={<Jobs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blog" element={<Blog />} />
         </Route>
