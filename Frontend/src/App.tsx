@@ -10,6 +10,7 @@ import { useAppDispatch } from './hooks/hooks';
 import Cases from './components/Cases';
 import Blog from './components/Blog';
 import WorkingWithUs from './components/WorkingWithUs';
+import Projects from './components/Projects';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
+          <Route path="projects" element={<Projects />} />
           <Route path="cases" element={<Cases />} />
           <Route path="services" element={<Services />} />
           <Route path="working-with-us" element={<WorkingWithUs />} />
