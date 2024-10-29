@@ -6,17 +6,23 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
-import { useAppDispatch } from './hooks/hooks';
-import Cases from './components/Cases';    
+import { useAppDispatch, useAppSelector } from './hooks/hooks';
+import Cases from './components/Cases';
 import Blog from './components/Blog';
 import WorkingWithUs from './components/WorkingWithUs';
+import fetchContentFromDrupal from './lib/drupal/drupal-content-api';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
+  const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
 
   useEffect(() => {
     dispatch(fetchJsonApiLinksFromDrupal());
   }, [dispatch])
+
+  useEffect(() => {
+    console.log(fetchContentFromDrupal(jsonApiLinks["node--article"]));
+  }, [])
 
   return (
     <Router>
@@ -24,7 +30,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="cases" element={<Cases />} />      
+          <Route path="cases" element={<Cases />} />
           <Route path="services" element={<Services />} />
           <Route path="working-with-us" element={<WorkingWithUs />} />
           <Route path="contact" element={<Contact />} />

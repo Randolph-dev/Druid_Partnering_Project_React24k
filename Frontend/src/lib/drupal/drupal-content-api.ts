@@ -1,24 +1,27 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { JsonApiLink, JsonApiLinks } from "./drupal-api";
 
-// This function will fetch contents for all pages from the Drupal Json API links
+export interface JsonApiData {
+  attributes: {
+    [key: string]: any; // accept any field of any type
+  };
+}
 
-// const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
+// response structure contains content data and links
+export interface JsonApiContent {
+  data: JsonApiData[];
+  links: JsonApiLinks;
+}
 
-// export interface JsonApiLink {
-//   href: string;
-// }
+// Fetch content from a Json API link, destructure the data/attribute and links
+const fetchContentFromDrupal = async (link: JsonApiLink): Promise<JsonApiContent> => {
+  const { data: { data, links } } = await axios.get<JsonApiContent>(link.href);
 
-// export interface JsonApiLinks {
-//   [key: string]: JsonApiLink;
-// }
+  // Log the attributes and links for each content item
+  console.log("Data:", data);
+  console.log("Links:", links);
 
-// const fetchJsonApiLinksFromDrupal = createAsyncThunk(
-//   'drupal/fetchJsonApiLinksFromDrupal',
-//   async (): Promise<JsonApiLinks> => {
-//     const { data: { links } } = await axios.get<{ links: JsonApiLinks }>(drupalUrl);
-//     return links;
-//   },
-// )
+  return { data, links };
+}
 
-// export default fetchJsonApiLinksFromDrupal;
+export default fetchContentFromDrupal;
