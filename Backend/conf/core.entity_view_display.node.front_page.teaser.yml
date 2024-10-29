@@ -1,20 +1,17 @@
-uuid: 8028a3f0-cfbc-42f2-ad7d-a6bfb7c242e1
+uuid: ede56aaf-e605-4b4a-a997-53b90f79096d
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.case.body
-    - field.field.node.case.field_link
-    - field.field.node.case.field_project_tags
-    - field.field.node.case.field_thumbnail
-    - node.type.case
+    - field.field.node.front_page.body
+    - node.type.front_page
   module:
     - text
     - user
-id: node.case.teaser
+id: node.front_page.teaser
 targetEntityType: node
-bundle: case
+bundle: front_page
 mode: teaser
 content:
   body:
@@ -30,7 +27,4 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden:
-  field_link: true
-  field_project_tags: true
-  field_thumbnail: true
+hidden: {  }

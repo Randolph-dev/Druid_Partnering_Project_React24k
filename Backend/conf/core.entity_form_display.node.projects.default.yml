@@ -1,63 +1,50 @@
-uuid: 45ca86a9-e49f-421c-93b5-d486aa47efa4
+uuid: 4dc8a327-12b9-443d-af5a-72be57ee8f87
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.case.body
-    - field.field.node.case.field_link
-    - field.field.node.case.field_project_tags
-    - field.field.node.case.field_thumbnail
+    - field.field.node.projects.field_hero_image
+    - field.field.node.projects.field_long_description
+    - field.field.node.projects.field_short_description
     - image.style.thumbnail
-    - node.type.case
+    - node.type.projects
   module:
     - image
-    - link
     - path
-    - text
-id: node.case.default
+id: node.projects.default
 targetEntityType: node
-bundle: case
+bundle: projects
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 121
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 123
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_project_tags:
-    type: string_textfield
-    weight: 124
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_thumbnail:
+  field_hero_image:
     type: image_image
-    weight: 122
+    weight: 124
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_long_description:
+    type: string_textarea
+    weight: 126
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_short_description:
+    type: string_textfield
+    weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

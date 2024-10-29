@@ -1,17 +1,17 @@
-uuid: a2a6ebd8-4341-409e-8a2a-c4044945cd4d
+uuid: c02d2760-8d60-4382-b7e7-4faf3bc51f60
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_thumbnail
-    - node.type.case
+    - field.storage.node.field_hero_image
+    - node.type.service
   module:
     - image
-id: node.case.field_thumbnail
-field_name: field_thumbnail
+id: node.service.field_hero_image
+field_name: field_hero_image
 entity_type: node
-bundle: case
-label: Thumbnail
+bundle: service
+label: hero_image
 description: ''
 required: false
 translatable: false

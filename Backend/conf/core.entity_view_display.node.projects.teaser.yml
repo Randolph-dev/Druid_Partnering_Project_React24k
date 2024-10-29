@@ -1,18 +1,18 @@
-uuid: faba9418-7e7e-4fba-a9d8-61607a926251
+uuid: f5c2ee29-de67-4b9d-89d5-4baaf2df1033
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.service.field_hero_image
-    - field.field.node.service.field_long_description
-    - field.field.node.service.field_short_description
-    - node.type.service
+    - field.field.node.projects.field_hero_image
+    - field.field.node.projects.field_long_description
+    - field.field.node.projects.field_short_description
+    - node.type.projects
   module:
     - user
-id: node.service.teaser
+id: node.projects.teaser
 targetEntityType: node
-bundle: service
+bundle: projects
 mode: teaser
 content:
   links:

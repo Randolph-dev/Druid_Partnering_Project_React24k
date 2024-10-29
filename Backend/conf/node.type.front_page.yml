@@ -1,4 +1,4 @@
-uuid: f55602c4-d5c6-4306-ad24-8c010f36d4ac
+uuid: a982001a-4e6d-4c5c-bc71-4555dee8ca56
 langcode: en
 status: true
 dependencies:
@@ -9,9 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Service pages'
-type: service
-description: 'This type includes 3 pages / contents including: projects, maintenance and consultation'
+name: 'Front page'
+type: front_page
+description: 'This is the front page of the site. Please add your own field if needed and create only one content for this'
 help: null
 new_revision: true
 preview_mode: 1

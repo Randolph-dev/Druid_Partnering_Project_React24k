@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
+    - field.field.node.page.field_content
+    - field.field.node.page.field_hero_image
     - node.type.page
   module:
+    - image
     - text
     - user
 _core:
@@ -15,12 +17,23 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
+  field_content:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 105
+    region: content
+  field_hero_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 104
     region: content
   links:
     weight: 101
