@@ -1,17 +1,17 @@
-uuid: c15d458c-ecd3-48b7-8dae-5c4c6382a24f
+uuid: eac5f157-e39f-4023-8d7f-9903d1248cf5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.service
+    - node.type.front_page
   module:
     - text
-id: node.service.body
+id: node.front_page.body
 field_name: body
 entity_type: node
-bundle: service
-label: long_description
+bundle: front_page
+label: Body
 description: ''
 required: false
 translatable: true

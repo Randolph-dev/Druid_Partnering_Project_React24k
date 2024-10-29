@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.service.body
-    - field.field.node.service.field_link
+    - field.field.node.service.field_hero_image
+    - field.field.node.service.field_short_description
     - node.type.service
   module:
-    - link
+    - image
     - text
     - user
 id: node.service.default
@@ -22,17 +23,24 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_link:
-    type: link
+  field_hero_image:
+    type: image
     label: above
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 103
+    weight: 104
+    region: content
+  field_short_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }

@@ -1,0 +1,19 @@
+uuid: 83952a9c-38d9-45ad-88ba-ebe1519a3735
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.service
+id: node.service.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: service
+label: short_description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

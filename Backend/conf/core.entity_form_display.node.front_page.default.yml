@@ -1,20 +1,16 @@
-uuid: b329f123-fe2e-4003-ace6-aba67255dc8e
+uuid: d234b1a0-7f6f-4305-80a6-164bc2b5a642
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.service.body
-    - field.field.node.service.field_hero_image
-    - field.field.node.service.field_short_description
-    - image.style.thumbnail
-    - node.type.service
+    - field.field.node.front_page.body
+    - node.type.front_page
   module:
-    - image
     - path
     - text
-id: node.service.default
+id: node.front_page.default
 targetEntityType: node
-bundle: service
+bundle: front_page
 mode: default
 content:
   body:
@@ -32,22 +28,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_hero_image:
-    type: image_image
-    weight: 124
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_short_description:
-    type: string_textfield
-    weight: 125
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   path:
     type: path
