@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.front_page.body
+    - field.field.node.front_page.field_image_url
     - node.type.front_page
   module:
+    - link
     - text
     - user
 id: node.front_page.default
@@ -19,6 +21,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

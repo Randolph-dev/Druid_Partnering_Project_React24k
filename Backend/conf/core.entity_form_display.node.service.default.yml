@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.service.field_hero_image
+    - field.field.node.service.field_image_url
     - field.field.node.service.field_long_description
     - field.field.node.service.field_short_description
-    - image.style.thumbnail
     - node.type.service
   module:
-    - image
+    - link
     - path
 id: node.service.default
 targetEntityType: node
@@ -22,13 +21,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hero_image:
-    type: image_image
-    weight: 124
+  field_image_url:
+    type: link_default
+    weight: 122
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_long_description:
     type: string_textarea

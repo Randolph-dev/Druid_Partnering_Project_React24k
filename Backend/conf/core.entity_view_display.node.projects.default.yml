@@ -3,28 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.projects.field_hero_image
+    - field.field.node.projects.field_image_url
     - field.field.node.projects.field_long_description
     - field.field.node.projects.field_short_description
     - node.type.projects
   module:
-    - image
+    - link
     - user
 id: node.projects.default
 targetEntityType: node
 bundle: projects
 mode: default
 content:
-  field_hero_image:
-    type: image
+  field_image_url:
+    type: link
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 102
     region: content
   field_long_description:
     type: basic_string

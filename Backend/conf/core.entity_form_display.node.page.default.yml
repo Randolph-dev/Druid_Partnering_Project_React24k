@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_content
-    - field.field.node.page.field_hero_image
-    - image.style.thumbnail
+    - field.field.node.page.field_image_url
     - node.type.page
   module:
-    - image
+    - link
     - path
     - text
 _core:
@@ -32,13 +31,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_hero_image:
-    type: image_image
-    weight: 124
+  field_image_url:
+    type: link_default
+    weight: 122
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   path:
     type: path

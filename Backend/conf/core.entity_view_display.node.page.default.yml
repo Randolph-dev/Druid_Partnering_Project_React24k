@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_content
-    - field.field.node.page.field_hero_image
+    - field.field.node.page.field_image_url
     - node.type.page
   module:
-    - image
+    - link
     - text
     - user
 _core:
@@ -24,16 +24,17 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
-  field_hero_image:
-    type: image
+  field_image_url:
+    type: link
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 102
     region: content
   links:
     weight: 101
