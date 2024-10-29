@@ -1,19 +1,19 @@
-uuid: b329f123-fe2e-4003-ace6-aba67255dc8e
+uuid: 4dc8a327-12b9-443d-af5a-72be57ee8f87
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.service.field_hero_image
-    - field.field.node.service.field_long_description
-    - field.field.node.service.field_short_description
+    - field.field.node.projects.field_hero_image
+    - field.field.node.projects.field_long_description
+    - field.field.node.projects.field_short_description
     - image.style.thumbnail
-    - node.type.service
+    - node.type.projects
   module:
     - image
     - path
-id: node.service.default
+id: node.projects.default
 targetEntityType: node
-bundle: service
+bundle: projects
 mode: default
 content:
   created:

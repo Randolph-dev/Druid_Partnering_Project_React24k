@@ -1,18 +1,18 @@
-uuid: bd740e64-f842-4861-8ccf-423388b1d995
+uuid: dbf2beac-15f1-45c8-9284-7967c25ebd20
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.service.field_hero_image
-    - field.field.node.service.field_long_description
-    - field.field.node.service.field_short_description
-    - node.type.service
+    - field.field.node.projects.field_hero_image
+    - field.field.node.projects.field_long_description
+    - field.field.node.projects.field_short_description
+    - node.type.projects
   module:
     - image
     - user
-id: node.service.default
+id: node.projects.default
 targetEntityType: node
-bundle: service
+bundle: projects
 mode: default
 content:
   field_hero_image:
