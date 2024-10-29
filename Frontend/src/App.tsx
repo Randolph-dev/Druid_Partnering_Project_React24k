@@ -11,6 +11,7 @@ import Cases from './components/Cases';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Jobs from './components/Jobs';
+import Consultation from './components/Consultation';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -25,7 +26,9 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
+          {/* the next 3 routes belongs to types service pages */}
           <Route path="projects" element={<Projects />} />
+          <Route path="consultation" element={<Consultation />} />
           <Route path="cases" element={<Cases />} />
           <Route path="services" element={<Services />} />
           <Route path="jobs" element={<Jobs />} />

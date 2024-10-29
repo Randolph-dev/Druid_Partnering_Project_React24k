@@ -51,7 +51,7 @@ const NavBar: React.FC = () => {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Maintenance</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Consultation</NavDropdown.Item>
+                <NavDropdown.Item href="/consultation">Consultation</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link as={Link} to="/jobs" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Jobs</Nav.Link>
               <Nav.Link as={Link} to="/cases" onClick={handleClose} className="text-light mb-3" style={{ fontSize: '26px' }}>Cases</Nav.Link>
