@@ -49,7 +49,7 @@ const NavBar: React.FC = () => {
               <NavDropdown title="Services" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/projects">Projects</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Maintenance</NavDropdown.Item>
+                <NavDropdown.Item href="/maintenance">Maintenance</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/consultation">Consultation</NavDropdown.Item>
               </NavDropdown>
