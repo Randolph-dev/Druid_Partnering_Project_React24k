@@ -41,6 +41,7 @@
     "@ckeditor/ckeditor5-utils": "^41.3.1",
     "@ckeditor/ckeditor5-word-count": "^41.3.1",
     "@claviska/jquery-minicolors": "^2.3.6",
+    "@esbuild/darwin-arm64": "^0.24.0",
     "at.js": "^1.5.4",
     "bootstrap": "^3.4.1",
     "chart.js": "^2.9.4",
