@@ -1,4 +1,4 @@
-uuid: 23b9fdb0-4261-4239-a769-4bf74d91d222
+uuid: ec690b9a-c605-426c-96be-f5b09ba29eb6
 langcode: en
 status: true
 dependencies:
@@ -9,12 +9,12 @@ field_name: field_short_description
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 500
   case_sensitive: false
   is_ascii: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

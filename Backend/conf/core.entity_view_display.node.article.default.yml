@@ -6,11 +6,11 @@ dependencies:
     - field.field.node.article.field_author
     - field.field.node.article.field_content
     - field.field.node.article.field_date
-    - field.field.node.article.field_hero_image
+    - field.field.node.article.field_image_url
     - node.type.article
   module:
     - datetime
-    - image
+    - link
     - text
     - user
 _core:
@@ -44,16 +44,17 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_hero_image:
-    type: image
+  field_image_url:
+    type: link
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 102
     region: content
   links:
     settings: {  }
