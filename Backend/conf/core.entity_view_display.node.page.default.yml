@@ -34,7 +34,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   links:
     settings: {  }
