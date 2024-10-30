@@ -1,5 +1,8 @@
 import axios from "axios";
 import { JsonApiLink, JsonApiLinks } from "./drupal-api";
+// import { useAppSelector } from "../../hooks/hooks";
+
+// const drupalLinkLoading = useAppSelector(state => state.drupal.isLoading);
 
 export interface JsonApiDataAttributes {
   [key: string]: any; // Accept any field of any type
@@ -13,6 +16,12 @@ export interface JsonApiContent {
 
 // Fetch content from a Json API link, destructure the data/attribute and links
 const fetchContentFromDrupal = async (link: JsonApiLink): Promise<JsonApiContent> => {
+  if (!link) {
+    return {
+      data: [],
+      links: {} as JsonApiLinks,
+    };
+  };
 
   // destructure the response in drupal and keep only the attributes fields and the links
   const { data: { data: data, links } } = await axios.get<{
