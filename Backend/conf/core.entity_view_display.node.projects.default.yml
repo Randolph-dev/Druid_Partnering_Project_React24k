@@ -32,7 +32,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 106
+    weight: 3
     region: content
   field_short_description:
     type: string
@@ -40,11 +40,11 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden: {  }

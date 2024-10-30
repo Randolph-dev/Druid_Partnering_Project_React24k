@@ -22,7 +22,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 0
     region: content
   field_image_url:
     type: link
@@ -37,6 +37,8 @@ content:
     weight: 102
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden: {  }

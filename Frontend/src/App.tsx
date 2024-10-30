@@ -7,16 +7,18 @@ import Contact from './components/Contact';
 import Layout from './pages/Layout';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
 import { useAppDispatch } from './hooks/hooks';
-import Cases from './components/Cases';    
 import Blog from './components/Blog';
-import WorkingWithUs from './components/WorkingWithUs';
+import Projects from './components/Projects';
+import Jobs from './components/Jobs';
+import Consultation from './components/Consultation';
+import Maintenance from './components/Maintenance';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchJsonApiLinksFromDrupal());
-  }, [dispatch])
+  }, [])
 
   return (
     <Router>
@@ -24,11 +26,14 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="cases" element={<Cases />} />      
           <Route path="services" element={<Services />} />
-          <Route path="working-with-us" element={<WorkingWithUs />} />
-          <Route path="contact" element={<Contact />} />
+          {/* the next 3 routes belongs to types service pages */}
+          <Route path="projects" element={<Projects />} />
+          <Route path="maintenance" element={<Maintenance />} />
+          <Route path="consultation" element={<Consultation />} />
+          <Route path="jobs" element={<Jobs />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </Router>
