@@ -3,12 +3,12 @@ import fetchJsonApiLinksFromDrupal, { JsonApiLinks } from "../../lib/drupal/drup
 
 
 export interface DrupalState {
-  value: number,
+  isLoading: boolean,
   jsonApiLinks: JsonApiLinks,
 }
 
 const initialState: DrupalState = {
-  value: 0,
+  isLoading: true,
   jsonApiLinks: {} as JsonApiLinks
 }
 
@@ -17,8 +17,8 @@ export const drupalSlice = createSlice({
   initialState,
   reducers: {
     // just a place holder reducer, doesn't actually do anything
-    increment: (state) => {
-      state.value += 1;
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
   },
   // this extra reducer call the api function to get api links and store it in state
@@ -32,6 +32,6 @@ export const drupalSlice = createSlice({
   },
 });
 
-export const { increment } = drupalSlice.actions;
+export const { setLoading } = drupalSlice.actions;
 
 export default drupalSlice.reducer;
