@@ -23,7 +23,7 @@ export default function Home() {
     return <p>Loading</p>
   }
 
-  console.log(homePageData);
+  // console.log(homePageData);
 
   const { title, body, field_image_url: images } = homePageData;
 
@@ -31,8 +31,8 @@ export default function Home() {
     <Container fluid className="p-5">
       <h1>{title}</h1>
       {body.value}
-      {images.map((image: { "uri": string }) =>
-        <img src={image.uri} alt="" />
+      {images.map((image: { "uri": string, "title": string }, index: number) =>
+        <img key={`${index}_${image.title}`} src={image.uri} alt={image.title} />
       )}
     </Container>
   )
