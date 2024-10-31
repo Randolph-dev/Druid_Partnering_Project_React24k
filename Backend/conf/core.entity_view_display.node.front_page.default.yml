@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.front_page.body
+    - field.field.node.front_page.field_heading
     - field.field.node.front_page.field_image_url
+    - field.field.node.front_page.field_paragraph
+    - field.field.node.front_page.field_service_paragraph
+    - field.field.node.front_page.field_service_paragraph_title
     - node.type.front_page
   module:
     - link
@@ -20,7 +24,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 5
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_image_url:
     type: link
@@ -32,11 +44,35 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 6
+    region: content
+  field_paragraph:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_service_paragraph:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_service_paragraph_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden: {  }

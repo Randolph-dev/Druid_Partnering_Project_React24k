@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.projects.field_image_url
+    - field.field.node.projects.field_link
     - field.field.node.projects.field_long_description
     - field.field.node.projects.field_short_description
     - node.type.projects
@@ -22,5 +23,6 @@ content:
     region: content
 hidden:
   field_image_url: true
+  field_link: true
   field_long_description: true
   field_short_description: true
