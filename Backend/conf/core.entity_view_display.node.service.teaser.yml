@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
     - field.field.node.service.field_long_description
+    - field.field.node.service.field_paragraph
+    - field.field.node.service.field_service_paragraph
+    - field.field.node.service.field_service_paragraph_title
     - field.field.node.service.field_short_description
     - node.type.service
   module:
@@ -21,6 +25,10 @@ content:
     weight: 100
     region: content
 hidden:
+  field_heading: true
   field_image_url: true
   field_long_description: true
+  field_paragraph: true
+  field_service_paragraph: true
+  field_service_paragraph_title: true
   field_short_description: true
