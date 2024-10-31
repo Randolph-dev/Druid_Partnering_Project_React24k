@@ -1,0 +1,19 @@
+uuid: fc017d7c-dc76-44d4-b1bb-86fb179a5188
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph
+    - node.type.front_page
+id: node.front_page.field_paragraph
+field_name: field_paragraph
+entity_type: node
+bundle: front_page
+label: intro
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
