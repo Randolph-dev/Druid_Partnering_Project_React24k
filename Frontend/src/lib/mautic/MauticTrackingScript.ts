@@ -1,13 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 function MauticTrackingScript(): null {
   const mauticUrl: string = import.meta.env.VITE_MAUTIC_URL;
+  // using useRef here to prevent the script tag being added twice due to react strictmode double mounting
+  const scriptAdded = useRef(false);
 
   // use effect here is nessessary because it will avoid multiple script tag being added on every reload
   useEffect(() => {
-    const mauticScript = document.createElement('script');
-    mauticScript.async = true; // async here to make it donwload in background without stoping other stuff
-    mauticScript.innerHTML = `
+    if (!scriptAdded.current) {
+      const mauticScript = document.createElement('script');
+      mauticScript.async = true; // async here to make it donwload in background without stoping other stuff
+      mauticScript.innerHTML = `
       (function(w,d,t,u,n,a,m){
           w['MauticTrackingObject']=n;
           w[n]=w[n]||function(){
@@ -22,8 +25,12 @@ function MauticTrackingScript(): null {
       mt('send', 'pageview');
     `;
 
-    // append the script to the of body
-    document.body.appendChild(mauticScript);
+      // append the script to the of body
+      document.body.appendChild(mauticScript);
+
+      // mark the script as added
+      scriptAdded.current = true;
+    }
   }, []);
 
   return null; // not return anything
