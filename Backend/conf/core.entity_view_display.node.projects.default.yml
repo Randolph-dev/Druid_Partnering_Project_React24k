@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.projects.field_image_url
+    - field.field.node.projects.field_link
     - field.field.node.projects.field_long_description
     - field.field.node.projects.field_short_description
     - node.type.projects
@@ -26,6 +27,18 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_long_description:
     type: basic_string

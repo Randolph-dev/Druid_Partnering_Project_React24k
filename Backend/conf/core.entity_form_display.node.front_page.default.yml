@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.front_page.body
+    - field.field.node.front_page.field_heading
     - field.field.node.front_page.field_image_url
+    - field.field.node.front_page.field_paragraph
+    - field.field.node.front_page.field_service_paragraph
+    - field.field.node.front_page.field_service_paragraph_title
     - node.type.front_page
   module:
     - link
@@ -31,6 +35,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_image_url:
     type: link_default
     weight: 122
@@ -38,6 +50,30 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_paragraph:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_service_paragraph:
+    type: string_textfield
+    weight: 124
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_service_paragraph_title:
+    type: string_textfield
+    weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path
