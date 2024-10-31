@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { useAppSelector } from '../hooks/hooks';
 import { useEffect, useState } from 'react';
@@ -13,18 +12,28 @@ export default function Home() {
     // Ensure loading is complete and jsonApiLinks is defined
     if (!jsonApiLinksLoading) {
       const fetchData = async () => {
-        const data = await fetchContentFromDrupal(jsonApiLinks["node--front_page"]);
-        setHomePageData(data);
+        const res = await fetchContentFromDrupal(jsonApiLinks["node--front_page"]);
+        setHomePageData(res.data[0]);
       };
       fetchData();
     }
-  }, [jsonApiLinks, jsonApiLinksLoading]);
+  }, [jsonApiLinksLoading]);
+
+  if (!homePageData) {
+    return <p>Loading</p>
+  }
+
+  console.log(homePageData);
+
+  const { title, body, field_image_url: images } = homePageData;
 
   return (
     <Container fluid className="p-5">
-      <h1>Hello world! This is team 3</h1>
-      <Button variant="primary">Click me!</Button>
-      {homePageData && <div>{JSON.stringify(homePageData)}</div>}
+      <h1>{title}</h1>
+      {body.value}
+      {images.map((image: { "uri": string }) =>
+        <img src={image.uri} alt="" />
+      )}
     </Container>
   )
 }
