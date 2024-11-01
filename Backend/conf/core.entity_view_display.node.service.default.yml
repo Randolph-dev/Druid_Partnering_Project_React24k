@@ -17,6 +17,14 @@ targetEntityType: node
 bundle: service
 mode: default
 content:
+  field_consultation_paragraph_tit:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_heading:
     type: string
     label: above
@@ -45,11 +53,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_service_description:
-    type: basic_string
+  field_paragraph:
+    type: string
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: content
     weight: 5
     region: content
   field_service_paragraph_title:
