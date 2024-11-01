@@ -37,3 +37,28 @@ This is a team project from the company Druid about creating a new website for t
 - If the PR is not working or not up to standard, write the reason in github and close the PR
 - If the PR is good for production, merge the request and delete the branch
 6. Update the ticket in Jira to done
+
+### Mautic Install (to run Mautic wizard). Please read carefully.
+
+1. ```git pull origin``` to download configurations in your branch
+2. ```cd Mautic```
+3. ```lando start```
+4. ```lando composer install```
+5. ```npm install```
+6. ```lando info``` to check available URL port (e.g. http://localhost:[port])
+7. Run Mautic installation wizard
+-- IMPORTANT: In the installation wizard, you MUST use these exact database settings:
+   
+- Database host: database
+- Database name: lamp
+- Database user: lamp
+- Database password: lamp
+- (These values are required for Lando's database connection)
+
+8. Create your own admin credentials.
+
+### Possible issues during Mautic set up
+Some issues may appear during Mautic's installation process. Most of which are caused by the composer install. Some of them can be:
+- Memory exhaustion issue with PHP - allowed PHP memory space isn't enough to handle the operations required for the install. Solution: increase memory limit with ```php -d memory_limit=-1 bin/ ```
+- Composer extension errors - failure to install in the working repository. Solution: Ran composer with ignore commands to keep the install process while ignoring the problematic extensions ```composer install --ignore-platform-req=ext-imap --ignore-platform-req=ext-redis```
+- Security issues - Some files can be interrupted during the install due to dubios origin/authors. This can be solved by whitelisting the files. 
