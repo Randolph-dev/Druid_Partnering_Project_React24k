@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.service.field_consultation_paragraph_tit
     - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
     - field.field.node.service.field_paragraph
@@ -25,14 +24,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_consultation_paragraph_tit:
-    type: string_textfield
-    weight: 129
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_heading:
     type: string_textfield
