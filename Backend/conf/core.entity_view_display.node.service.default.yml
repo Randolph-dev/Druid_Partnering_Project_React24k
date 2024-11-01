@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.service.field_consultation_paragraph_tit
+    - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
-    - field.field.node.service.field_long_description
-    - field.field.node.service.field_short_description
+    - field.field.node.service.field_paragraph
+    - field.field.node.service.field_service_description
+    - field.field.node.service.field_service_paragraph_title
     - node.type.service
   module:
     - link
@@ -15,6 +18,22 @@ targetEntityType: node
 bundle: service
 mode: default
 content:
+  field_consultation_paragraph_tit:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_image_url:
     type: link
     label: above
@@ -27,20 +46,28 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_long_description:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_short_description:
+  field_paragraph:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_service_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_service_paragraph_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }

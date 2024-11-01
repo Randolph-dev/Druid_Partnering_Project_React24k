@@ -1,15 +1,15 @@
-uuid: 57f749a9-2f81-4137-bfec-3bc68f21e06b
+uuid: 1ed41c33-b3b4-4e9d-a721-3e5dda0a7c7f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_short_description
+    - field.storage.node.field_service_paragraph_title
     - node.type.service
-id: node.service.field_short_description
-field_name: field_short_description
+id: node.service.field_service_paragraph_title
+field_name: field_service_paragraph_title
 entity_type: node
 bundle: service
-label: short_description
+label: 'service paragraph title'
 description: ''
 required: false
 translatable: false
