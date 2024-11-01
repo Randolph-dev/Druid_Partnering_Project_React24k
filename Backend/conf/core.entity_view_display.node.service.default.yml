@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
     - field.field.node.service.field_paragraph
+    - field.field.node.service.field_project_description
+    - field.field.node.service.field_project_tiltle
     - field.field.node.service.field_service_description
     - field.field.node.service.field_service_paragraph_title
     - node.type.service
@@ -53,8 +55,24 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_paragraph:
+  field_project_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_project_tiltle:
     type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_service_description:
+    type: basic_string
+
     label: above
     settings:
       link_to_entity: false

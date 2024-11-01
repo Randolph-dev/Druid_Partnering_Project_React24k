@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
     - field.field.node.service.field_paragraph
+    - field.field.node.service.field_project_description
+    - field.field.node.service.field_project_tiltle
     - field.field.node.service.field_service_description
     - field.field.node.service.field_service_paragraph_title
     - node.type.service
@@ -26,5 +28,7 @@ hidden:
   field_heading: true
   field_image_url: true
   field_paragraph: true
+  field_project_description: true
+  field_project_tiltle: true
   field_service_description: true
   field_service_paragraph_title: true
