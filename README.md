@@ -61,4 +61,5 @@ This is a team project from the company Druid about creating a new website for t
 Some issues may appear during Mautic's installation process. Most of which are caused by the composer install. Some of them can be:
 - Memory exhaustion issue with PHP - allowed PHP memory space isn't enough to handle the operations required for the install. Solution: increase memory limit with ```php -d memory_limit=-1 bin/ ```
 - Composer extension errors - failure to install in the working repository. Solution: Ran composer with ignore commands to keep the install process while ignoring the problematic extensions ```composer install --ignore-platform-req=ext-imap --ignore-platform-req=ext-redis```
-- Security issues - Some files can be interrupted during the install due to dubios origin/authors. This can be solved by whitelisting the files. 
+- Security issues - Some files can be interrupted during the install due to dubios origin/authors. This can be solved by whitelisting the files.
+- If you encounter issues such as too many files being commited, this is possibly caused by .gitignore failing to properly ignore the specified content. Run ``` git rm -r --cached .``` to clear tracking of all files and re-add only the files specified for tracking based on .gitignore settings. 
