@@ -1,0 +1,19 @@
+uuid: 54f29850-0158-46f1-9c66-5fcd0e191a58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_title
+    - node.type.page
+id: node.page.field_paragraph_title
+field_name: field_paragraph_title
+entity_type: node
+bundle: page
+label: 'paragraph title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
