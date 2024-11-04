@@ -1,6 +1,11 @@
 # Druid_Partnering_Project_React24k
 This is a team project from the company Druid about creating a new website for their business as a final assignment for Business College Helsinki students.
 
+## Live site
+- Live client site: [https://druid-project.alextran.dev](https://druid-project.alextran.dev)
+- Drupal backend: [https://dev-druid-partnering-project-react24k.pantheonsite.io/](https://dev-druid-partnering-project-react24k.pantheonsite.io/)
+- Mautic analytics dashboard: [https://mautic.alextran.cloud/](https://mautic.alextran.cloud/)
+
 ## For development team
 ### Setup the dev environment
 1. Clone the project: `git clone https://github.com/Randolph-dev/Druid_Partnering_Project_React24k.git`
