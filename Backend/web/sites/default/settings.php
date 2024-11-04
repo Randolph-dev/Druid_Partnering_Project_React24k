@@ -883,4 +883,17 @@ $databases['default']['default'] = array(
   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
+
+// config directory
 $settings['config_sync_directory'] = '../conf/';
+
+// cors configuration
+$settings['cors.config'] = [
+  'enabled' => true,
+  'allowedHeaders' => ['x-csrf-token', 'authorization', 'content-type', 'accept', 'origin', 'x-requested-with', 'access-control-allow-origin', 'x-allowed-header', '*'], // Adjust if needed
+  'allowedMethods' => ['*'], // Allow the methods you need
+  'allowedOrigins' => ['https://druid-project.alextran.dev', 'http://localhost/', 'http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', '*'],
+  'exposedHeaders' => false,
+  'maxAge' => false,
+  'supportsCredentials' => true,
+];
