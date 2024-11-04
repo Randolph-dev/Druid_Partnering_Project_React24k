@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.service.field_consultation_paragraph_tit
     - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
     - field.field.node.service.field_paragraph
@@ -33,7 +34,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_image_url:
     type: link
@@ -53,7 +54,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_project_description:
     type: basic_string
@@ -72,14 +73,10 @@ content:
     region: content
   field_service_description:
     type: basic_string
-
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    weight: 2
-    region: content
-    weight: 5
+    weight: 6
     region: content
   field_service_paragraph_title:
     type: string
@@ -87,7 +84,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   links:
     settings: {  }

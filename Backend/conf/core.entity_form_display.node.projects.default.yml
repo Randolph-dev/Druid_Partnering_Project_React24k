@@ -3,8 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.projects.field_category
+    - field.field.node.projects.field_heading
     - field.field.node.projects.field_image_url
     - field.field.node.projects.field_long_description
+    - field.field.node.projects.field_paragraph
+    - field.field.node.projects.field_project_tiltle
     - field.field.node.projects.field_short_description
     - node.type.projects
   module:
@@ -21,6 +25,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_category:
+    type: entity_reference_autocomplete
+    weight: 128
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_image_url:
     type: link_default
     weight: 122
@@ -35,6 +57,22 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraph:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_project_tiltle:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_short_description:
