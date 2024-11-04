@@ -44,6 +44,11 @@ VITE_MAUTIC_URL=https://mautic.alextran.cloud/
 - If the PR is good for production, merge the request and **delete the branch**
 6. Update the ticket in Jira to done
 
+### To access live site
+- Drupal: Hosted with Pantheon [https://dev-druid-partnering-project-react24k.pantheonsite.io/](https://dev-druid-partnering-project-react24k.pantheonsite.io/)
+- React: Hosted with Netlify [https://druid-project.alextran.dev](https://druid-project.alextran.dev)
+- Mautic: Deployed a dockerized version in private server [https://mautic.alextran.cloud/](https://mautic.alextran.cloud/)
+
 ### Mautic
 - Mautic used to be a folder living in this repo but because it is too heavy and require setting up on all local machine,
 it is now installed online
