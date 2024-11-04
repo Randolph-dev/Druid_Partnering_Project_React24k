@@ -1,10 +1,10 @@
-import { ReactNode, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import { NavDropdown } from 'react-bootstrap';
+import { ReactNode, useState } from "react";
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { NavDropdown } from "react-bootstrap";
 
 const NavBar: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -20,17 +20,23 @@ const NavBar: React.FC = () => {
         to={path}
         onClick={handleClose}
         className="text-light mb-3"
-        style={{ fontSize: '26px' }}
+        style={{ fontSize: "26px" }}
       >
         {children}
       </Nav.Link>
-    )
+    );
   }
 
   return (
-    <Navbar expand={false} className="bg-white" style={{ borderBottom: '0.5px solid #000' }}>
+    <Navbar
+      expand={false}
+      className="bg-white m-0"
+      style={{ borderBottom: "0.5px solid #000" }}
+    >
       <Container>
-        <Navbar.Brand as={Link} to="/">Druid</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          Druid
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
 
@@ -49,24 +55,31 @@ const NavBar: React.FC = () => {
               aria-label="Close"
               onClick={handleClose}
               style={{
-                position: 'absolute',
-                top: '10%',
-                right: '4rem',
+                position: "absolute",
+                top: "10%",
+                right: "4rem",
               }}
             ></button>
           </Offcanvas.Header>
 
           <Offcanvas.Body className="d-flex flex-column justify-content-center">
-            <Nav className="flex-column text-center text-light mb-3" style={{ fontSize: '26px' }}>
+            <Nav
+              className="flex-column text-center text-light mb-3"
+              style={{ fontSize: "26px" }}
+            >
               {/* this is a dropdown list for service pages including: projects, maintenance and consultation */}
               {/* TODO: style this */}
               <NavLink path="/about-us">About Us</NavLink>
               <NavDropdown title="Services" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/projects">Projects</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/maintenance">Maintenance</NavDropdown.Item>
+                <NavDropdown.Item href="/maintenance">
+                  Maintenance
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/consultation">Consultation</NavDropdown.Item>
+                <NavDropdown.Item href="/consultation">
+                  Consultation
+                </NavDropdown.Item>
               </NavDropdown>
               <NavLink path="/jobs">Jobs</NavLink>
               <NavLink path="/blog">Blog</NavLink>

@@ -34,7 +34,7 @@ const fetchContentFromDrupal = async (link: JsonApiLink): Promise<JsonApiContent
 
   // Log the attributes and links for each content item
   // JUST FOR DEVELOP, DELETE THIS ON PRODUCTION BUILD
-  console.log(link.href, { data: attributesOnly, links });
+  // console.log(link.href, { data: attributesOnly, links });
 
   return { data: attributesOnly, links };
 }
