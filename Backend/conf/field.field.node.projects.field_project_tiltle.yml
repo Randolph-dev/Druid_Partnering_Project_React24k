@@ -1,0 +1,19 @@
+uuid: 8c0ef88a-7e0f-41a2-aa5f-9e1b2fd97c68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_tiltle
+    - node.type.projects
+id: node.projects.field_project_tiltle
+field_name: field_project_tiltle
+entity_type: node
+bundle: projects
+label: 'project title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

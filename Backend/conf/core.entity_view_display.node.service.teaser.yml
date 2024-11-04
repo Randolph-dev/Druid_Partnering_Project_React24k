@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.service.field_consultation_paragraph_tit
     - field.field.node.service.field_heading
     - field.field.node.service.field_image_url
     - field.field.node.service.field_paragraph
@@ -25,6 +26,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_consultation_paragraph_tit: true
   field_heading: true
   field_image_url: true
   field_paragraph: true
