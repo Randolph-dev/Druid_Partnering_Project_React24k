@@ -22,7 +22,8 @@
         "drupal/jsonapi_extras": "^3.26",
         "drupal/mautic_paragraph": "^1.1",
         "drupal/paragraphs": "^1.18",
-        "drush/drush": "^12.5"
+        "drush/drush": "^12.5",
+        "mautic/api-library": "^3.1"
     },
     "conflict": {
         "drupal/drupal": "*"
