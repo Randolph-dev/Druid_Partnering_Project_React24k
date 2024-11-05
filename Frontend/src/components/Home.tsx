@@ -28,10 +28,9 @@ export default function Home() {
     return <p>Loading</p>;
   }
 
-  console.log(homePageData);
+  // console.log(homePageData);
 
   const {
-    title,
     field_image_url: images,
     field_paragraph,
     field_service_paragraph,
@@ -41,8 +40,6 @@ export default function Home() {
 
   return (
     <Container fluid className="p-0">
-      <h1>{/*title*/}</h1>
-
       <Container
         className="d-flex align-items-center"
         style={{ height: "80vh" }}
