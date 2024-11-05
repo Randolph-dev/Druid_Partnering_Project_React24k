@@ -15,6 +15,7 @@ const Contact: React.FC = () => {
         <div>
             <h1>Contact Us</h1>
             <p>Contact page will be here</p>
+            <iframe src="//mautic.alextran.cloud/form/4" width="300" height="300"><p>Your browser does not support iframes.</p></iframe>
         </div>
     )
 }
