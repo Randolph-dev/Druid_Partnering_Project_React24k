@@ -1,16 +1,30 @@
-import { useEffect } from 'react';
-import fetchContentFromDrupal from '../lib/drupal/drupal-content-api';
+import { useEffect, useState } from 'react';
+import fetchContentFromDrupal, { JsonApiDataAttributes } from '../lib/drupal/drupal-content-api';
 import { useAppSelector } from '../hooks/hooks';
 import ContactForm from './ContactForm';
 
 const Contact: React.FC = () => {
     const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
+    const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
+    const [contactPageData, setContactPageData] = useState<JsonApiDataAttributes | null>(null);
 
     useEffect(() => {
-        // the link node--page will return all 3 pages of type "basic pages", we just want the first one which is Contact
-        fetchContentFromDrupal(jsonApiLinks["node--page"])
-            .then(res => console.log(res.data[0]))
-    }, [jsonApiLinks])
+        if (!jsonApiLinksLoading) {
+            const fetchData = async () => {
+                const res = await fetchContentFromDrupal(
+                    jsonApiLinks["node--contact_page"]
+                );
+                setContactPageData(res.data[0]);
+            };
+            fetchData();
+        }
+    }, [jsonApiLinksLoading]);
+
+    if (!contactPageData) {
+        return <p>Loading</p>;
+    }
+
+    console.log(contactPageData);
 
     return (
         <div>
