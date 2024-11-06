@@ -2,7 +2,7 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-4 mt-5">
+    <footer className="bg-dark text-white py-5">
       <Container>
         <Row className="d-flex align-items-center">
           {/* Title Column */}
@@ -33,26 +33,47 @@ function Footer() {
             </Nav>
           </Col>
           <Col></Col>
-          {/* Address Column */}
-          <Col md={2}>
-            <p>
-              Pasilankatu 2
-              <br />
-              00240 Helsinki
-              <br />
-              Finland
-            </p>
-          </Col>
 
-          {/* Email Contacts Column */}
-          <Col md={2}>
-            <p>
-              Email: info@druid.fi
-              <br />
-              Phone: +358 20 187 6602
-              <br />
-              &rarr; Contact
-            </p>
+          <Col md={5}>
+            <Col className="d-flex justify-content-between">
+              <div>
+                <p>
+                  Pasilankatu 2
+                  <br />
+                  00240 Helsinki
+                  <br />
+                  Finland
+                </p>
+              </div>
+
+              <div>
+                <p>
+                  Email: info@druid.fi
+                  <br />
+                  Phone: +358 20 187 6602
+                  <br />
+                  &rarr; Contact
+                </p>
+              </div>
+            </Col>
+
+            <Nav className="d-flex justify-content-end mt-4">
+              <Nav.Link href="#linkedin" className="text-white">
+                LinkedIn
+              </Nav.Link>
+              <Nav.Link href="#facebook" className="text-white">
+                Facebook
+              </Nav.Link>
+              <Nav.Link href="#x" className="text-white">
+                X
+              </Nav.Link>
+              <Nav.Link href="#instagram" className="text-white">
+                Instagram
+              </Nav.Link>
+              <Nav.Link href="#itewiki" className="text-white">
+                Itewiki
+              </Nav.Link>
+            </Nav>
           </Col>
         </Row>
       </Container>
