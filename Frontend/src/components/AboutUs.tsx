@@ -27,14 +27,15 @@ const AboutUs: React.FC = () => {
     const {
         field_heading,
         field_paragraph,
+        field_paragraph_description,
         field_image_url,
     } = aboutUsData;
     console.log(field_heading[0].split("."));
 
 
     return (
-        <Container className="p-4">           
-            <Container className="text-center my-4 p-2">
+        <Container style={{maxWidth: '100%'}} className='p-4' >           
+            <Container className="text-center my-4 p-5">
                 <h2>
                     <i>
                         {field_heading[0].split(".")[0]}
@@ -52,6 +53,42 @@ const AboutUs: React.FC = () => {
                     </div>
                 </Col>
             </Row>
+
+            <div style={{ backgroundColor: '#000', color: '#fff', maxWidth: '100%' }}>
+                <Container fluid className='py-5'>
+                    <h2>
+                        <b>
+                        {field_heading[1].split(",")[0]},
+                        </b>
+                        <br />
+                        <i>
+                        {field_heading[1].split(",")[1]}
+                        </i>
+                    </h2>
+                    <h2 style={{position: 'relative', 
+                        color: 'red',
+                        marginRight: '10rem'}} 
+                        className='text-center text-md-end'>Our story</h2>
+                </Container>
+                <Row>
+                    <Col md={6} className="d-flex justify-content-end p-4">
+                    <div className="text-start">
+                        <p>{field_paragraph_description[0].split("The company ")[0]}</p>
+                        <p>{field_paragraph_description[0].split("dreams.")[1]}</p>
+                        <p>{field_paragraph_description[0].split("services.")[1]}</p>
+                    </div>
+                    </Col>
+                    <Col md={6} className='text-start p-4'>
+                        <Image 
+                        src={field_image_url[1].uri} 
+                        alt={field_image_url[1].title} 
+                        fluid 
+                        />
+                    </Col>
+                    
+                </Row>
+            </div>
+
         </Container>
     )
 }
