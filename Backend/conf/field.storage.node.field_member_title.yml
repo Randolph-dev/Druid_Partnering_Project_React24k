@@ -1,11 +1,11 @@
-uuid: e692bfda-610d-43ca-b003-19439475bf23
+uuid: bd9d8df4-5642-4908-879a-163ef157309c
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_phone
-field_name: field_phone
+id: node.field_member_title
+field_name: field_member_title
 entity_type: node
 type: string
 settings:
