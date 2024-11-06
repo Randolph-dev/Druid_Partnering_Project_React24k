@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.page.field_content
+    - field.field.node.page.field_email
     - field.field.node.page.field_heading
     - field.field.node.page.field_image_url
+    - field.field.node.page.field_name
     - field.field.node.page.field_paragraph
     - field.field.node.page.field_paragraph_description
     - field.field.node.page.field_paragraph_title
+    - field.field.node.page.field_phone
+    - field.field.node.page.field_title
     - node.type.page
   module:
     - user
@@ -24,9 +27,12 @@ content:
     weight: 101
     region: content
 hidden:
-  field_content: true
+  field_email: true
   field_heading: true
   field_image_url: true
+  field_name: true
   field_paragraph: true
   field_paragraph_description: true
   field_paragraph_title: true
+  field_phone: true
+  field_title: true
