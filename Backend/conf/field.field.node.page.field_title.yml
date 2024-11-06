@@ -1,0 +1,19 @@
+uuid: cbe8e20b-c1ca-4a07-b5e0-22e3a3f669d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.page
+id: node.page.field_title
+field_name: field_title
+entity_type: node
+bundle: page
+label: title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
