@@ -1,4 +1,4 @@
 name: druidpartneringapp
-recipe: drupal11
+recipe: drupal10
 config:
   webroot: web

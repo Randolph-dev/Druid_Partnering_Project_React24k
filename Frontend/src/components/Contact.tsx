@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import fetchContentFromDrupal from '../lib/drupal/drupal-content-api';
 import { useAppSelector } from '../hooks/hooks';
+import ContactForm from './ContactForm';
 
 const Contact: React.FC = () => {
     const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
@@ -15,6 +16,7 @@ const Contact: React.FC = () => {
         <div>
             <h1>Contact Us</h1>
             <p>Contact page will be here</p>
+            <ContactForm />
         </div>
     )
 }

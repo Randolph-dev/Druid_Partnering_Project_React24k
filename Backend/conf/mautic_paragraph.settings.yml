@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: _jBWHDxcUqiULjXJMHx8WwoT1VIODfJ3jsHA7pycQos
+connector: basic_auth
+limit: 100
+connector_config:
+  scheme: https
+  base_url: mautic.alextran.cloud
+  port: ''
+  path: ''
+  username: admin
+  password: xohron-joqhyv-wyfHo4
+cache: '3600'
