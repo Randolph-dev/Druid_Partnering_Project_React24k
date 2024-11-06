@@ -13,7 +13,7 @@ _core:
   default_config_hash: i0snV8Wj--OkRW12UdachUiYiz3FbeMwHu_pZYfzKLc
 name: 'Basic page'
 type: page
-description: 'This type includes 3 contents / pages: contact info, about us, job. Leave this for later because we need to add custom HTML/CSS for the content'
+description: 'For all generic pages'
 help: null
 new_revision: true
 preview_mode: 1

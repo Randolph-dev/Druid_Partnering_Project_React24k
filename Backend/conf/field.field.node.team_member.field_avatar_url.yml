@@ -1,0 +1,23 @@
+uuid: 41048dee-81f9-4cb3-94e3-63138288b5ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avatar_url
+    - node.type.team_member
+  module:
+    - link
+id: node.team_member.field_avatar_url
+field_name: field_avatar_url
+entity_type: node
+bundle: team_member
+label: avatar_url
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

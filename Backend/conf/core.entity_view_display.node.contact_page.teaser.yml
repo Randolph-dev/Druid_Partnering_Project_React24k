@@ -1,0 +1,28 @@
+uuid: 40605de9-59bf-49c0-bed7-4408596e6a4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_page.field_first_section_header
+    - field.field.node.contact_page.field_first_section_paragraph
+    - field.field.node.contact_page.field_second_section_header
+    - field.field.node.contact_page.field_second_section_paragraph
+    - node.type.contact_page
+  module:
+    - user
+id: node.contact_page.teaser
+targetEntityType: node
+bundle: contact_page
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_first_section_header: true
+  field_first_section_paragraph: true
+  field_second_section_header: true
+  field_second_section_paragraph: true
