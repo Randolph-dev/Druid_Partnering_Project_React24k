@@ -32,6 +32,7 @@ function Footer() {
               </Nav.Link>
             </Nav>
           </Col>
+
           <Col></Col>
 
           <Col md={5}>
