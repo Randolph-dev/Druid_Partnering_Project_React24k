@@ -29,6 +29,9 @@ const Contact: React.FC = () => {
 
     const {
         field_first_section_header,
+        field_first_section_paragraph,
+        field_second_section_header,
+        field_second_section_paragraph
     } = contactPageData;
 
     type ContactPageField = {
@@ -39,17 +42,29 @@ const Contact: React.FC = () => {
 
     return (
         <Container fluid className='p-0'>
-            <Container fluid className='p-5'>
-                <h1 className='my-5 d-flex gap-2'>
+            <Container fluid className='p-5 pb-1'>
+                <h1 className='my-3 d-flex gap-2'>
                     {field_first_section_header.map((span: ContactPageField, index: number) => (
-                        <p key={index} dangerouslySetInnerHTML={{ __html: span.processed }} />
+                        <span key={index} dangerouslySetInnerHTML={{ __html: span.processed }} />
                     ))}
                 </h1>
-                <p>Contact page will be here</p>
+                <p style={{ maxWidth: "500px" }} className='d-flex flex-column gap-3'>
+                    {field_first_section_paragraph.map((span: ContactPageField, index: number) => (
+                        <span key={index} dangerouslySetInnerHTML={{ __html: span.processed }} />
+                    ))}
+                </p>
             </Container>
             <Container fluid className='p-5'>
-                <h1>Contact Us</h1>
-                <p>Contact page will be here</p>
+                <h1 className='my-3 d-flex gap-2'>
+                    {field_second_section_header.map((span: ContactPageField, index: number) => (
+                        <span key={index} dangerouslySetInnerHTML={{ __html: span.processed }} />
+                    ))}
+                </h1>
+                <p style={{ maxWidth: "500px" }} className='d-flex flex-column gap-3'>
+                    {field_second_section_paragraph.map((span: ContactPageField, index: number) => (
+                        <span key={index} dangerouslySetInnerHTML={{ __html: span.processed }} />
+                    ))}
+                </p>
             </Container>
             <ContactForm />
         </Container>
