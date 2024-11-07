@@ -1,0 +1,20 @@
+uuid: af73cb7a-c5c1-4077-bce9-e3c6e477587f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_first_section_paragraph
+field_name: field_first_section_paragraph
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

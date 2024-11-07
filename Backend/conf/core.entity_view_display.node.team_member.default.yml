@@ -1,0 +1,59 @@
+uuid: 8b98b414-7fc0-43a3-adb5-3629e01070fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.team_member.field_avatar_url
+    - field.field.node.team_member.field_email
+    - field.field.node.team_member.field_member_title
+    - field.field.node.team_member.field_phone
+    - node.type.team_member
+  module:
+    - link
+    - user
+id: node.team_member.default
+targetEntityType: node
+bundle: team_member
+mode: default
+content:
+  field_avatar_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_member_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

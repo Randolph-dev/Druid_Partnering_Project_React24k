@@ -1,0 +1,42 @@
+uuid: 88da6167-3919-418a-a16d-8d6caab52eab
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.jobs_page.body
+    - field.field.node.jobs_page.field_heading
+    - field.field.node.jobs_page.field_image_description
+    - field.field.node.jobs_page.field_image_url
+    - field.field.node.jobs_page.field_intro_paragraph
+    - field.field.node.jobs_page.field_paragraph_description
+    - field.field.node.jobs_page.field_paragraph_title
+    - node.type.jobs_page
+  module:
+    - text
+    - user
+id: node.jobs_page.teaser
+targetEntityType: node
+bundle: jobs_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_heading: true
+  field_image_description: true
+  field_image_url: true
+  field_intro_paragraph: true
+  field_paragraph_description: true
+  field_paragraph_title: true

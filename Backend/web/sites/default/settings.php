@@ -871,10 +871,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
-$databases['default']['default'] = array (
-  'database' => 'drupal11',
-  'username' => 'drupal11',
-  'password' => 'drupal11',
+$databases['default']['default'] = array(
+  'database' => 'drupal10',
+  'username' => 'drupal10',
+  'password' => 'drupal10',
   'prefix' => '',
   'host' => 'database',
   'port' => '3306',
@@ -883,4 +883,17 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
-$settings['config_sync_directory'] = 'sites/default/files/config_ZSGVinsqxLKJMZWoj0WTXGVN79zA3UfgI9Qz9arHo5gXYOGX2aZrTtAI-Q111QoH5iRvHQ9mNA/sync';
+
+// config directory
+$settings['config_sync_directory'] = '../conf/';
+
+// cors configuration
+$settings['cors.config'] = [
+  'enabled' => true,
+  'allowedHeaders' => ['x-csrf-token', 'authorization', 'content-type', 'accept', 'origin', 'x-requested-with', 'access-control-allow-origin', 'x-allowed-header', '*'], // Adjust if needed
+  'allowedMethods' => ['*'], // Allow the methods you need
+  'allowedOrigins' => ['https://druid-project.alextran.dev', 'http://localhost/', 'http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', '*'],
+  'exposedHeaders' => false,
+  'maxAge' => false,
+  'supportsCredentials' => true,
+];

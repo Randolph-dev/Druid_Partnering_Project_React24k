@@ -1,0 +1,19 @@
+uuid: 14bc184f-68b4-4ca3-a375-484fb11c6e0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraph_title
+    - node.type.jobs_page
+id: node.jobs_page.field_paragraph_title
+field_name: field_paragraph_title
+entity_type: node
+bundle: jobs_page
+label: 'paragraph title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

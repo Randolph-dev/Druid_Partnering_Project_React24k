@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import AboutUs from './components/AboutUs';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import Layout from './pages/Layout';
+import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
+import { useAppDispatch } from './hooks/hooks';
+import Blog from './components/Blog';
+import Projects from './components/Projects';
+import Jobs from './components/Jobs';
+import Consultation from './components/Consultation';
+import Maintenance from './components/Maintenance';
+import { setLoading } from './features/drupalData/drupalSlice';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      dispatch(setLoading(true));
+      await dispatch(fetchJsonApiLinksFromDrupal());
+      dispatch(setLoading(false));
+    };
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="services" element={<Services />} />
+          {/* the next 3 routes belongs to types service pages */}
+          <Route path="projects" element={<Projects />} />
+          <Route path="maintenance" element={<Maintenance />} />
+          <Route path="consultation" element={<Consultation />} />
+          <Route path="jobs" element={<Jobs />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

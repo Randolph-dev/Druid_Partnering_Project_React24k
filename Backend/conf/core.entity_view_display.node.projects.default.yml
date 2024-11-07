@@ -1,0 +1,59 @@
+uuid: dbf2beac-15f1-45c8-9284-7967c25ebd20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.projects.field_category
+    - field.field.node.projects.field_image_url
+    - field.field.node.projects.field_project_description
+    - field.field.node.projects.field_project_tiltle
+    - node.type.projects
+  module:
+    - link
+    - user
+id: node.projects.default
+targetEntityType: node
+bundle: projects
+mode: default
+content:
+  field_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_project_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_project_tiltle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
