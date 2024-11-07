@@ -51,8 +51,8 @@ const Jobs: React.FC = () => {
               <b>{field_heading[0]}</b>
             </h1>
             <div className="py-3">
-              {field_intro_paragraph.map((intro: string) => (
-                <p style={{ fontSize: "20px" }}>{intro}</p>
+              {field_intro_paragraph.map((intro: string, index: number) => (
+                <p key={`${index}_${intro.slice(0, 10)}`} style={{ fontSize: "20px" }}>{intro}</p>
               ))}
             </div>
 
