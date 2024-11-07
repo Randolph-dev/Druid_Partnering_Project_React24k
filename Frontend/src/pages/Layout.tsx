@@ -2,8 +2,13 @@ import { Container } from "react-bootstrap";
 import NavBar from "./NavBar";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
+import { setPageTitle } from "../lib/utils/setPageTitle";
 
 export default function Layout() {
+  // a custom script to set the current page title
+  // this is important for Mautic to know which page the user visited
+  setPageTitle();
+
   return (
     // page container
     <Container
