@@ -48,7 +48,7 @@ export default function Jobs() {
               src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
               style={{ width: "100%" }}
             />
-            <p>
+            <p className="text-end">
               Above our founders Samuli, Tero, Arto and Roni with our <br />
               Production Director Pasi.
             </p>
