@@ -14,7 +14,7 @@ const AboutUs: React.FC = () => {
         if (jsonApiLinks["node--page"]) {
             fetchContentFromDrupal(jsonApiLinks["node--page"])
                 .then(res => {
-                    console.log(res.data[1]); 
+                    // console.log(res.data[1]); 
                     setAboutUsData(res.data[1]);
                 });
         }
@@ -29,18 +29,18 @@ const AboutUs: React.FC = () => {
         field_paragraph,
         field_image_url,
     } = aboutUsData;
-    console.log(field_heading[0].split("."));
+    // console.log(field_heading[0].split("."));
 
 
     return (
-        <Container className="p-4">           
+        <Container className="p-4">
             <Container className="text-center my-4 p-2">
                 <h2>
                     <i>
                         {field_heading[0].split(".")[0]}
-                        </i>.
-                        <b>{field_heading[0].split(".")[1]}.</b>
-                        </h2>
+                    </i>.
+                    <b>{field_heading[0].split(".")[1]}.</b>
+                </h2>
             </Container>
             <Row>
                 <Col md={6} className='p-4'>
