@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { NavDropdown } from "react-bootstrap";
+import logo from "../assets/images/logo.webp"
 
 const NavBar: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -34,7 +35,14 @@ const NavBar: React.FC = () => {
       style={{ borderBottom: "0.5px solid #000" }}
     >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+          <img
+            src={logo}
+            alt="Druid logo"
+            width="30"
+            height="30"
+            className="me-2"
+          />
           Druid
         </Navbar.Brand>
 
