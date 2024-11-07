@@ -1,0 +1,52 @@
+uuid: 940c8b35-50a5-4f02-ac35-4b98bd757efc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact_page.field_first_section_header
+    - field.field.node.contact_page.field_first_section_paragraph
+    - field.field.node.contact_page.field_second_section_header
+    - field.field.node.contact_page.field_second_section_paragraph
+    - node.type.contact_page
+  module:
+    - text
+    - user
+id: node.contact_page.default
+targetEntityType: node
+bundle: contact_page
+mode: default
+content:
+  field_first_section_header:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_first_section_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_second_section_header:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_second_section_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

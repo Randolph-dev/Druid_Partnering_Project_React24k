@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_author
-    - field.field.node.article.field_content
     - field.field.node.article.field_date
+    - field.field.node.article.field_heading
     - field.field.node.article.field_image_url
+    - field.field.node.article.field_paragraph_description
+    - field.field.node.article.field_technology
     - node.type.article
   module:
     - datetime
     - link
-    - text
     - user
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
@@ -21,19 +22,12 @@ bundle: article
 mode: default
 content:
   field_author:
-    type: entity_reference_label
+    type: string
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_content:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
+    weight: 106
     region: content
   field_date:
     type: datetime_default
@@ -43,6 +37,14 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_image_url:
     type: link
@@ -55,6 +57,21 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_paragraph_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_technology:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
     region: content
   links:
     settings: {  }
