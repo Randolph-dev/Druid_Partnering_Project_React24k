@@ -8,11 +8,8 @@ const AboutUs: React.FC = () => {
     const [aboutUsData, setAboutUsData] = useState<JsonApiDataAttributes | null>(null);
 
     useEffect(() => {
-        // Fetch content from Drupal JSON API for the "About Us" page content.
-        // We target the second page in the response as it contains the desired data.
         if (jsonApiLinks["node--page"]) {
             fetchContentFromDrupal(jsonApiLinks["node--page"]).then(res => {
-                console.log(res.data[1]);
                 setAboutUsData(res.data[1]);
             });
         }
@@ -21,7 +18,6 @@ const AboutUs: React.FC = () => {
     if (!aboutUsData) return <div>Loading...</div>;
 
     const { field_heading, field_paragraph, field_paragraph_description, field_paragraph_title, field_image_url } = aboutUsData;
-    console.log(field_heading[0].split(".")); 
 
     return (
         <Container style={{ maxWidth: '100%' }} className="p-0">
@@ -38,8 +34,7 @@ const AboutUs: React.FC = () => {
                 </Col>
                 <Col md={6} className="d-flex justify-content-end p-4 text-start">
                     <div>
-                        <h2>{field_paragraph[0]}</h2>
-                        
+                        <h2>{field_paragraph[0]}</h2>   
                         <p>
                             <span style={{ color: 'red' }}> &rarr; </span>
                             Check out our services
