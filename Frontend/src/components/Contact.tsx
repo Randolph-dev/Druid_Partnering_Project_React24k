@@ -3,6 +3,7 @@ import fetchContentFromDrupal, { JsonApiDataAttributes } from '../lib/drupal/dru
 import { useAppSelector } from '../hooks/hooks';
 import ContactForm from './ContactForm';
 import { Container } from 'react-bootstrap';
+import ContactPageTeam from './ContactPageTeam';
 
 const Contact: React.FC = () => {
     const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
@@ -66,6 +67,9 @@ const Contact: React.FC = () => {
                     ))}
                 </p>
             </Container>
+
+            <ContactPageTeam />
+
             <ContactForm />
         </Container>
     )
