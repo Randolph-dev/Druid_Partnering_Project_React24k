@@ -1,0 +1,19 @@
+uuid: 1564b8be-45df-4a22-be01-80d6020cdba6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_description
+    - node.type.jobs_page
+id: node.jobs_page.field_image_description
+field_name: field_image_description
+entity_type: node
+bundle: jobs_page
+label: 'image description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
