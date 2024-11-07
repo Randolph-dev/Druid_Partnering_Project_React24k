@@ -1,87 +1,134 @@
-import { useEffect } from "react";
-import fetchContentFromDrupal from "../lib/drupal/drupal-content-api";
+import { useEffect, useState } from "react";
+import fetchContentFromDrupal, {
+  JsonApiDataAttributes,
+} from "../lib/drupal/drupal-content-api";
 import { useAppSelector } from "../hooks/hooks";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 
-export default function Jobs() {
+const Jobs: React.FC = () => {
+  const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
   const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
+
+  const [jobsPageData, setJobsData] = useState<JsonApiDataAttributes | null>(
+    null
+  );
+
   useEffect(() => {
-    // the link node--page will return all 3 pages of type "basic pages", we just want the last one which is Jobs
-    fetchContentFromDrupal(jsonApiLinks["node--page"]).then((res) =>
-      console.log(res.data[2])
-    );
-  }, [jsonApiLinks]);
+    // Ensure loading is complete and jsonApiLinks is defined
+    if (!jsonApiLinksLoading) {
+      const fetchData = async () => {
+        const res = await fetchContentFromDrupal(
+          jsonApiLinks["node--jobs_page"]
+        );
+        setJobsData(res.data[0]);
+      };
+      fetchData();
+    }
+  }, [jsonApiLinksLoading]);
+
+  if (!jobsPageData) {
+    return <p>Loading</p>;
+  }
+
+  const {
+    field_heading,
+    field_intro_paragraph,
+    field_image_description,
+    field_paragraph_description,
+    field_paragraph_title,
+    field_image_url: images,
+  } = jobsPageData;
 
   return (
     <Container className="p-0" fluid>
-      <div>Jobs</div>
-      <Container className="my-5">
+      <Container
+        className="d-flex align-items-center"
+        style={{ height: "90vh" }}
+      >
         <Row className="d-flex justify-content-between">
           <Col md={6}>
-            <h2>For developers by developers.</h2>
-            <p>
-              We're all about tackling major content management gigs using
-              Drupal as our prime playground. Here at Druid, we're all about
-              crafting a cooler web - think open-source vibes and an
-              open-for-anything mindset. From user-friendly sites to apps that
-              make life smoother, we're all in on cracking puzzles and creating
-              top-tier solutions that'll really make a difference down the road.
-              Our crew of folks? We're all about whipping up slick digital
-              solutions with heart and tech know-how. Wanna dive in and vibe
-              with us? You're more than welcome!
-            </p>
+            <h1>
+              <b>{field_heading[0]}</b>
+            </h1>
+            <div className="py-3">
+              {field_intro_paragraph.map((intro: string) => (
+                <p style={{ fontSize: "20px" }}>{intro}</p>
+              ))}
+            </div>
 
-            <Col className="mt-5">
+            <Col className="mt-4">
               <Button
-                className="me-2 p-3"
+                className="me-2 p-3 px-5 rounded-pill border-0"
                 style={{ backgroundColor: "#EF3428" }}
               >
                 Connect
               </Button>
-              <Button className="p-3 " style={{ backgroundColor: "#EF3428" }}>
+              <Button
+                className="p-3 px-5 rounded-pill border-0"
+                style={{ backgroundColor: "#EF3428" }}
+              >
                 Job openings
               </Button>
             </Col>
           </Col>
           <Col md={5}>
             <Image
-              src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+              src={images[0].uri}
+              alt={images[0].title}
               style={{ width: "100%" }}
             />
-            <p className="text-end">
-              Above our founders Samuli, Tero, Arto and Roni with our <br />
-              Production Director Pasi.
-            </p>
+            <p className="pt-3 text-end">{field_image_description}</p>
           </Col>
         </Row>
       </Container>
 
-      <Container className="my-5">
-        <h2 className="py-5 text-center">
-          Perks and Benefits working at Druid
-        </h2>
+      <Container>
+        <h2 className="py-5 text-center">{field_heading[1]}</h2>
+
         <Row className="d-flex justify-content-center">
-          <Col md={5}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-              sed optio consequuntur assumenda libero eaque? Iusto consequatur
-              nam a temporibus quam porro ex officiis non eos, et est, laborum
-              optio.
-            </p>
-          </Col>
-          <Col md={5}>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-              totam adipisci, dolor quia aliquam impedit? Porro amet sint
-              quaerat, veritatis excepturi laudantium numquam, earum dolorum
-              assumenda labore eligendi, ipsam eum?
-            </p>
-          </Col>
+          {field_paragraph_description.map(
+            (description: string, index: number) => (
+              <Col key={index} md={5} className="pb-5">
+                <h5>{field_paragraph_title[index]}</h5>
+                <p>{description}</p>
+              </Col>
+            )
+          )}
         </Row>
       </Container>
+
       <Container className="my-5 py-5 bg-dark text-light" fluid>
-        <h2 className="text-center">Meet the druids</h2>
+        <h2 className="pb-5 text-center">Meet the druids</h2>
+        <Row className="justify-content-center">
+          <Col xs="auto" className="d-flex justify-content-center mb-4">
+            <div
+              className="d-flex, justify-content-center, align-items-center rounded-pill"
+              style={{
+                width: "180px",
+                height: "180px",
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM="
+                alt="Profile 1"
+                roundedCircle
+                fluid
+              />
+            </div>
+          </Col>
+        </Row>
+        <Col>
+          <Button
+            className="p-3 px-5 rounded-pill border-0"
+            style={{ backgroundColor: "#EF3428" }}
+          >
+            More people
+          </Button>
+        </Col>
       </Container>
     </Container>
   );
-}
+};
+
+export default Jobs;
