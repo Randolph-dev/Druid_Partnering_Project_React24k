@@ -31,8 +31,6 @@ const Contact: React.FC = () => {
         return <p>Loading</p>;
     }
 
-    console.log(teamMembersData);
-
     const {
         field_first_section_header,
         field_first_section_paragraph,
