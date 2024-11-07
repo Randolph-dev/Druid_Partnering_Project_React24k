@@ -1,22 +1,13 @@
 import { Container } from "react-bootstrap";
 import NavBar from "./NavBar";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import { useEffect } from "react";
+import { setPageTitle } from "../lib/utils/setPageTitle";
 
 export default function Layout() {
-  const location = useLocation();
-  const pathname = location.pathname;
-  let pageTitle: string;
-  if (pathname === "/") {
-    pageTitle = "Drupal websites and uncompromising software solutions | Druid";
-  } else {
-    pageTitle = `${location.pathname.slice(1)} | Drupal websites and uncompromising software solutions | Druid`
-  }
-
-  useEffect(() => {
-    document.title = pageTitle; // Set the desired page title
-  }, [location]);
+  // a custom script to set the current page title
+  // this is important for Mautic to know which page the user visited
+  setPageTitle();
 
   return (
     // page container
