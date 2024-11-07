@@ -9,14 +9,19 @@ const Contact: React.FC = () => {
     const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
     const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
     const [contactPageData, setContactPageData] = useState<JsonApiDataAttributes | null>(null);
+    const [teamMembersData, setTeamMembersData] = useState<JsonApiDataAttributes | null>(null);
 
     useEffect(() => {
         if (!jsonApiLinksLoading) {
             const fetchData = async () => {
-                const res = await fetchContentFromDrupal(
+                const pageData = await fetchContentFromDrupal(
                     jsonApiLinks["node--contact_page"]
                 );
-                setContactPageData(res.data[0]);
+                setContactPageData(pageData.data[0]);
+                const teamData = await fetchContentFromDrupal(
+                    jsonApiLinks["node--team_member"]
+                );
+                setTeamMembersData(teamData.data)
             };
             fetchData();
         }
@@ -26,7 +31,7 @@ const Contact: React.FC = () => {
         return <p>Loading</p>;
     }
 
-    console.log(contactPageData);
+    console.log(teamMembersData);
 
     const {
         field_first_section_header,
@@ -68,7 +73,7 @@ const Contact: React.FC = () => {
                 </p>
             </Container>
 
-            <ContactPageTeam />
+            <ContactPageTeam teamMembersData={teamMembersData} />
 
             <ContactForm />
         </Container>
