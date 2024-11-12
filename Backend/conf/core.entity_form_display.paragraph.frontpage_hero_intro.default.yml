@@ -1,0 +1,25 @@
+uuid: c5d8a0d8-ec41-400d-9fb2-d448d248c7dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_hero_intro.field_frontpage_hero_intro_parag
+    - paragraphs.paragraphs_type.frontpage_hero_intro
+  module:
+    - text
+id: paragraph.frontpage_hero_intro.default
+targetEntityType: paragraph
+bundle: frontpage_hero_intro
+mode: default
+content:
+  field_frontpage_hero_intro_parag:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

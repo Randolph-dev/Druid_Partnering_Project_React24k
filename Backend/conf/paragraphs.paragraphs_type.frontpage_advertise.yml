@@ -1,0 +1,10 @@
+uuid: b4d8a515-3221-4662-ae79-f94a265e753f
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_advertise
+label: frontpage_advertise
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

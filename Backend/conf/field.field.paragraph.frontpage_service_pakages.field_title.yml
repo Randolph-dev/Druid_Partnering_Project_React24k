@@ -1,0 +1,24 @@
+uuid: ac5e67f0-1bb5-4bee-8473-970397d18a7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.frontpage_service_pakages
+  module:
+    - text
+id: paragraph.frontpage_service_pakages.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: frontpage_service_pakages
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text
