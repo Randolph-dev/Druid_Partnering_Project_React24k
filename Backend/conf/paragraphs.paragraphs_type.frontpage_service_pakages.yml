@@ -1,0 +1,10 @@
+uuid: b9134e40-fb89-45a5-80a8-c4d8d436bd6a
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_service_pakages
+label: frontpage_service_pakages
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

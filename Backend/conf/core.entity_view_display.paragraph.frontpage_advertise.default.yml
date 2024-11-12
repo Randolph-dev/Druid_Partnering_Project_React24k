@@ -1,0 +1,44 @@
+uuid: 1fe2b2e4-90a7-48a5-859c-3e03a963c3e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_advertise.field_image_url
+    - field.field.paragraph.frontpage_advertise.field_paragraph
+    - field.field.paragraph.frontpage_advertise.field_title
+    - paragraphs.paragraphs_type.frontpage_advertise
+  module:
+    - link
+    - text
+id: paragraph.frontpage_advertise.default
+targetEntityType: paragraph
+bundle: frontpage_advertise
+mode: default
+content:
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

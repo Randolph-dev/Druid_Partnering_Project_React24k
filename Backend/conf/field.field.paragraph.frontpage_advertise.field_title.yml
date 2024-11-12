@@ -1,0 +1,24 @@
+uuid: 047fe674-f6cc-42f4-b9a2-9e44c96e1166
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.frontpage_advertise
+  module:
+    - text
+id: paragraph.frontpage_advertise.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: frontpage_advertise
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text
