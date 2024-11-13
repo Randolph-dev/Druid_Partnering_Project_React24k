@@ -3,25 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.frontpage_service_pakage.field_frontpage_service_pakage_i
     - field.field.paragraph.frontpage_service_pakage.field_paragraph
     - field.field.paragraph.frontpage_service_pakage.field_title
     - paragraphs.paragraphs_type.frontpage_service_pakage
   module:
-    - options
     - text
 id: paragraph.frontpage_service_pakage.default
 targetEntityType: paragraph
 bundle: frontpage_service_pakage
 mode: default
 content:
-  field_frontpage_service_pakage_i:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_paragraph:
     type: text_default
     label: above
