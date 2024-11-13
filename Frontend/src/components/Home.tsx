@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Hero from "./HomePage/Hero";
@@ -35,17 +35,7 @@ export default function Home() {
             return <Advertise key={key} section={section} />;
         }
       })}
-      {/* <Container
-        className="d-flex align-items-center"
-        style={{ height: "80vh" }}
-      >
-        <Row>
-          <Col lg={6}>
-            <p className="h1 fw-light">{frontPageData[0]}</p>
-          </Col>
-        </Row>
-      </Container>
-
+      {/*
       <Container className="my-5">
         <Row>
           <h1 className="my-5">{""}</h1>
