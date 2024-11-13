@@ -1,0 +1,11 @@
+uuid: 21e7a700-728e-4d72-90d7-416f5274de86
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+id: comment.decoupled
+label: Decoupled
+description: ''
+targetEntityType: comment
+cache: true

@@ -1,0 +1,39 @@
+uuid: dc2cac5f-bf85-4260-9988-499b94ea396b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.front_page.body
+    - field.field.node.front_page.field_frontpage_sections
+    - field.field.node.front_page.field_heading
+    - field.field.node.front_page.field_image_url
+    - field.field.node.front_page.field_paragraph
+    - field.field.node.front_page.field_service_paragraph
+    - field.field.node.front_page.field_service_paragraph_title
+    - node.type.front_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.front_page.decoupled
+targetEntityType: node
+bundle: front_page
+mode: decoupled
+content:
+  field_frontpage_sections:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_heading: true
+  field_image_url: true
+  field_paragraph: true
+  field_service_paragraph: true
+  field_service_paragraph_title: true
+  links: true

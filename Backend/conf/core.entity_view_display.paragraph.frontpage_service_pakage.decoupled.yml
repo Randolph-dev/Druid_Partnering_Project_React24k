@@ -1,0 +1,19 @@
+uuid: 0ad58bbd-5010-4ada-b118-1e9a35041ecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.decoupled
+    - field.field.paragraph.frontpage_service_pakage.field_frontpage_service_pakage_i
+    - field.field.paragraph.frontpage_service_pakage.field_paragraph
+    - field.field.paragraph.frontpage_service_pakage.field_title
+    - paragraphs.paragraphs_type.frontpage_service_pakage
+id: paragraph.frontpage_service_pakage.decoupled
+targetEntityType: paragraph
+bundle: frontpage_service_pakage
+mode: decoupled
+content: {  }
+hidden:
+  field_frontpage_service_pakage_i: true
+  field_paragraph: true
+  field_title: true

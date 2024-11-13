@@ -1,0 +1,38 @@
+uuid: 08b4b3d8-f03e-40dd-9fcf-655179b68fc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.page.field_email
+    - field.field.node.page.field_heading
+    - field.field.node.page.field_image_url
+    - field.field.node.page.field_name
+    - field.field.node.page.field_paragraph
+    - field.field.node.page.field_paragraph_description
+    - field.field.node.page.field_paragraph_title
+    - field.field.node.page.field_phone
+    - field.field.node.page.field_title
+    - node.type.page
+  module:
+    - user
+id: node.page.decoupled
+targetEntityType: node
+bundle: page
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_email: true
+  field_heading: true
+  field_image_url: true
+  field_name: true
+  field_paragraph: true
+  field_paragraph_description: true
+  field_paragraph_title: true
+  field_phone: true
+  field_title: true

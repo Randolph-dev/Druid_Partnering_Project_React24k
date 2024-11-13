@@ -1,0 +1,11 @@
+uuid: 2acead44-f3b3-4572-880e-918a8d43aeca
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.decoupled
+label: Decoupled
+description: ''
+targetEntityType: node
+cache: true

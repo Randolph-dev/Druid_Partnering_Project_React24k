@@ -1,0 +1,15 @@
+uuid: 966bcf00-6999-4ba1-bc31-2887a710ceb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - core.entity_view_mode.block_content.decoupled
+    - field.field.block_content.basic.body
+id: block_content.basic.decoupled
+targetEntityType: block_content
+bundle: basic
+mode: decoupled
+content: {  }
+hidden:
+  body: true

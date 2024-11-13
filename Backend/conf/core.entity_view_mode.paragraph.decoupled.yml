@@ -1,0 +1,11 @@
+uuid: 878d73d1-bacb-471f-a2f1-dbdf9f3b966e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.decoupled
+label: Decoupled
+description: ''
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,28 @@
+uuid: 208232b2-fc96-4583-828f-dbb824d8cb45
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.contact_page.field_first_section_header
+    - field.field.node.contact_page.field_first_section_paragraph
+    - field.field.node.contact_page.field_second_section_header
+    - field.field.node.contact_page.field_second_section_paragraph
+    - node.type.contact_page
+  module:
+    - user
+id: node.contact_page.decoupled
+targetEntityType: node
+bundle: contact_page
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_first_section_header: true
+  field_first_section_paragraph: true
+  field_second_section_header: true
+  field_second_section_paragraph: true

@@ -1,0 +1,22 @@
+uuid: a758ba4b-9217-4214-90b5-76d528f9d784
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.decoupled
+    - taxonomy.vocabulary.tags
+  module:
+    - text
+id: taxonomy_term.tags.decoupled
+targetEntityType: taxonomy_term
+bundle: tags
+mode: decoupled
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
