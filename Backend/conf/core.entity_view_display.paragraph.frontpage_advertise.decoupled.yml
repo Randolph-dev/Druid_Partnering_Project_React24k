@@ -1,0 +1,19 @@
+uuid: 0ee35bed-8e9d-4c78-b5cd-6d85d1ee9e4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.decoupled
+    - field.field.paragraph.frontpage_advertise.field_image_url
+    - field.field.paragraph.frontpage_advertise.field_paragraph
+    - field.field.paragraph.frontpage_advertise.field_title
+    - paragraphs.paragraphs_type.frontpage_advertise
+id: paragraph.frontpage_advertise.decoupled
+targetEntityType: paragraph
+bundle: frontpage_advertise
+mode: decoupled
+content: {  }
+hidden:
+  field_image_url: true
+  field_paragraph: true
+  field_title: true

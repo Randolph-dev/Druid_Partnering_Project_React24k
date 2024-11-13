@@ -1,0 +1,28 @@
+uuid: e342aa3d-fe4f-4c84-a9ca-49c4b7b184d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.team_member.field_avatar_url
+    - field.field.node.team_member.field_email
+    - field.field.node.team_member.field_member_title
+    - field.field.node.team_member.field_phone
+    - node.type.team_member
+  module:
+    - user
+id: node.team_member.decoupled
+targetEntityType: node
+bundle: team_member
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_avatar_url: true
+  field_email: true
+  field_member_title: true
+  field_phone: true

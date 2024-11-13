@@ -1,0 +1,21 @@
+uuid: acfdb2be-dcf8-42eb-9576-f615a1d3896f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.decoupled
+    - field.field.user.user.user_picture
+  module:
+    - user
+id: user.user.decoupled
+targetEntityType: user
+bundle: user
+mode: decoupled
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  user_picture: true

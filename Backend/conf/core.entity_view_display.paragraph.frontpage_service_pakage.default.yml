@@ -1,0 +1,30 @@
+uuid: 7fe49c3b-a689-436b-8f52-af828e21fb6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_service_pakage.field_paragraph
+    - field.field.paragraph.frontpage_service_pakage.field_title
+    - paragraphs.paragraphs_type.frontpage_service_pakage
+  module:
+    - text
+id: paragraph.frontpage_service_pakage.default
+targetEntityType: paragraph
+bundle: frontpage_service_pakage
+mode: default
+content:
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,24 @@
+uuid: 5cdd032b-1c0f-4ce8-9882-ae79a8d197df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_frontpage_hero_intro_parag
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.frontpage_hero_intro
+  module:
+    - text
+id: paragraph.frontpage_hero_intro.field_frontpage_hero_intro_parag
+field_name: field_frontpage_hero_intro_parag
+entity_type: paragraph
+bundle: frontpage_hero_intro
+label: frontpage_hero_intro_paragraph
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

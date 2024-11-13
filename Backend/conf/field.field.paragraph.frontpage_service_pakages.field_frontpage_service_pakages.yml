@@ -1,0 +1,43 @@
+uuid: 8d4ed372-e994-469f-92f4-8d188e724055
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_frontpage_service_pakages
+    - paragraphs.paragraphs_type.frontpage_service_pakage
+    - paragraphs.paragraphs_type.frontpage_service_pakages
+  module:
+    - entity_reference_revisions
+id: paragraph.frontpage_service_pakages.field_frontpage_service_pakages
+field_name: field_frontpage_service_pakages
+entity_type: paragraph
+bundle: frontpage_service_pakages
+label: frontpage_service_pakages
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      frontpage_service_pakage: frontpage_service_pakage
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 5
+        enabled: false
+      frontpage_hero_intro:
+        weight: 5
+        enabled: false
+      frontpage_service_pakage:
+        weight: 7
+        enabled: true
+      frontpage_service_pakages:
+        weight: 9
+        enabled: false
+      mautic:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,21 @@
+uuid: 15f39ab3-8e55-454f-a60c-09dfb3f64253
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+    - core.entity_view_mode.contact_message.decoupled
+id: contact_message.feedback.decoupled
+targetEntityType: contact_message
+bundle: feedback
+mode: decoupled
+content:
+  message:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

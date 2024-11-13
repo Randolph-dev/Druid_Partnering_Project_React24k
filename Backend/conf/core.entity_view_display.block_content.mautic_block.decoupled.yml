@@ -1,0 +1,19 @@
+uuid: 623f87f5-b700-463b-b6ca-d79d37e2b38f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mautic_block
+    - core.entity_view_mode.block_content.decoupled
+    - field.field.block_content.mautic_block.field_mautic_block_formid
+    - field.field.block_content.mautic_block.field_mautic_block_text
+    - field.field.block_content.mautic_block.field_mautic_block_title
+id: block_content.mautic_block.decoupled
+targetEntityType: block_content
+bundle: mautic_block
+mode: decoupled
+content: {  }
+hidden:
+  field_mautic_block_formid: true
+  field_mautic_block_text: true
+  field_mautic_block_title: true

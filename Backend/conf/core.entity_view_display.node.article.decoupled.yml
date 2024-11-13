@@ -1,0 +1,32 @@
+uuid: 6f5e6af2-3c61-4b6b-9124-afb323ba4b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.article.field_author
+    - field.field.node.article.field_date
+    - field.field.node.article.field_heading
+    - field.field.node.article.field_image_url
+    - field.field.node.article.field_paragraph_description
+    - field.field.node.article.field_technology
+    - node.type.article
+  module:
+    - user
+id: node.article.decoupled
+targetEntityType: node
+bundle: article
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_author: true
+  field_date: true
+  field_heading: true
+  field_image_url: true
+  field_paragraph_description: true
+  field_technology: true
