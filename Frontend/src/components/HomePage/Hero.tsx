@@ -1,9 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-
-type Field = {
-  value: string;
-  format: string;
-};
+import { Field } from "../../types/drupal";
 
 export interface HeroProps {
   section: {
