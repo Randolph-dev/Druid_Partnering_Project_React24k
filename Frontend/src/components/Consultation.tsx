@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import fetchContentFromDrupal from "../lib/drupal/drupal-content-api";
 import { useAppSelector } from "../hooks/hooks";
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+import ContactForm from "./ContactForm";
 
 export default function Consultation() {
   const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
@@ -21,10 +22,10 @@ export default function Consultation() {
 
       <Row className="my-5">
         <Col>
-          <h3>
+          <h2 className="mb-4">
             Discovery Tour guarantees a quick and risk-free start for a
             development project
-          </h3>
+          </h2>
           <p>
             Is your web service in need of a shake-up, but you don't know where
             to start or how to tackle it? Join us on an adventure to explore
@@ -57,29 +58,33 @@ export default function Consultation() {
       </Row>
 
       <Row className="my-5">
-        <h3 className="my-5">When to take the Discovery Tour?</h3>
+        <h2 className="mb-4">When to take the Discovery Tour?</h2>
         <p>
           The Discovery Tour makes life easier and helps kick-start your
           development project, if
         </p>
-        <ListGroup as="ul" className="my-3">
-          <ListGroup.Item as="li" style={{ listStyleType: "disc" }}>
+        <ul className="my-3" style={{ paddingLeft: "50px" }}>
+          <li>
             You lack technical know-how to evaluate alternatives and define the
             project requirements
-          </ListGroup.Item>
-          <ListGroup.Item as="li" style={{ listStyleType: "disc" }}>
+          </li>
+          <li>
             You are looking for fresh solutions to serve a changing customer
             base or for new customer needs
-          </ListGroup.Item>
-          <ListGroup.Item as="li" style={{ listStyleType: "disc" }}>
+          </li>
+          <li>
             Staying on budget and on schedule is important and project
             management needs support
-          </ListGroup.Item>
-          <ListGroup.Item as="li" style={{ listStyleType: "disc" }}>
+          </li>
+          <li>
             Your goal is to do the right things in the right way in one go.
-          </ListGroup.Item>
-        </ListGroup>
+          </li>
+        </ul>
       </Row>
+      <Row>
+        <h2>Let's get started</h2>
+      </Row>
+      <ContactForm />
     </Container>
   );
 }

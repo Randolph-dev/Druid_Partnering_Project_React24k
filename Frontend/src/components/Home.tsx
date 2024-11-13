@@ -141,7 +141,7 @@ export default function Home() {
                     fluid
                   />
                   <h3 className="my-4">
-                    Veikkaus {images[images.length - 1].title}
+                    Veikkaus {images[images.length - 1].title}
                   </h3>
                   <p>
                     New universal Drupal platform and the revamp of Hel.fi web
