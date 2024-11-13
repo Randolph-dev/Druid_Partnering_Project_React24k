@@ -37,31 +37,6 @@ export default function Home() {
         }
       })}
 
-      {/* <Container fluid className="my-5 py-5 bg-dark text-light">
-        <h1 className="text-center my-5">Open source. Open mindset.</h1>
-        <Row className="d-flex justify-content-center">
-          <Col md={5}>
-            {images && images.length > 0 && (
-              <Image src={images[0].uri} alt={images[0].title} fluid />
-            )}
-          </Col>
-          <Col md={5} className="d-flex align-items-center p-3">
-            <div>
-              <p>
-                Finland's finest: Our Drupal experts design, develop and
-                customize even the most challenging projects. We harness the
-                potential of Drupal and open-source code.
-              </p>
-              <p>
-                Website solutions for large enterprises: We understand the
-                challenges of large businesses and organizations and specialize
-                in expansive website and online service implementations.
-              </p>
-            </div>
-          </Col>
-        </Row>
-      </Container> */}
-
       {/* body.value */}
       {/* images.map((image: { "uri": string, "title": string }, index: number) =>
         <img key={`${index}_${image.title}`} src={image.uri} alt={image.title} />
