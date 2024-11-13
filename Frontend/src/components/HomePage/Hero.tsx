@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Field } from "../../types/drupal";
 import { generateFieldKey } from "../../lib/utils/utils";
 
-export interface HeroProps {
+interface HeroProps {
   section: {
     field_frontpage_hero_intro_parag: Field[];
   };
