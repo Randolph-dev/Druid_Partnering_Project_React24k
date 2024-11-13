@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Field } from "../../types/drupal";
+import { generateFieldKey } from "../../lib/utils/utils";
 
 export interface HeroProps {
   section: {
@@ -23,9 +24,9 @@ export default function Hero(props: HeroProps) {
         <Col lg={6}>
           {fields.map((field, index) =>
             <p
-              key={`${index}_${field.value.slice(0, 10)}`}
+              key={generateFieldKey(field, index)}
               className="h1 fw-light"
-              dangerouslySetInnerHTML={{ __html: fields[0].value }}
+              dangerouslySetInnerHTML={{ __html: field.value }}
             ></p>
           )}
         </Col>

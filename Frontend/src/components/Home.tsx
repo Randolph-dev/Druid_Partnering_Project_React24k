@@ -4,14 +4,15 @@ import axios from "axios";
 import Hero from "./HomePage/Hero";
 import Service from "./HomePage/Service";
 import Advertise from "./HomePage/Advertise";
+import { Paragraph, RestResponseData } from "../types/drupal";
 
 export default function Home() {
-  const [frontPageData, setFrontPageData] = useState<any>(null); // TODO: type this properly
+  const [frontPageData, setFrontPageData] = useState<Paragraph[] | []>([]); // TODO: type this properly
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('https://druidpartneringapp.lndo.site/api/frontpage');
-      setFrontPageData(res.data[0]["field_frontpage_sections"]);
+      const { data } = await axios.get<RestResponseData[]>('https://druidpartneringapp.lndo.site/api/frontpage');
+      setFrontPageData(data[0]["field_frontpage_sections"]);
     };
     fetchData();
   }, []);
@@ -35,20 +36,6 @@ export default function Home() {
             return <Advertise key={key} section={section} />;
         }
       })}
-      {/*
-      <Container className="my-5">
-        <Row>
-          <h1 className="my-5">{""}</h1>
-        </Row>
-        <Row className="d-flex justify-content-between">
-          {field_service_paragraph.map((paragraph: string, index: number) => (
-            <Col md={5} key={index} className="my-5">
-              <h5>{field_service_paragraph_title[index]}</h5>
-              <p>&rarr; {paragraph}</p>
-            </Col>
-          ))}
-        </Row>
-      </Container> */}
 
       {/* <Container fluid className="my-5 py-5 bg-dark text-light">
         <h1 className="text-center my-5">Open source. Open mindset.</h1>
