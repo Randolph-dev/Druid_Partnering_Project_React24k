@@ -1,0 +1,28 @@
+uuid: 3c304841-d341-4089-85e1-e13fc0fc978f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.projects.field_category
+    - field.field.node.projects.field_image_url
+    - field.field.node.projects.field_project_description
+    - field.field.node.projects.field_project_tiltle
+    - node.type.projects
+  module:
+    - user
+id: node.projects.decoupled
+targetEntityType: node
+bundle: projects
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_category: true
+  field_image_url: true
+  field_project_description: true
+  field_project_tiltle: true

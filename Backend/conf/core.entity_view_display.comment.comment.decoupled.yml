@@ -1,0 +1,20 @@
+uuid: ecaec7da-f54c-42d7-bd6d-b0593c948f23
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - core.entity_view_mode.comment.decoupled
+    - field.field.comment.comment.comment_body
+id: comment.comment.decoupled
+targetEntityType: comment
+bundle: comment
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  comment_body: true

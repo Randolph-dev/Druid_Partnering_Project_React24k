@@ -1,0 +1,11 @@
+uuid: 522a2214-0012-4751-b2fb-a1528a0b3269
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.decoupled
+label: Decoupled
+description: ''
+targetEntityType: taxonomy_term
+cache: true

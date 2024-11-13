@@ -4,11 +4,18 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
   module:
     - comment
     - contact
+    - field_ui
     - file
     - filter
+    - node
+    - paragraphs
+    - paragraphs_type_permissions
+    - rest
     - search
     - shortcut
     - system
@@ -21,10 +28,33 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access content overview'
+  - 'access files overview'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'administer paragraph display'
+  - 'administer paragraph fields'
+  - 'administer paragraph form display'
+  - 'administer paragraphs settings'
+  - 'administer paragraphs types'
+  - 'administer rest resources'
+  - 'bypass paragraphs type content access'
+  - 'create paragraph content frontpage_advertise'
+  - 'create paragraph content frontpage_hero_intro'
+  - 'create paragraph content frontpage_service_pakage'
+  - 'create paragraph content mautic'
   - 'delete own files'
+  - 'edit behavior plugin settings'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view own unpublished content'
+  - 'view paragraph content frontpage_advertise'
+  - 'view paragraph content frontpage_hero_intro'
+  - 'view paragraph content frontpage_service_pakage'
+  - 'view paragraph content frontpage_service_pakages'
+  - 'view paragraph content mautic'
+  - 'view unpublished paragraphs'

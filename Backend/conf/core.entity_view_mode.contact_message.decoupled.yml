@@ -1,0 +1,11 @@
+uuid: 268ff1f5-8429-40a7-998d-3dec404b2842
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.decoupled
+label: Decoupled
+description: ''
+targetEntityType: contact_message
+cache: true

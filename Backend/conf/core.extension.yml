@@ -37,6 +37,10 @@ module:
   paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
+  rest: 0
+  rest_entity_recursive: 0
+  rest_menu_recursive: 0
+  rest_paragraphs_recursive: 0
   search: 0
   serialization: 0
   shortcut: 0

@@ -1,0 +1,36 @@
+uuid: 2339ee07-5e1e-4864-ad02-6cc76edd8748
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.service.field_consultation_paragraph_tit
+    - field.field.node.service.field_heading
+    - field.field.node.service.field_image_url
+    - field.field.node.service.field_paragraph
+    - field.field.node.service.field_project_description
+    - field.field.node.service.field_project_tiltle
+    - field.field.node.service.field_service_description
+    - field.field.node.service.field_service_paragraph_title
+    - node.type.service
+  module:
+    - user
+id: node.service.decoupled
+targetEntityType: node
+bundle: service
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_consultation_paragraph_tit: true
+  field_heading: true
+  field_image_url: true
+  field_paragraph: true
+  field_project_description: true
+  field_project_tiltle: true
+  field_service_description: true
+  field_service_paragraph_title: true
