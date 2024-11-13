@@ -1,17 +1,14 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Hero from "./HomePage/Hero";
+import Service from "./HomePage/Service";
+import Advertise from "./HomePage/Advertise";
 
 export default function Home() {
-  // const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
-  // const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
-  // const [homePageData, setHomePageData] =
-  //   useState<JsonApiDataAttributes | null>(null);
-
-  const [frontPageData, setFrontPageData] = useState<any>(null);
+  const [frontPageData, setFrontPageData] = useState<any>(null); // TODO: type this properly
 
   useEffect(() => {
-    // Ensure loading is complete and jsonApiLinks is defined
     const fetchData = async () => {
       const res = await axios.get('https://druidpartneringapp.lndo.site/api/frontpage');
       setFrontPageData(res.data[0]["field_frontpage_sections"]);
@@ -19,39 +16,26 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log(frontPageData);
-
-  // useEffect(() => {
-  //   // Ensure loading is complete and jsonApiLinks is defined
-  //   if (!jsonApiLinksLoading) {
-  //     const fetchData = async () => {
-  //       const res = await fetchContentFromDrupal(
-  //         jsonApiLinks["node--front_page"]
-  //       );
-  //       setHomePageData(res.data[0]);
-  //     };
-  //     fetchData();
-  //   }
-  // }, [jsonApiLinksLoading]);
+  // console.log(frontPageData);
 
   if (!frontPageData) {
     return <p>Loading</p>;
   }
 
-  return <p>Loading</p>;
-  // console.log(homePageData);
-
-  // const {
-  //   field_image_url: images,
-  //   field_paragraph,
-  //   field_service_paragraph,
-  //   field_service_paragraph_title,
-  //   field_heading,
-  // } = homePageData;
-
   return (
     <Container fluid className="p-0">
-      <Container
+      {frontPageData.map((section: any) => {
+        const key = section.id[0].value;
+        switch (section.entity_bundle[0].value) {
+          case "frontpage_hero_intro":
+            return <Hero key={key} section={section} />;
+          case "frontpage_service_pakages":
+            return <Service key={key} section={section} />;
+          case "frontpage_advertise":
+            return <Advertise key={key} section={section} />;
+        }
+      })}
+      {/* <Container
         className="d-flex align-items-center"
         style={{ height: "80vh" }}
       >
@@ -67,14 +51,14 @@ export default function Home() {
           <h1 className="my-5">{""}</h1>
         </Row>
         <Row className="d-flex justify-content-between">
-          {/* {field_service_paragraph.map((paragraph: string, index: number) => (
+          {field_service_paragraph.map((paragraph: string, index: number) => (
             <Col md={5} key={index} className="my-5">
               <h5>{field_service_paragraph_title[index]}</h5>
               <p>&rarr; {paragraph}</p>
             </Col>
-          ))} */}
+          ))}
         </Row>
-      </Container>
+      </Container> */}
 
       {/* <Container fluid className="my-5 py-5 bg-dark text-light">
         <h1 className="text-center my-5">Open source. Open mindset.</h1>
