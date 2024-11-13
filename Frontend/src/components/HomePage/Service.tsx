@@ -32,7 +32,7 @@ export default function Service(props: ServiceProps) {
             <h1
               key={generateFieldKey(title, index)} className="my-5"
               dangerouslySetInnerHTML={{ __html: title.value }}
-            ></h1>
+            />
           ))}
         </Col>
       </Row>
@@ -43,14 +43,14 @@ export default function Service(props: ServiceProps) {
               <h5
                 key={generateFieldKey(title, index)}
                 dangerouslySetInnerHTML={{ __html: title.value }}
-              ></h5>
+              />
             ))}
             <p className="d-flex">
               {service.field_paragraph.map((paragraph, index) => (
                 <span
                   key={generateFieldKey(paragraph, index)}
                   dangerouslySetInnerHTML={{ __html: paragraph.value }}
-                ></span>
+                />
               ))}
             </p>
           </Col>

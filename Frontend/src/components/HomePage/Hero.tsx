@@ -27,7 +27,7 @@ export default function Hero(props: HeroProps) {
               key={generateFieldKey(field, index)}
               className="h1 fw-light"
               dangerouslySetInnerHTML={{ __html: field.value }}
-            ></p>
+            />
           )}
         </Col>
       </Row>

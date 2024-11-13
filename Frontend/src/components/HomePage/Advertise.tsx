@@ -22,7 +22,7 @@ export default function Advertise(props: AdvertiseProps) {
     return <p>Loading</p>;
   };
 
-  console.log(section);
+  // console.log(section);
 
   return (
     <Container fluid className="my-5 py-5 bg-dark text-light">
