@@ -4,13 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.decoupled
-    - field.field.node.front_page.body
     - field.field.node.front_page.field_frontpage_sections
-    - field.field.node.front_page.field_heading
-    - field.field.node.front_page.field_image_url
-    - field.field.node.front_page.field_paragraph
-    - field.field.node.front_page.field_service_paragraph
-    - field.field.node.front_page.field_service_paragraph_title
     - node.type.front_page
   module:
     - entity_reference_revisions
@@ -30,10 +24,4 @@ content:
     weight: 0
     region: content
 hidden:
-  body: true
-  field_heading: true
-  field_image_url: true
-  field_paragraph: true
-  field_service_paragraph: true
-  field_service_paragraph_title: true
   links: true

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.decoupled
-    - field.field.paragraph.frontpage_service_pakage.field_frontpage_service_pakage_i
     - field.field.paragraph.frontpage_service_pakage.field_paragraph
     - field.field.paragraph.frontpage_service_pakage.field_title
     - paragraphs.paragraphs_type.frontpage_service_pakage
@@ -14,6 +13,5 @@ bundle: frontpage_service_pakage
 mode: decoupled
 content: {  }
 hidden:
-  field_frontpage_service_pakage_i: true
   field_paragraph: true
   field_title: true
