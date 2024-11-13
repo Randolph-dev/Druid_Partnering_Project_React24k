@@ -4,9 +4,8 @@ export type Field = {
 };
 
 export type Paragraph = {
-  entity_bundle: {
-    value: string;
-  }[];
+  entity_bundle: { value: string }[];
+  id: { value: number }[];
   [key: string]: Field[] | Paragraph[];
 };
 
