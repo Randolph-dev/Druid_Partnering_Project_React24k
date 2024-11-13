@@ -12,3 +12,8 @@ export type Paragraph = {
 export type RestResponseData = {
   [key: string]: any;
 };
+
+export type ImageField = {
+  uri: string;
+  title: string;
+};
