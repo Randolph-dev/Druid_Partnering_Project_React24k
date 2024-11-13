@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e7943d11141f8361da6d42dc0a2d7e4",
+    "content-hash": "42db2a7a5c816f77b4d1386cc8cc83cb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1779,6 +1779,78 @@
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
                 "source": "https://git.drupalcode.org/project/paragraphs"
+            }
+        },
+        {
+            "name": "drupal/rest_entity_recursive",
+            "version": "2.0.5-rc5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/rest_entity_recursive.git",
+                "reference": "2.0.5-rc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/rest_entity_recursive-2.0.5-rc5.zip",
+                "reference": "2.0.5-rc5",
+                "shasum": "ec7df6ac5bb54497d8b30e60d3b066d4f1b58e16"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/consumer_image_styles": "*",
+                "drupal/paragraphs": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.5-rc5",
+                    "datestamp": "1713944366",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "beloglazov91",
+                    "homepage": "https://www.drupal.org/user/3431497"
+                },
+                {
+                    "name": "branimir.juranic",
+                    "homepage": "https://www.drupal.org/user/3331091"
+                },
+                {
+                    "name": "iamdroid",
+                    "homepage": "https://www.drupal.org/user/892728"
+                },
+                {
+                    "name": "kalabro",
+                    "homepage": "https://www.drupal.org/user/1399638"
+                },
+                {
+                    "name": "pavel.bulat",
+                    "homepage": "https://www.drupal.org/user/3568596"
+                },
+                {
+                    "name": "skorzh",
+                    "homepage": "https://www.drupal.org/user/813560"
+                },
+                {
+                    "name": "Spleshka",
+                    "homepage": "https://www.drupal.org/user/810676"
+                }
+            ],
+            "description": "A new \"json_recursive\" REST format exposes all fields and referenced entities by default.",
+            "homepage": "https://www.drupal.org/project/rest_entity_recursive",
+            "support": {
+                "source": "https://git.drupalcode.org/project/rest_entity_recursive"
             }
         },
         {
@@ -6542,7 +6614,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "drupal/rest_entity_recursive": 5
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
