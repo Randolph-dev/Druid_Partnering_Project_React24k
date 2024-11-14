@@ -17,7 +17,7 @@ export default function Home() {
     fetchData();
   }, []);
 
-  // console.log(frontPageData);
+  console.log(frontPageData);
 
   if (!frontPageData) {
     return <p>Loading</p>;
@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <Container fluid className="p-0">
-      {frontPageData.map((section: any) => {
+      {frontPageData.map((section: Paragraph) => {
         const key = section.id[0].value;
         switch (section.entity_bundle[0].value) {
           case "frontpage_hero_intro":
@@ -34,6 +34,8 @@ export default function Home() {
             return <Service key={key} section={section} />;
           case "frontpage_advertise":
             return <Advertise key={key} section={section} />;
+          default:
+            return;
         }
       })}
 

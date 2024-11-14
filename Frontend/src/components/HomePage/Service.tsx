@@ -3,10 +3,7 @@ import { Field, Paragraph } from "../../types/drupal";
 import { generateFieldKey } from "../../lib/utils/utils";
 
 interface ServiceProps {
-  section: {
-    field_title: Field[];
-    field_frontpage_service_pakages: Service[];
-  };
+  section: Paragraph
 }
 
 interface Service extends Paragraph {
@@ -16,7 +13,13 @@ interface Service extends Paragraph {
 
 export default function Service(props: ServiceProps) {
   const { section } = props;
-  const { field_title: titles, field_frontpage_service_pakages: services } = section;
+  const {
+    field_title,
+    field_frontpage_service_pakages
+  } = section;
+
+  const services = field_frontpage_service_pakages as Service[];
+  const titles = field_title as Field[];
 
   if (!section) {
     return <p>Loading</p>;
