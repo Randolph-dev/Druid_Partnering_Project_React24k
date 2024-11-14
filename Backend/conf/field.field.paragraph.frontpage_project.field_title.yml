@@ -1,0 +1,24 @@
+uuid: 4352f374-039f-497f-bf49-8407a3f27f3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.frontpage_project
+  module:
+    - text
+id: paragraph.frontpage_project.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: frontpage_project
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

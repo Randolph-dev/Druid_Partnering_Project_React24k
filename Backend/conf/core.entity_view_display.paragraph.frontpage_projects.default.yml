@@ -1,0 +1,33 @@
+uuid: c5029f99-882d-497c-a0ae-504a02ce879c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_projects.field_frontpage_projects
+    - field.field.paragraph.frontpage_projects.field_title
+    - paragraphs.paragraphs_type.frontpage_projects
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.frontpage_projects.default
+targetEntityType: paragraph
+bundle: frontpage_projects
+mode: default
+content:
+  field_frontpage_projects:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }
