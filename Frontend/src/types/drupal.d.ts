@@ -17,3 +17,8 @@ export type ImageField = {
   uri: string;
   title: string;
 };
+
+export type LinkField = {
+  uri: string;
+  title: string;
+};
