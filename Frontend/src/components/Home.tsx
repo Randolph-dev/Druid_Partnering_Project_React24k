@@ -5,6 +5,7 @@ import Hero from "./HomePage/Hero";
 import Service from "./HomePage/Service";
 import Advertise from "./HomePage/Advertise";
 import { Paragraph, RestResponseData } from "../types/drupal";
+import Projects from "./HomePage/Projects";
 
 export default function Home() {
   const [frontPageData, setFrontPageData] = useState<Paragraph[] | []>([]); // TODO: type this properly
@@ -25,7 +26,7 @@ export default function Home() {
 
   return (
     <Container fluid className="p-0">
-      {frontPageData.map((section: any) => {
+      {frontPageData.map((section: Paragraph) => {
         const key = section.id[0].value;
         switch (section.entity_bundle[0].value) {
           case "frontpage_hero_intro":
@@ -34,29 +35,12 @@ export default function Home() {
             return <Service key={key} section={section} />;
           case "frontpage_advertise":
             return <Advertise key={key} section={section} />;
+          case "frontpage_projects":
+            return <Projects key={key} section={section} />;
+          default:
+            return;
         }
       })}
-
-      {/* body.value */}
-      {/* images.map((image: { "uri": string, "title": string }, index: number) =>
-        <img key={`${index}_${image.title}`} src={image.uri} alt={image.title} />
-  ) */}
-
-      {/* <Container className="my-5">
-        <Row>
-          <h1 className="my-5">
-            The secrets behind our agile web services and websites
-          </h1>
-        </Row>
-        <Row className="d-flex justify-content-between">
-          {field_service_paragraph.map((paragraph: string, index: number) => (
-            <Col md={5} key={index} className="my-5">
-              <h5>{field_service_paragraph_title[index]}</h5>
-              <p>{paragraph}</p>
-            </Col>
-          ))}
-        </Row>
-      </Container> */}
 
       {/* <Container className="my-5">
         <Row className="justify-content-between">

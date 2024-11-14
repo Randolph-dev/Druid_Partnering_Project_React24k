@@ -1,22 +1,22 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { Field, ImageField } from "../../types/drupal";
+import { Field, ImageField, Paragraph } from "../../types/drupal";
 import { generateFieldKey } from "../../lib/utils/utils";
 
 interface AdvertiseProps {
-  section: {
-    field_title: Field[];
-    field_paragraph: Field[];
-    field_image_url: ImageField[];
-  };
+  section: Paragraph;
 }
 
 export default function Advertise(props: AdvertiseProps) {
   const { section } = props;
   const {
-    field_title: titles,
-    field_paragraph: paragraphs,
-    field_image_url: images,
+    field_title,
+    field_paragraph,
+    field_image_url,
   } = section;
+
+  const titles = field_title as Field[];
+  const paragraphs = field_paragraph as Field[];
+  const images = field_image_url as ImageField[];
 
   if (!section) {
     return <p>Loading</p>;

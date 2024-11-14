@@ -1,15 +1,14 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { Field } from "../../types/drupal";
+import { Field, Paragraph } from "../../types/drupal";
 import { generateFieldKey } from "../../lib/utils/utils";
 
 interface HeroProps {
-  section: {
-    field_frontpage_hero_intro_parag: Field[];
-  };
+  section: Paragraph;
 }
 
 export default function Hero(props: HeroProps) {
-  const { section: { field_frontpage_hero_intro_parag: fields } } = props;
+  const { section: { field_frontpage_hero_intro_parag } } = props;
+  const fields = field_frontpage_hero_intro_parag as Field[];
 
   if (!fields) {
     return <p>Loading</p>;

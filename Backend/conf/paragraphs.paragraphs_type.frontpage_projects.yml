@@ -1,0 +1,10 @@
+uuid: dc04e124-83f2-4c53-a4a5-b39e76cbddb3
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_projects
+label: frontpage_projects
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
