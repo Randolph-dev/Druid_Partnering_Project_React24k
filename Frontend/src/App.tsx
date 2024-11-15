@@ -13,6 +13,7 @@ import Jobs from './components/Jobs';
 import Consultation from './components/Consultation';
 import Maintenance from './components/Maintenance';
 import { setLoading } from './features/drupalData/drupalSlice';
+import { mauticDynamicContents } from './lib/mautic/mauticDynamicContents';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -24,6 +25,10 @@ const App: React.FC = () => {
       dispatch(setLoading(false));
     };
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    mauticDynamicContents();
   }, []);
 
   return (
