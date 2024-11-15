@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.jobs_page.field_image_description
     - field.field.node.jobs_page.field_image_url
     - field.field.node.jobs_page.field_intro_paragraph
+    - field.field.node.jobs_page.field_jobspage_sections
     - field.field.node.jobs_page.field_paragraph_description
     - field.field.node.jobs_page.field_paragraph_title
     - node.type.jobs_page
@@ -30,5 +31,6 @@ hidden:
   field_image_description: true
   field_image_url: true
   field_intro_paragraph: true
+  field_jobspage_sections: true
   field_paragraph_description: true
   field_paragraph_title: true

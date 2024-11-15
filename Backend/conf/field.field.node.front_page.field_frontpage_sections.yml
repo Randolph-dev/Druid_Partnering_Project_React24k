@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.frontpage_advertise
     - paragraphs.paragraphs_type.frontpage_hero_intro
     - paragraphs.paragraphs_type.frontpage_projects
+    - paragraphs.paragraphs_type.frontpage_quote
     - paragraphs.paragraphs_type.frontpage_service_pakages
   module:
     - entity_reference_revisions
@@ -29,6 +30,7 @@ settings:
       frontpage_hero_intro: frontpage_hero_intro
       frontpage_service_pakages: frontpage_service_pakages
       frontpage_projects: frontpage_projects
+      frontpage_quote: frontpage_quote
     negate: 0
     target_bundles_drag_drop:
       frontpage_advertise:
@@ -43,12 +45,27 @@ settings:
       frontpage_projects:
         weight: 11
         enabled: true
+      frontpage_quote:
+        weight: 17
+        enabled: true
       frontpage_service_pakage:
         weight: 7
         enabled: false
       frontpage_service_pakages:
         weight: 9
         enabled: true
+      jobspage_about_company:
+        weight: 20
+        enabled: false
+      jobspage_benefit:
+        weight: 21
+        enabled: false
+      jobspage_benefits:
+        weight: 22
+        enabled: false
+      jobspage_hero_intro:
+        weight: 23
+        enabled: false
       mautic:
         weight: 8
         enabled: false

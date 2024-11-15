@@ -1,0 +1,10 @@
+uuid: 8bfe29ab-43b9-42ac-94a2-fa547e3c52fd
+langcode: en
+status: true
+dependencies: {  }
+id: jobspage_about_company
+label: jobspage_about_company
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

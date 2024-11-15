@@ -1,0 +1,33 @@
+uuid: 14d840d9-ae00-4932-b0e0-eab4ec4351f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_benefits.field_jobspage_benefits
+    - field.field.paragraph.jobspage_benefits.field_title
+    - paragraphs.paragraphs_type.jobspage_benefits
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.jobspage_benefits.default
+targetEntityType: paragraph
+bundle: jobspage_benefits
+mode: default
+content:
+  field_jobspage_benefits:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }
