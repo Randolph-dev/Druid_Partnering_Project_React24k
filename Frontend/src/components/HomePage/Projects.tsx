@@ -1,6 +1,7 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Field, ImageField, LinkField, Paragraph } from "../../types/drupal";
 import { generateFieldKey } from "../../lib/utils/utils";
+import { Link } from "react-router-dom";
 
 interface ProjectsProps {
   section: Paragraph;
@@ -22,8 +23,9 @@ export default function Projects(props: ProjectsProps) {
 
   const titles = field_title as Field[];
   const projects = field_frontpage_projects as Project[];
+  const heroProject = projects[0];
 
-  console.log(section);
+  // console.log(section);
 
   if (!section) {
     return <p>Loading</p>;
@@ -34,20 +36,40 @@ export default function Projects(props: ProjectsProps) {
       <Row className="justify-content-between">
 
         <Col md={5}>
-          {/* {projects
-            .slice(1, -1)
-            .map((image: { uri: string; title: string }, index: number) => (
-              <div key={index} className="my-5">
-                <Image src={image.uri} alt={image.title} fluid />
-                <h3 className="my-4">City of Helsinki</h3>
-                <p>
-                  New universal Drupal platform and the revamp of Hel.fi web
-                  service - efficient and accessible content production.
-                </p>
-                <p>&rarr; Read more</p>
+          {projects
+            .slice(1) // skip the first project, it will show as a hero
+            .map((project) => (
+              <div key={project.id[0].value} className="my-5">
+                <Image
+                  src={project.field_image_url[0].uri}
+                  alt={project.field_image_url[0].title}
+                  fluid
+                />
+                {project.field_title.map((title, index) => (
+                  <h3
+                    key={generateFieldKey(title, index)}
+                    className="my-4"
+                    dangerouslySetInnerHTML={{ __html: title.value }}
+                  />
+                ))}
+                {project.field_paragraph.map((paragraph, index) => (
+                  <p
+                    key={generateFieldKey(paragraph, index)}
+                    dangerouslySetInnerHTML={{ __html: paragraph.value }}
+                  />
+                ))}
+                {project.field_link.map((link, index) =>
+                  <Link
+                    to={link.uri}
+                    key={index}
+                    style={{ textDecoration: "none", color: "black" }}
+                    dangerouslySetInnerHTML={{ __html: link.title }}
+                  />
+                )}
               </div>
-            ))} */}
+            ))}
         </Col>
+
 
         <Col md={6}>
           {titles.map((title, index) => (
@@ -57,25 +79,36 @@ export default function Projects(props: ProjectsProps) {
               key={generateFieldKey(title, index)}
             />
           ))}
-          {/* <div>
-            {images.length > 0 && (
-              <div className="my-5">
-                <Image
-                  src={images[images.length - 1].uri}
-                  alt={images[images.length - 1].title}
-                  fluid
+          <div>
+            <div className="my-5">
+              <Image
+                src={heroProject.field_image_url[0].uri}
+                alt={heroProject.field_image_url[0].title}
+                fluid
+              />
+              {heroProject.field_title.map((title, index) => (
+                <h3
+                  key={generateFieldKey(title, index)}
+                  className="my-4"
+                  dangerouslySetInnerHTML={{ __html: title.value }}
                 />
-                <h3 className="my-4">
-                  Veikkaus {images[images.length - 1].title}
-                </h3>
-                <p>
-                  New universal Drupal platform and the revamp of Hel.fi web
-                  service - efficient and accessible content production.
-                </p>
-                <p>&rarr; Read more</p>
-              </div>
-            )}
-          </div> */}
+              ))}
+              {heroProject.field_paragraph.map((paragraph, index) => (
+                <p
+                  key={generateFieldKey(paragraph, index)}
+                  dangerouslySetInnerHTML={{ __html: paragraph.value }}
+                />
+              ))}
+              {heroProject.field_link.map((link, index) =>
+                <Link
+                  to={link.uri}
+                  key={index}
+                  style={{ textDecoration: "none", color: "black" }}
+                  dangerouslySetInnerHTML={{ __html: link.title }}
+                />
+              )}
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>
