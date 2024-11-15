@@ -1,0 +1,65 @@
+uuid: 0c03d84b-71f8-4357-a3f3-440c947cf05c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jobspage_sections
+    - node.type.jobs_page
+    - paragraphs.paragraphs_type.jobspage_about_company
+    - paragraphs.paragraphs_type.jobspage_benefits
+    - paragraphs.paragraphs_type.jobspage_hero_intro
+  module:
+    - entity_reference_revisions
+id: node.jobs_page.field_jobspage_sections
+field_name: field_jobspage_sections
+entity_type: node
+bundle: jobs_page
+label: jobspage_sections
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      jobspage_about_company: jobspage_about_company
+      jobspage_hero_intro: jobspage_hero_intro
+      jobspage_benefits: jobspage_benefits
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 9
+        enabled: false
+      frontpage_hero_intro:
+        weight: 10
+        enabled: false
+      frontpage_project:
+        weight: 11
+        enabled: false
+      frontpage_projects:
+        weight: 12
+        enabled: false
+      frontpage_service_pakage:
+        weight: 13
+        enabled: false
+      frontpage_service_pakages:
+        weight: 14
+        enabled: false
+      jobspage_about_company:
+        weight: 12
+        enabled: true
+      jobspage_benefit:
+        weight: 17
+        enabled: false
+      jobspage_benefits:
+        weight: 18
+        enabled: true
+      jobspage_hero_intro:
+        weight: 15
+        enabled: true
+      mautic:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

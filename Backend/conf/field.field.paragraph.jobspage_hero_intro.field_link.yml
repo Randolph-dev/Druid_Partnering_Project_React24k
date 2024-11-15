@@ -1,0 +1,23 @@
+uuid: 0b7bfd83-3d2b-4bf3-8908-380e92494a8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.jobspage_hero_intro
+  module:
+    - link
+id: paragraph.jobspage_hero_intro.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: jobspage_hero_intro
+label: link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

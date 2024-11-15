@@ -1,0 +1,57 @@
+uuid: 48f1bb87-3753-455f-999a-5f915e57175f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_hero_intro.field_image_url
+    - field.field.paragraph.jobspage_hero_intro.field_link
+    - field.field.paragraph.jobspage_hero_intro.field_paragraph
+    - field.field.paragraph.jobspage_hero_intro.field_title
+    - paragraphs.paragraphs_type.jobspage_hero_intro
+  module:
+    - link
+    - text
+id: paragraph.jobspage_hero_intro.default
+targetEntityType: paragraph
+bundle: jobspage_hero_intro
+mode: default
+content:
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,30 @@
+uuid: 851f8b53-264e-4902-a06a-cee7079b065f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_benefit.field_paragraph
+    - field.field.paragraph.jobspage_benefit.field_title
+    - paragraphs.paragraphs_type.jobspage_benefit
+  module:
+    - text
+id: paragraph.jobspage_benefit.default
+targetEntityType: paragraph
+bundle: jobspage_benefit
+mode: default
+content:
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

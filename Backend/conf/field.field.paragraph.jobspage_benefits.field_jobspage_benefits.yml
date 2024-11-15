@@ -1,0 +1,58 @@
+uuid: e0613e8b-6a97-4ad7-9ba7-7083fffd15db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_jobspage_benefits
+    - paragraphs.paragraphs_type.jobspage_benefit
+    - paragraphs.paragraphs_type.jobspage_benefits
+  module:
+    - entity_reference_revisions
+id: paragraph.jobspage_benefits.field_jobspage_benefits
+field_name: field_jobspage_benefits
+entity_type: paragraph
+bundle: jobspage_benefits
+label: jobspage_benefits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      jobspage_benefit: jobspage_benefit
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 11
+        enabled: false
+      frontpage_hero_intro:
+        weight: 12
+        enabled: false
+      frontpage_project:
+        weight: 13
+        enabled: false
+      frontpage_projects:
+        weight: 14
+        enabled: false
+      frontpage_service_pakage:
+        weight: 15
+        enabled: false
+      frontpage_service_pakages:
+        weight: 16
+        enabled: false
+      jobspage_benefit:
+        weight: 17
+        enabled: true
+      jobspage_benefits:
+        weight: 18
+        enabled: false
+      jobspage_hero_intro:
+        weight: 19
+        enabled: false
+      mautic:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

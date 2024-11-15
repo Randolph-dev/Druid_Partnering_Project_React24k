@@ -1,0 +1,28 @@
+uuid: 3807bd20-665d-4ff6-95f5-4642e6d646bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_url
+    - paragraphs.paragraphs_type.jobspage_about_company
+  module:
+    - link
+id: paragraph.jobspage_about_company.field_image_url
+field_name: field_image_url
+entity_type: paragraph
+bundle: jobspage_about_company
+label: image_url
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/d602a4a0-d92c-4f3c-aec0-0861359cf4bb/original.jpeg?outputFormat=webp'
+    title: 'random image'
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
