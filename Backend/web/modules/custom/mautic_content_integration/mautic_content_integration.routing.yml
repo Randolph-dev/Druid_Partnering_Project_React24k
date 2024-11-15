@@ -1,0 +1,7 @@
+mautic_content_integration.personalized_content:
+  path: '/api/personalized-content/{userId}'
+  defaults:
+    _controller: '\Drupal\mautic_content_integration\Controller\MauticContentController::getPersonalizedContent'
+    _title: "Mautic Content Integration"
+    requirements:
+      _permission: "access content"

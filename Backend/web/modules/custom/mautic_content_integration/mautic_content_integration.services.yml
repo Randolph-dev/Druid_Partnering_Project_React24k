@@ -1,0 +1,4 @@
+services:
+  mautic_content_integration.service:
+    class: 'Drupal\mautic_content_integration\Service\MauticContentService'
+    arguments: ['@http_client', '@logger.factory']

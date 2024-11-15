@@ -1,0 +1,7 @@
+name: 'Mautic Content Integration'
+type: module
+description: 'Fetches personalized content from Drupal based on Mautic user segmentation.'
+core_version_requirement: ^10 || ^11
+package: Custom
+requirements:
+  _access: 'TRUE'
