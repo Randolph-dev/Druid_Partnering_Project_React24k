@@ -1,0 +1,28 @@
+uuid: 758ad674-cb15-41ed-80a3-2416fcc32b4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_url
+    - paragraphs.paragraphs_type.transitioning_maintenance_sectio
+  module:
+    - link
+id: paragraph.transitioning_maintenance_sectio.field_image_url
+field_name: field_image_url
+entity_type: paragraph
+bundle: transitioning_maintenance_sectio
+label: image_url
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://druid.fi/wp-content/uploads/2024/04/20240425-093615-Druid-Oy-0205.jpg'
+    title: ''
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,76 @@
+uuid: 36e7fc77-98e3-403b-b0a0-fbba3e50ae92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magical_support_team
+    - node.type.service
+    - paragraphs.paragraphs_type.magical_support_section
+  module:
+    - entity_reference_revisions
+id: node.service.field_magical_support_team
+field_name: field_magical_support_team
+entity_type: node
+bundle: service
+label: 'magical support team'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      magical_support_section: magical_support_section
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 17
+        enabled: false
+      frontpage_hero_intro:
+        weight: 18
+        enabled: false
+      frontpage_project:
+        weight: 19
+        enabled: false
+      frontpage_projects:
+        weight: 20
+        enabled: false
+      frontpage_quote:
+        weight: 21
+        enabled: false
+      frontpage_service_pakage:
+        weight: 22
+        enabled: false
+      frontpage_service_pakages:
+        weight: 23
+        enabled: false
+      jobspage_about_company:
+        weight: 24
+        enabled: false
+      jobspage_benefit:
+        weight: 25
+        enabled: false
+      jobspage_benefits:
+        weight: 26
+        enabled: false
+      jobspage_hero_intro:
+        weight: 27
+        enabled: false
+      magical_support_section:
+        weight: 28
+        enabled: true
+      magical_team_advantages:
+        weight: 29
+        enabled: false
+      maintenance_page_hero_intro:
+        weight: 30
+        enabled: false
+      mautic:
+        weight: 31
+        enabled: false
+      transitioning_maintenance_sectio:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions
