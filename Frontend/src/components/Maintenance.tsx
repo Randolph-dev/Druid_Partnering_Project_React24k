@@ -65,3 +65,68 @@ export default function Maintenance() {
   const webSolutionsSection = maintenanceData.included?.find(
     (item: any) => item.type === "paragraph--web_solution"
   );
+
+  return (
+    <Container fluid className="py-5">
+      <Row className="mb-5">
+        <Col lg={8} className="mx-auto text-center">
+          {introSection?.attributes.field_title[0] && (
+            <h1
+              className="mb-4 fw-bold"
+              style={{ fontFamily: "Roboto, sans-serif", fontSize: "2.5rem" }}
+            >
+              {introSection.attributes.field_title[0].value}
+            </h1>
+          )}
+
+          {introSection?.attributes.field_title[1] && (
+            <h3
+              className="mb-4 fw-bold"
+              style={{ fontFamily: "Roboto, sans-serif", fontSize: "2rem" }}
+            >
+              {introSection.attributes.field_title[1].value}
+            </h3>
+          )}
+
+          <div className="content-wrapper">
+            {introSection?.attributes.field_maintenance_intro_paragrap.map(
+              (paragraph: string, index: number) =>
+                paragraph && (
+                  <p
+                    key={index}
+                    className="mb-4"
+                    style={{
+                      fontFamily: "Roboto, sans-serif",
+                      fontSize: "1.125rem",
+                    }}
+                  >
+                    {paragraph}
+                  </p>
+                )
+            )}
+          </div>
+
+          <h3
+            className="fw-bold"
+            style={{ fontFamily: "Roboto, sans-serif", fontSize: "1.5rem" }}
+          >
+            {introSection?.attributes.field_title[2]?.value}
+          </h3>
+          <p
+            className="mb-4"
+            style={{ fontFamily: "Roboto, sans-serif", fontSize: "1rem" }}
+          >
+            {introSection?.attributes.field_phone[0]} ({" "}
+            {introSection?.attributes.field_contact_hours[0]})
+          </p>
+          <p
+            className="mb-4"
+            style={{ fontFamily: "Roboto, sans-serif", fontSize: "1rem" }}
+          >
+            {introSection?.attributes.field_email[0]}
+          </p>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
