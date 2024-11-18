@@ -290,6 +290,52 @@ export default function Maintenance() {
           </Row>
         </Container>
       </section>
+      {/* Web Solutions section with icons and descriptions */}
+      <section className="web-solutions py-5">
+        <Container>
+          <Row className="mb-4">
+            <Col className="text-center">
+              <h2
+                className="mb-4"
+                style={{ fontFamily: "Roboto, sans-serif", fontSize: "2rem" }}
+              >
+                {webSolutionsSection?.attributes.field_title[0].value}
+              </h2>
+            </Col>
+          </Row>
+          {webSolutionsSection?.attributes.field_web_solution_description.map(
+            (desc: string, index: number) => (
+              <Row key={index} className="mb-4 align-items-center">
+                <Col md={2} className="text-center">
+                  {webSolutionsSection?.attributes.field_web_solution_icon[
+                    index
+                  ] && (
+                    <img
+                      src={
+                        webSolutionsSection.attributes.field_web_solution_icon[
+                          index
+                        ].uri
+                      }
+                      alt=""
+                      className="img-fluid"
+                    />
+                  )}
+                </Col>
+                <Col md={10}>
+                  <p
+                    style={{
+                      fontFamily: "Roboto, sans-serif",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {desc}
+                  </p>
+                </Col>
+              </Row>
+            )
+          )}
+        </Container>
+      </section>
     </Container>
   );
 }
