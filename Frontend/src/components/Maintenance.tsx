@@ -45,3 +45,23 @@ export default function Maintenance() {
     }
   }, [drupalUrl, dispatch, maintenanceData]);
 
+  if (!maintenanceData) {
+    return <p>Loading</p>;
+  }
+
+  // Find sections in included data
+  const introSection = maintenanceData.included?.find(
+    (item: any) => item.type === "paragraph--maintenance_page_hero_intro"
+  );
+  const magicalSupportSection = maintenanceData.included?.find(
+    (item: any) => item.type === "paragraph--magical_support_section"
+  );
+  const teamAdvantagesSection = maintenanceData.included?.find(
+    (item: any) => item.type === "paragraph--magical_team_advantages"
+  );
+  const transitionSection = maintenanceData.included?.find(
+    (item: any) => item.type === "paragraph--transitioning_maintenance_sectio"
+  );
+  const webSolutionsSection = maintenanceData.included?.find(
+    (item: any) => item.type === "paragraph--web_solution"
+  );
