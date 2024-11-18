@@ -152,6 +152,66 @@ export default function Maintenance() {
           </div>
         </Col>
       </Row>
+
+      {/* Magical Team Advanatges section */}
+      <Row>
+        <Col lg={6} className="ps-4">
+          <div
+            style={{
+              backgroundColor: "#FFFFFF",
+              padding: "20px",
+              borderRadius: "5px",
+            }}
+          >
+            <h2
+              className="mb-4 h3 fw-bold"
+              style={{ fontFamily: "Roboto, sans-serif", fontSize: "2rem" }}
+            >
+              {teamAdvantagesSection?.attributes.field_title[0].value}
+            </h2>
+
+            {teamAdvantagesSection?.attributes.field_title
+              .slice(1)
+              .map((title: any, index: number) => (
+                <p
+                  key={index}
+                  className="mb-4 lh-lg"
+                  style={{ fontFamily: "Roboto, sans-serif", fontSize: "1rem" }}
+                >
+                  <strong>{title.value}</strong>{" "}
+                  {
+                    teamAdvantagesSection.attributes
+                      .field_magical_support_team_descr[index]
+                  }
+                </p>
+              ))}
+
+            <Row className="mb-5">
+              <Col lg={8} className="ps-3">
+                <div
+                  className="d-flex align-items-center"
+                  style={{ marginTop: "10px" }}
+                >
+                  <div className="arrow" style={{ marginRight: "10px" }}>
+                    <span style={{ fontSize: "18px", color: "red" }}>➔</span>
+                  </div>
+                  <p style={{ margin: 0, color: "black" }}>Contact Us</p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Col>
+
+        <Col lg={6} className="d-flex align-items-center">
+          {teamAdvantagesSection?.attributes.field_image_url[0].uri && (
+            <img
+              src={teamAdvantagesSection.attributes.field_image_url[0].uri}
+              alt=""
+              className="img-fluid rounded"
+            />
+          )}
+        </Col>
+      </Row>
     </Container>
   );
 }
