@@ -1,0 +1,10 @@
+uuid: da6bab3a-d66d-4d9f-8ac3-21fc65143d7b
+langcode: en
+status: true
+dependencies: {  }
+id: magical_support_section
+label: 'magical support section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

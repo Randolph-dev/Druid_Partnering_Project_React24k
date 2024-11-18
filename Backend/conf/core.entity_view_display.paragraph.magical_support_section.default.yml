@@ -1,0 +1,30 @@
+uuid: 2a9fe3c0-aa76-4dcd-9581-0b039588fa6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.magical_support_section.field_magical_support_paragraph
+    - field.field.paragraph.magical_support_section.field_title
+    - paragraphs.paragraphs_type.magical_support_section
+  module:
+    - text
+id: paragraph.magical_support_section.default
+targetEntityType: paragraph
+bundle: magical_support_section
+mode: default
+content:
+  field_magical_support_paragraph:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

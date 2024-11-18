@@ -1,0 +1,10 @@
+uuid: 4409869f-1445-4790-9a7c-9c9ea97013f8
+langcode: en
+status: true
+dependencies: {  }
+id: transitioning_maintenance_sectio
+label: 'Transitioning maintenance section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

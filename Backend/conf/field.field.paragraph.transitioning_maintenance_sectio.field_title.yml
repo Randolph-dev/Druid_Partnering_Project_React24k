@@ -1,0 +1,24 @@
+uuid: 447fe095-66e7-4cd9-90bd-115d529a8bb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.transitioning_maintenance_sectio
+  module:
+    - text
+id: paragraph.transitioning_maintenance_sectio.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: transitioning_maintenance_sectio
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

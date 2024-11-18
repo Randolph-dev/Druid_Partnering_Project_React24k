@@ -4,14 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.service.field_consultation_paragraph_tit
-    - field.field.node.service.field_heading
-    - field.field.node.service.field_image_url
-    - field.field.node.service.field_paragraph
-    - field.field.node.service.field_project_description
-    - field.field.node.service.field_project_tiltle
-    - field.field.node.service.field_service_description
-    - field.field.node.service.field_service_paragraph_title
+    - field.field.node.service.field_magical_support_team
+    - field.field.node.service.field_magical_team_advantages
+    - field.field.node.service.field_maintenance_intro
+    - field.field.node.service.field_transition_section
+    - field.field.node.service.field_web_solutions
     - node.type.service
   module:
     - user
@@ -26,11 +23,8 @@ content:
     weight: 100
     region: content
 hidden:
-  field_consultation_paragraph_tit: true
-  field_heading: true
-  field_image_url: true
-  field_paragraph: true
-  field_project_description: true
-  field_project_tiltle: true
-  field_service_description: true
-  field_service_paragraph_title: true
+  field_magical_support_team: true
+  field_magical_team_advantages: true
+  field_maintenance_intro: true
+  field_transition_section: true
+  field_web_solutions: true

@@ -1,0 +1,24 @@
+uuid: 76887c48-ef08-4d34-96db-315a827233b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.magical_team_advantages
+  module:
+    - text
+id: paragraph.magical_team_advantages.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: magical_team_advantages
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text
