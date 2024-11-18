@@ -7,24 +7,34 @@ import Advertise from "./HomePage/Advertise";
 import { Paragraph, RestResponseData } from "../types/drupal";
 import Projects from "./HomePage/Projects";
 import { setPageData } from "../features/drupalData/drupalSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { RootState } from "../store/store";
 import Quotes from "./HomePage/Quotes";
+import { useAppSelector } from "../hooks/hooks";
+import { setDynamicContent } from "../lib/mautic/setDynamicContent";
 
 export default function Home() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
   const dispatch = useDispatch();
-  const frontPageData = useSelector((state: RootState) => state.drupal.pageData.frontpage);
+  const frontPageData = useAppSelector((state: RootState) => state.drupal.pageData.frontpage);
+  const userType = useAppSelector((state: RootState) => state.drupal.userType);
 
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get<RestResponseData[]>(`${drupalUrl}frontpage`);
-      dispatch(setPageData({ page: "frontpage", data: data[0]["field_frontpage_sections"] }));
+      const dynamicContent = setDynamicContent(data, userType);
+
+      if (dynamicContent.length === 0) {
+        dispatch(setPageData({ page: "frontpage", data: data[0]["field_frontpage_sections"] }));
+      } else {
+        dispatch(setPageData({ page: "frontpage", data: dynamicContent[0]["field_frontpage_sections"] }));
+      }
+
     };
-    if (!frontPageData) {
+    if (!frontPageData && userType) {
       fetchData()
     }
-  }, []);
+  }, [userType]);
 
   // console.log(frontPageData);
 
