@@ -12,8 +12,8 @@ import Projects from './components/Projects';
 import Jobs from './components/Jobs';
 import Consultation from './components/Consultation';
 import Maintenance from './components/Maintenance';
-import { setLoading } from './features/drupalData/drupalSlice';
-import { mauticDynamicContents } from './lib/mautic/mauticDynamicContents';
+import { setLoading, setUserType } from './features/drupalData/drupalSlice';
+import { fetchUserSegments } from './lib/mautic/fetchUserSegments';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -28,7 +28,11 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    mauticDynamicContents();
+    const setUserSegments = async () => {
+      const userSegment = await fetchUserSegments();
+      dispatch(setUserType(userSegment));
+    }
+    setUserSegments();
   }, []);
 
   return (

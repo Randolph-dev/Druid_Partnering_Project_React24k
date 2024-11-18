@@ -7,12 +7,14 @@ export interface DrupalState {
   isLoading: boolean,
   jsonApiLinks: JsonApiLinks,
   pageData: Record<string, Paragraph[]>,
+  userType: string,
 }
 
 const initialState: DrupalState = {
   isLoading: true,
   jsonApiLinks: {} as JsonApiLinks,
   pageData: {},
+  userType: '',
 }
 
 export const drupalSlice = createSlice({
@@ -20,12 +22,15 @@ export const drupalSlice = createSlice({
   initialState,
   reducers: {
     // just a place holder reducer, doesn't actually do anything
-    setLoading: (state, action) => {
+    setLoading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
     },
     setPageData: (state, action: PayloadAction<{ page: string, data: Paragraph[] }>) => {
       const { page, data } = action.payload;
       state.pageData[page] = data;
+    },
+    setUserType: (state, action: PayloadAction<string>) => {
+      state.userType = action.payload;
     }
   },
   // this extra reducer call the api function to get api links and store it in state
@@ -39,6 +44,6 @@ export const drupalSlice = createSlice({
   },
 });
 
-export const { setLoading, setPageData } = drupalSlice.actions;
+export const { setLoading, setPageData, setUserType } = drupalSlice.actions;
 
 export default drupalSlice.reducer;
