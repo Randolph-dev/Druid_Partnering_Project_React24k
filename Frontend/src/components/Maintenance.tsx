@@ -1,17 +1,8 @@
-import { useEffect } from 'react';
-import fetchContentFromDrupal from '../lib/drupal/drupal-content-api';
-import { useAppSelector } from '../hooks/hooks';
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setPageData } from "../features/drupalData/drupalSlice";
+import { RootState } from "../store/store";
+import { Container, Row, Col, ListGroup } from "react-bootstrap";
 
-export default function Maintenance() {
-  const jsonApiLinks = useAppSelector(state => state.drupal.jsonApiLinks);
-
-  useEffect(() => {
-    // the link node--page will return all 3 pages of type "service pages", we just want the second one which is Maintenance
-    fetchContentFromDrupal(jsonApiLinks["node--service"])
-      .then(res => console.log(res.data[1]))
-  }, [jsonApiLinks])
-
-  return (
-    <div>Maintenance</div>
-  )
-}
+// Commit Message: `Set up imports and initialize Maintenance component`
