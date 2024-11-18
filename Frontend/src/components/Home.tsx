@@ -6,45 +6,52 @@ import Service from "./HomePage/Service";
 import Advertise from "./HomePage/Advertise";
 import { Paragraph, RestResponseData } from "../types/drupal";
 import Projects from "./HomePage/Projects";
-import { setPageData } from "../features/drupalData/drupalSlice";
+import { setCurrentHomepageData, setHomepagesData } from "../features/drupalData/drupalSlice";
 import { useDispatch } from "react-redux";
 import { RootState } from "../store/store";
 import Quotes from "./HomePage/Quotes";
 import { useAppSelector } from "../hooks/hooks";
 import { setDynamicContent } from "../lib/mautic/setDynamicContent";
+// import { setDynamicContent } from "../lib/mautic/setDynamicContent";
 
 export default function Home() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
   const dispatch = useDispatch();
-  const frontPageData = useAppSelector((state: RootState) => state.drupal.pageData.frontpage);
+  const homepagesData = useAppSelector((state: RootState) => state.drupal.homepagesData);
+  const currentPageData = useAppSelector((state: RootState) => state.drupal.currentHomepageData.frontpage);
   const userType = useAppSelector((state: RootState) => state.drupal.userType);
 
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get<RestResponseData[]>(`${drupalUrl}frontpage`);
-      const dynamicContent = setDynamicContent(data, userType);
+      dispatch(setHomepagesData(data));
+    };
+    if (homepagesData.length === 0) {
+      fetchData()
+    }
+  }, []);
+
+  useEffect(() => {
+    if (homepagesData.length > 0 && userType !== undefined) {
+      const dynamicContent = setDynamicContent(homepagesData, userType);
 
       if (dynamicContent.length === 0) {
-        dispatch(setPageData({ page: "frontpage", data: data[0]["field_frontpage_sections"] }));
+        dispatch(setCurrentHomepageData({ page: "frontpage", data: homepagesData[0]["field_frontpage_sections"] }));
       } else {
-        dispatch(setPageData({ page: "frontpage", data: dynamicContent[0]["field_frontpage_sections"] }));
+        dispatch(setCurrentHomepageData({ page: "frontpage", data: dynamicContent[0]["field_frontpage_sections"] }));
       }
-
-    };
-    if (!frontPageData && userType) {
-      fetchData()
     }
   }, [userType]);
 
   // console.log(frontPageData);
 
-  if (!frontPageData) {
+  if (!currentPageData) {
     return <p>Loading</p>;
   }
 
   return (
     <Container fluid className="p-0">
-      {frontPageData.map((section: Paragraph) => {
+      {currentPageData.map((section: Paragraph) => {
         const key = section.id[0].value;
         switch (section.entity_bundle[0].value) {
           case "frontpage_hero_intro":
