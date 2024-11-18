@@ -127,6 +127,31 @@ export default function Maintenance() {
           </p>
         </Col>
       </Row>
+      {/* Magical Support Section */}
+      <Row className="mb-5">
+        <Col lg={8} className="ps-4">
+          <div className="bg-light p-4 rounded shadow-sm">
+            <h2
+              className="mb-4 h3 fw-bold"
+              style={{ fontFamily: "Roboto, sans-serif", fontSize: "2rem" }}
+            >
+              {magicalSupportSection?.attributes.field_title[0]?.value}
+            </h2>
+
+            {magicalSupportSection?.attributes.field_magical_support_paragraph.map(
+              (paragraph: string, index: number) => (
+                <p
+                  key={index}
+                  className="mb-4"
+                  style={{ fontFamily: "Roboto, sans-serif", fontSize: "1rem" }}
+                >
+                  {paragraph}
+                </p>
+              )
+            )}
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 }
