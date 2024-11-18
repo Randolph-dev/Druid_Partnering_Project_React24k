@@ -212,6 +212,84 @@ export default function Maintenance() {
           )}
         </Col>
       </Row>
+      {/*Transition section with title and steps */}
+      <section
+        className="transition py-5"
+        style={{ backgroundColor: "black", color: "white" }}
+      >
+        <Container>
+          <Row className="text-center">
+            <Col>
+              <h2
+                className="mb-4"
+                style={{ fontFamily: "Roboto, sans-serif", fontSize: "2rem" }}
+              >
+                {transitionSection?.attributes.field_title[0].value
+                  .split("\n")
+                  .map((line: string, index: number) => (
+                    <span key={index}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </h2>
+              <p
+                className="mb-4"
+                style={{
+                  marginTop: "50px",
+                  textAlign: "left",
+                  fontFamily: "Roboto, sans-serif",
+                  fontSize: "1rem",
+                }}
+              >
+                {transitionSection?.attributes.field_transition_paragraph[0]
+                  .split("\n")
+                  .map((line: string, index: number) => (
+                    <span key={index}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={4} className="d-flex justify-content-start">
+              {transitionSection?.attributes.field_image_url[0].uri && (
+                <img
+                  src={transitionSection.attributes.field_image_url[0].uri}
+                  alt=""
+                  className="img-fluid"
+                  style={{
+                    maxWidth: "80%",
+                    opacity: 0.8,
+                  }}
+                />
+              )}
+            </Col>
+            <Col md={8} className="mx-auto">
+              <ListGroup>
+                {transitionSection?.attributes.field_transition_steps.map(
+                  (step: string, index: number) => (
+                    <ListGroup.Item
+                      key={index}
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none",
+                        color: "white",
+                        marginBottom: "10px",
+                        textAlign: "left",
+                      }}
+                    >
+                      {step}
+                    </ListGroup.Item>
+                  )
+                )}
+              </ListGroup>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </Container>
   );
 }
