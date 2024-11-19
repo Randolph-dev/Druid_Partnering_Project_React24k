@@ -1,0 +1,76 @@
+uuid: 1ee132bd-8fa4-44a5-a21c-2872cff40f03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magical_team_advantages
+    - node.type.service
+    - paragraphs.paragraphs_type.magical_team_advantages
+  module:
+    - entity_reference_revisions
+id: node.service.field_magical_team_advantages
+field_name: field_magical_team_advantages
+entity_type: node
+bundle: service
+label: 'magical team advantages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      magical_team_advantages: magical_team_advantages
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 17
+        enabled: false
+      frontpage_hero_intro:
+        weight: 18
+        enabled: false
+      frontpage_project:
+        weight: 19
+        enabled: false
+      frontpage_projects:
+        weight: 20
+        enabled: false
+      frontpage_quote:
+        weight: 21
+        enabled: false
+      frontpage_service_pakage:
+        weight: 22
+        enabled: false
+      frontpage_service_pakages:
+        weight: 23
+        enabled: false
+      jobspage_about_company:
+        weight: 24
+        enabled: false
+      jobspage_benefit:
+        weight: 25
+        enabled: false
+      jobspage_benefits:
+        weight: 26
+        enabled: false
+      jobspage_hero_intro:
+        weight: 27
+        enabled: false
+      magical_support_section:
+        weight: 28
+        enabled: false
+      magical_team_advantages:
+        weight: 29
+        enabled: true
+      maintenance_page_hero_intro:
+        weight: 30
+        enabled: false
+      mautic:
+        weight: 31
+        enabled: false
+      transitioning_maintenance_sectio:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

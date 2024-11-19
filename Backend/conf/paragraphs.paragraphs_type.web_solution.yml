@@ -1,0 +1,10 @@
+uuid: 52bab79e-a539-41f7-866c-70f41c5534c7
+langcode: en
+status: true
+dependencies: {  }
+id: web_solution
+label: 'web solution'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

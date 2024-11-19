@@ -1,0 +1,19 @@
+uuid: b7e0b96b-3cdb-4759-abd6-97881f1ac9a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_web_solution_description
+field_name: field_web_solution_description
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

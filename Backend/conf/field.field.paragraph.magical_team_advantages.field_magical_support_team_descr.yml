@@ -1,0 +1,19 @@
+uuid: 1502a125-0b8b-417f-862e-533aa3021aec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_magical_support_team_descr
+    - paragraphs.paragraphs_type.magical_team_advantages
+id: paragraph.magical_team_advantages.field_magical_support_team_descr
+field_name: field_magical_support_team_descr
+entity_type: paragraph
+bundle: magical_team_advantages
+label: 'magical support team description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,44 @@
+uuid: 42d372cc-2958-4697-8936-2dc5d1526ebb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.web_solution.field_title
+    - field.field.paragraph.web_solution.field_web_solution_description
+    - field.field.paragraph.web_solution.field_web_solution_icon
+    - paragraphs.paragraphs_type.web_solution
+  module:
+    - link
+    - text
+id: paragraph.web_solution.default
+targetEntityType: paragraph
+bundle: web_solution
+mode: default
+content:
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_web_solution_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_web_solution_icon:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }
