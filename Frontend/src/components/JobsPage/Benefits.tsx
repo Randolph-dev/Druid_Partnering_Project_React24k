@@ -33,7 +33,7 @@ export default function Benefits(props: BenefitsProps) {
       ))}
 
       <Row className="d-flex justify-content-center">
-        {benefits.map((benefit, index) => (
+        {benefits.map((benefit) => (
           <Col
             md={5}
             className="pb-5"
