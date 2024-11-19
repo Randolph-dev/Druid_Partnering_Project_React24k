@@ -47,6 +47,7 @@ export default function Hero(props: HeroProps) {
             <Col className="mt-4">
               {links.map((link, index) => (
                 <Button
+                  key={`${index}_${link.title}`}
                   className="me-2 p-3 px-5 rounded-pill border-0"
                   style={{ backgroundColor: "#EF3428" }}
                 >

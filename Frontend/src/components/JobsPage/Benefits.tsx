@@ -33,8 +33,12 @@ export default function Benefits(props: BenefitsProps) {
       ))}
 
       <Row className="d-flex justify-content-center">
-        {benefits.map((benefit) => (
-          <Col md={5} className="pb-5">
+        {benefits.map((benefit, index) => (
+          <Col
+            md={5}
+            className="pb-5"
+            key={benefit.id[0].value}
+          >
             {benefit.field_title.map((title, index) => (
               <h5
                 key={generateFieldKey(title, index)}
