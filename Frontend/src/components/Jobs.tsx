@@ -1,101 +1,73 @@
-import { useEffect, useState } from "react";
-import fetchContentFromDrupal, {
-  JsonApiDataAttributes,
-} from "../lib/drupal/drupal-content-api";
-import { useAppSelector } from "../hooks/hooks";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { useEffect } from "react";
+import axios from "axios";
 
-const Jobs: React.FC = () => {
-  const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
-  const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
+import { Paragraph, RestResponseData } from "../types/drupal";
+import { setPageData } from "../features/drupalData/drupalSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import Hero from "./JobsPage/Hero";
+import Benefits from "./JobsPage/Benefits";
+import AboutCompany from "./JobsPage/AboutCompany";
 
-  const [jobsPageData, setJobsData] = useState<JsonApiDataAttributes | null>(
-    null
+export default function Jobs() {
+  const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
+  const dispatch = useDispatch();
+  const jobsPageData = useSelector(
+    (state: RootState) => state.drupal.pageData.jobspage
   );
 
   useEffect(() => {
-    // Ensure loading is complete and jsonApiLinks is defined
-    if (!jsonApiLinksLoading) {
-      const fetchData = async () => {
-        const res = await fetchContentFromDrupal(
-          jsonApiLinks["node--jobs_page"]
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get<RestResponseData[]>(
+          `${drupalUrl}jobspage`
         );
-        setJobsData(res.data[0]);
-      };
+        dispatch(
+          setPageData({
+            page: "jobspage",
+            data: data[0]["field_jobspage_sections"],
+          })
+        );
+      } catch (error) {
+        console.error("Error fetching jobs page data:", error);
+      }
+    };
+
+    if (!jobsPageData) {
       fetchData();
     }
-  }, [jsonApiLinksLoading]);
+  }, [jobsPageData, dispatch]);
 
   if (!jobsPageData) {
-    return <p>Loading</p>;
+    return <p>Loading...</p>;
   }
 
-  const {
-    field_heading,
-    field_intro_paragraph,
-    field_image_description,
-    field_paragraph_description,
-    field_paragraph_title,
-    field_image_url: images,
-  } = jobsPageData;
-
   return (
-    <Container className="p-0" fluid>
-      <Container
-        className="d-flex align-items-center"
-        style={{ height: "90vh" }}
-      >
-        <Row className="d-flex justify-content-between">
-          <Col md={6}>
-            <h1>
-              <b>{field_heading[0]}</b>
-            </h1>
-            <div className="py-3">
-              {field_intro_paragraph.map((intro: string, index: number) => (
-                <p key={`${index}_${intro.slice(0, 10)}`} style={{ fontSize: "20px" }}>{intro}</p>
-              ))}
-            </div>
+    <Container fluid className="p-0">
+      {jobsPageData.map((section: Paragraph) => {
+        const key = section.id[0]?.value ?? "default-key";
+        switch (section.entity_bundle[0]?.value) {
+          case "jobspage_hero_intro":
+            return <Hero key={key} section={section} />;
+          case "jobspage_benefits":
+            return <Benefits key={key} section={section} />;
+          case "jobspage_about_company":
+            return <AboutCompany key={key} section={section} />;
+          default:
+            return null;
+        }
+      })}
+    </Container>
+  );
+}
 
-            <Col className="mt-4">
-              <Button
-                className="me-2 p-3 px-5 rounded-pill border-0"
-                style={{ backgroundColor: "#EF3428" }}
-              >
-                Connect
-              </Button>
-              <Button
-                className="p-3 px-5 rounded-pill border-0"
-                style={{ backgroundColor: "#EF3428" }}
-              >
-                Job openings
-              </Button>
-            </Col>
-          </Col>
-          <Col md={5}>
-            <Image
-              src={images[0].uri}
-              alt={images[0].title}
-              style={{ width: "100%" }}
-            />
-            <p className="pt-3 text-end">{field_image_description}</p>
-          </Col>
-        </Row>
-      </Container>
+/*
 
-      <Container>
-        <h2 className="py-5 text-center">{field_heading[1]}</h2>
+ <Container className="p-0" fluid>
+    hero section...
 
-        <Row className="d-flex justify-content-center">
-          {field_paragraph_description.map(
-            (description: string, index: number) => (
-              <Col key={index} md={5} className="pb-5">
-                <h5>{field_paragraph_title[index]}</h5>
-                <p>{description}</p>
-              </Col>
-            )
-          )}
-        </Row>
-      </Container>
+    benefits section...
 
       <Container className="my-5 py-5 bg-dark text-light" fluid>
         <h2 className="pb-5 text-center">Meet the druids</h2>
@@ -128,7 +100,5 @@ const Jobs: React.FC = () => {
         </Col>
       </Container>
     </Container>
-  );
-};
 
-export default Jobs;
+*/
