@@ -30,6 +30,7 @@ const App: React.FC = () => {
     }
   }, []);
 
+  // find the user type from Mautic and store it in redux
   useEffect(() => {
     const setUserSegments = async () => {
       const userSegment = await fetchUserSegments();

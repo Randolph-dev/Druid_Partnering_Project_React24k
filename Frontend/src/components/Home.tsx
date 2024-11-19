@@ -21,6 +21,7 @@ export default function Home() {
   const currentPageData = useAppSelector((state: RootState) => state.drupal.currentHomepageData.frontpage);
   const userType = useAppSelector((state: RootState) => state.drupal.userType);
 
+  // fetch all homepages from drupal (for all usertypes) and store it in redux
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get<RestResponseData[]>(`${drupalUrl}frontpage`);
@@ -31,6 +32,7 @@ export default function Home() {
     }
   }, []);
 
+  // set the right homepage based on the user type, if no user type is found, show the default homepage
   useEffect(() => {
     if (homepagesData.length > 0 && userType !== undefined) {
       const dynamicContent = setDynamicContent(homepagesData, userType);
@@ -53,6 +55,7 @@ export default function Home() {
     <Container fluid className="p-0">
       {currentPageData.map((section: Paragraph) => {
         const key = section.id[0].value;
+        // switch here to render the right component based on the paragraph entity name
         switch (section.entity_bundle[0].value) {
           case "frontpage_hero_intro":
             return <Hero key={key} section={section} />;
