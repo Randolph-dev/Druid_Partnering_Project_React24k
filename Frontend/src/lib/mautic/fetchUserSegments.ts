@@ -10,11 +10,6 @@ export const fetchUserSegments = async () => {
       Authorization: apiToken,
     }
   });
-  console.log();
-
-  if (currentUser.data.contact.tags.length === 0) {
-    return "Visitor";
-  }
 
   return currentUser.data.contact.tags[0].tag;
 }
