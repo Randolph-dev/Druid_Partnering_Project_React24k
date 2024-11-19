@@ -16,21 +16,16 @@ export default function AboutCompany(props: AboutCompanyProps) {
 
   return (
     <Container fluid className="my-5 py-5 bg-dark text-light">
-      {titles.map((title, index) => (
-        <h1
-          key={generateFieldKey(title, index)}
-          className="text-center my-5"
-          dangerouslySetInnerHTML={{ __html: title.value }}
-        />
-      ))}
       <Row className="d-flex justify-content-center">
-        <Col md={5}>
-          {images && images.length > 0 && (
-            <Image src={images[0].uri} alt={images[0].title} fluid />
-          )}
-        </Col>
-        <Col md={5} className="d-flex align-items-center p-3">
+        <Col md={5} className="d-flex align-items-center">
           <div>
+            {titles.map((title, index) => (
+              <h1
+                key={generateFieldKey(title, index)}
+                className="pb-4"
+                dangerouslySetInnerHTML={{ __html: title.value }}
+              />
+            ))}
             {paragraphs.map((paragraph, index) => (
               <p
                 key={generateFieldKey(paragraph, index)}
@@ -38,6 +33,11 @@ export default function AboutCompany(props: AboutCompanyProps) {
               />
             ))}
           </div>
+        </Col>
+        <Col md={5}>
+          {images && images.length > 0 && (
+            <Image src={images[0].uri} alt={images[0].title} fluid />
+          )}
         </Col>
       </Row>
     </Container>
