@@ -9,6 +9,7 @@ export interface DrupalState {
   homepagesData: RestResponseData[],
   currentHomepageData: Record<string, Paragraph[]>,
   userType: string,
+  pageData: Record<string, Paragraph[]>,
 }
 
 const initialState: DrupalState = {
@@ -17,6 +18,7 @@ const initialState: DrupalState = {
   homepagesData: [],
   currentHomepageData: {},
   userType: '',
+  pageData: {},
 }
 
 export const drupalSlice = createSlice({
@@ -36,6 +38,10 @@ export const drupalSlice = createSlice({
     },
     setUserType: (state, action: PayloadAction<string>) => {
       state.userType = action.payload;
+    },
+    setPageData: (state, action: PayloadAction<{ page: string, data: Paragraph[] }>) => {
+      const { page, data } = action.payload;
+      state.pageData[page] = data;
     }
   },
   // this extra reducer call the api function to get api links and store it in state
@@ -49,6 +55,6 @@ export const drupalSlice = createSlice({
   },
 });
 
-export const { setLoading, setHomepagesData, setCurrentHomepageData, setUserType } = drupalSlice.actions;
+export const { setLoading, setHomepagesData, setCurrentHomepageData, setUserType, setPageData } = drupalSlice.actions;
 
 export default drupalSlice.reducer;
