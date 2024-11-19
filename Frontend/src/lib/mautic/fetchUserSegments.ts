@@ -10,6 +10,7 @@ export const fetchUserSegments = async () => {
       Authorization: apiToken,
     }
   });
+  console.log();
 
-  return currentUser.data.contact.fields.all.segments;
+  return currentUser.data.contact.tags[0].tag;
 }
