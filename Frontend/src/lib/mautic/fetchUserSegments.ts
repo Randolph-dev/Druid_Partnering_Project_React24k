@@ -12,5 +12,9 @@ export const fetchUserSegments = async () => {
   });
   console.log();
 
+  if (currentUser.data.contact.tags.length === 0) {
+    return "Visitor";
+  }
+
   return currentUser.data.contact.tags[0].tag;
 }
