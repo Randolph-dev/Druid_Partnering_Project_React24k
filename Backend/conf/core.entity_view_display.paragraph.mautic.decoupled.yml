@@ -1,0 +1,21 @@
+uuid: 6c383628-b4a7-406c-ac97-d956d67e2023
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.decoupled
+    - field.field.paragraph.mautic.field_mautic_formid
+    - field.field.paragraph.mautic.field_mautic_layout
+    - field.field.paragraph.mautic.field_mautic_text
+    - field.field.paragraph.mautic.field_mautic_title
+    - paragraphs.paragraphs_type.mautic
+id: paragraph.mautic.decoupled
+targetEntityType: paragraph
+bundle: mautic
+mode: decoupled
+content: {  }
+hidden:
+  field_mautic_formid: true
+  field_mautic_layout: true
+  field_mautic_text: true
+  field_mautic_title: true

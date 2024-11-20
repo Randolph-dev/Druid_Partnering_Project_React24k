@@ -8,11 +8,13 @@ dependencies:
     - field.field.node.jobs_page.field_image_description
     - field.field.node.jobs_page.field_image_url
     - field.field.node.jobs_page.field_intro_paragraph
+    - field.field.node.jobs_page.field_jobspage_sections
     - field.field.node.jobs_page.field_paragraph_description
     - field.field.node.jobs_page.field_paragraph_title
     - node.type.jobs_page
   module:
     - link
+    - paragraphs
     - path
     - text
 id: node.jobs_page.default
@@ -67,6 +69,24 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_jobspage_sections:
+    type: paragraphs
+    weight: 129
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_paragraph_description:
     type: string_textarea

@@ -1,0 +1,23 @@
+uuid: 51d7c58a-16d8-4c40-9202-3691801050df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_web_solution_icon
+    - paragraphs.paragraphs_type.web_solution
+  module:
+    - link
+id: paragraph.web_solution.field_web_solution_icon
+field_name: field_web_solution_icon
+entity_type: paragraph
+bundle: web_solution
+label: 'web solution icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

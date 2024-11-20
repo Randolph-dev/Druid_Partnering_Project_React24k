@@ -1,0 +1,10 @@
+uuid: 099aa536-44df-4f4f-9af0-3ae0bddd7585
+langcode: en
+status: true
+dependencies: {  }
+id: magical_team_advantages
+label: 'magical team advantages'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

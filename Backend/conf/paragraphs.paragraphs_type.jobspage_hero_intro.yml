@@ -1,0 +1,10 @@
+uuid: c46ca5dc-e8d9-450f-aaf4-cd37d6d7d2d9
+langcode: en
+status: true
+dependencies: {  }
+id: jobspage_hero_intro
+label: jobspage_hero_intro
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

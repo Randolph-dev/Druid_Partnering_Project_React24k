@@ -1,0 +1,10 @@
+uuid: ae17d5f6-930c-4a74-ae2e-f4cf0dbdcd14
+langcode: en
+status: true
+dependencies: {  }
+id: frontpage_hero_intro
+label: frontpage_hero_intro
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

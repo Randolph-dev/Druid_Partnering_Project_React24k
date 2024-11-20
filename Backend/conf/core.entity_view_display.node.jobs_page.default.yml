@@ -8,10 +8,12 @@ dependencies:
     - field.field.node.jobs_page.field_image_description
     - field.field.node.jobs_page.field_image_url
     - field.field.node.jobs_page.field_intro_paragraph
+    - field.field.node.jobs_page.field_jobspage_sections
     - field.field.node.jobs_page.field_paragraph_description
     - field.field.node.jobs_page.field_paragraph_title
     - node.type.jobs_page
   module:
+    - entity_reference_revisions
     - link
     - text
     - user
@@ -61,6 +63,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_jobspage_sections:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_paragraph_description:
     type: basic_string

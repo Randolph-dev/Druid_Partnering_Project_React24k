@@ -1,0 +1,10 @@
+uuid: 8cd3aab8-0235-48ee-bde3-4f53d97a85e4
+langcode: en
+status: true
+dependencies: {  }
+id: maintenance_page_hero_intro
+label: 'maintenance page hero intro'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

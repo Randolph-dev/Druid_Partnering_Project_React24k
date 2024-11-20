@@ -1,0 +1,24 @@
+uuid: 4ac6115d-aaac-4ca7-b0f3-7b6e5feb2157
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.maintenance_page_hero_intro
+  module:
+    - text
+id: paragraph.maintenance_page_hero_intro.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: maintenance_page_hero_intro
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

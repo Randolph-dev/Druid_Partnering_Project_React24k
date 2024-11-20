@@ -1,0 +1,33 @@
+uuid: 007b3640-7c16-4048-a1d8-165567d8a832
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.frontpage_service_pakages.field_frontpage_service_pakages
+    - field.field.paragraph.frontpage_service_pakages.field_title
+    - paragraphs.paragraphs_type.frontpage_service_pakages
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.frontpage_service_pakages.default
+targetEntityType: paragraph
+bundle: frontpage_service_pakages
+mode: default
+content:
+  field_frontpage_service_pakages:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

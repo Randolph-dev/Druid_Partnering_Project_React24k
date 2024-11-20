@@ -1,0 +1,24 @@
+uuid: 48eb0260-0975-4f52-a7d5-ea8b30d5efda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.jobspage_about_company
+  module:
+    - text
+id: paragraph.jobspage_about_company.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: jobspage_about_company
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

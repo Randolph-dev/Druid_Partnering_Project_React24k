@@ -1,0 +1,10 @@
+uuid: 6f1ce39f-415d-432f-b8a1-3966405e5f4e
+langcode: en
+status: true
+dependencies: {  }
+id: jobspage_benefits
+label: jobspage_benefits
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

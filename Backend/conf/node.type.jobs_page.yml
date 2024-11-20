@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Jobs page'
 type: jobs_page
-description: null
+description: 'This is the jobs page'
 help: null
 new_revision: true
 preview_mode: 1

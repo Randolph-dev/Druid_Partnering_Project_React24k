@@ -1,0 +1,19 @@
+uuid: a4044175-ca3c-4d34-9882-78fc5aad6102
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_hours
+    - paragraphs.paragraphs_type.maintenance_page_hero_intro
+id: paragraph.maintenance_page_hero_intro.field_contact_hours
+field_name: field_contact_hours
+entity_type: paragraph
+bundle: maintenance_page_hero_intro
+label: 'contact hours'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,44 @@
+uuid: bbc23bad-5584-4664-92e1-3f137b935172
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_about_company.field_image_url
+    - field.field.paragraph.jobspage_about_company.field_paragraph
+    - field.field.paragraph.jobspage_about_company.field_title
+    - paragraphs.paragraphs_type.jobspage_about_company
+  module:
+    - link
+    - text
+id: paragraph.jobspage_about_company.default
+targetEntityType: paragraph
+bundle: jobspage_about_company
+mode: default
+content:
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

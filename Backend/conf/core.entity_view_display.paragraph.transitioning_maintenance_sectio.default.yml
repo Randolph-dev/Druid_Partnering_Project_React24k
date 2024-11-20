@@ -1,0 +1,53 @@
+uuid: d7a42d3b-ffe2-446b-a8b8-3352327ea127
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.transitioning_maintenance_sectio.field_image_url
+    - field.field.paragraph.transitioning_maintenance_sectio.field_title
+    - field.field.paragraph.transitioning_maintenance_sectio.field_transition_paragraph
+    - field.field.paragraph.transitioning_maintenance_sectio.field_transition_steps
+    - paragraphs.paragraphs_type.transitioning_maintenance_sectio
+  module:
+    - link
+    - text
+id: paragraph.transitioning_maintenance_sectio.default
+targetEntityType: paragraph
+bundle: transitioning_maintenance_sectio
+mode: default
+content:
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_transition_paragraph:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_transition_steps:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

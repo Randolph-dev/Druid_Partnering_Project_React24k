@@ -1,0 +1,15 @@
+uuid: 95b24606-7d5f-464e-8d43-6b92762c4cf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.decoupled
+    - field.field.paragraph.frontpage_hero_intro.field_frontpage_hero_intro_parag
+    - paragraphs.paragraphs_type.frontpage_hero_intro
+id: paragraph.frontpage_hero_intro.decoupled
+targetEntityType: paragraph
+bundle: frontpage_hero_intro
+mode: decoupled
+content: {  }
+hidden:
+  field_frontpage_hero_intro_parag: true

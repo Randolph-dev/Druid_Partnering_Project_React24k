@@ -1,0 +1,49 @@
+uuid: 24f89fd0-fcd8-4dab-bb95-19fe3bbc67d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_frontpage_projects
+    - paragraphs.paragraphs_type.frontpage_project
+    - paragraphs.paragraphs_type.frontpage_projects
+  module:
+    - entity_reference_revisions
+id: paragraph.frontpage_projects.field_frontpage_projects
+field_name: field_frontpage_projects
+entity_type: paragraph
+bundle: frontpage_projects
+label: frontpage_projects
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      frontpage_project: frontpage_project
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 8
+        enabled: false
+      frontpage_hero_intro:
+        weight: 9
+        enabled: false
+      frontpage_project:
+        weight: 10
+        enabled: true
+      frontpage_projects:
+        weight: 11
+        enabled: false
+      frontpage_service_pakage:
+        weight: 12
+        enabled: false
+      frontpage_service_pakages:
+        weight: 13
+        enabled: false
+      mautic:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

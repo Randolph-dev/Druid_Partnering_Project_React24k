@@ -1,0 +1,24 @@
+uuid: ccbef6b1-c859-4b5d-a442-deee5681cdaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.frontpage_service_pakage
+  module:
+    - text
+id: paragraph.frontpage_service_pakage.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: frontpage_service_pakage
+label: paragraph
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

@@ -1,0 +1,27 @@
+uuid: dc2cac5f-bf85-4260-9988-499b94ea396b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.front_page.field_frontpage_sections
+    - node.type.front_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.front_page.decoupled
+targetEntityType: node
+bundle: front_page
+mode: decoupled
+content:
+  field_frontpage_sections:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

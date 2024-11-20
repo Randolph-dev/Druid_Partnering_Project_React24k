@@ -16,6 +16,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_clone: 0
   entity_reference_revisions: 0
   field: 0
   field_ui: 0
@@ -37,6 +38,10 @@ module:
   paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
+  rest: 0
+  rest_entity_recursive: 0
+  rest_menu_recursive: 0
+  rest_paragraphs_recursive: 0
   search: 0
   serialization: 0
   shortcut: 0

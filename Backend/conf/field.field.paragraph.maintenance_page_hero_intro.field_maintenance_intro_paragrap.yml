@@ -1,0 +1,19 @@
+uuid: 80e93c67-3959-41b2-ad03-d71ad7554a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_maintenance_intro_paragrap
+    - paragraphs.paragraphs_type.maintenance_page_hero_intro
+id: paragraph.maintenance_page_hero_intro.field_maintenance_intro_paragrap
+field_name: field_maintenance_intro_paragrap
+entity_type: paragraph
+bundle: maintenance_page_hero_intro
+label: 'maintenance intro paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,24 @@
+uuid: d5c992c7-6931-4c24-9b49-03caaf3f53ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.jobspage_hero_intro
+  module:
+    - text
+id: paragraph.jobspage_hero_intro.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: jobspage_hero_intro
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

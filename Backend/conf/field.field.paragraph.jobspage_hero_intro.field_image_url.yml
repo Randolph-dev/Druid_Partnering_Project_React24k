@@ -1,0 +1,28 @@
+uuid: 3fd68787-9e41-4f64-87b6-0852a2702761
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_url
+    - paragraphs.paragraphs_type.jobspage_hero_intro
+  module:
+    - link
+id: paragraph.jobspage_hero_intro.field_image_url
+field_name: field_image_url
+entity_type: paragraph
+bundle: jobspage_hero_intro
+label: image_url
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://druid.fi/wp-content/uploads/2024/05/20240425-103217-Druid-Oy-1026-2.jpg'
+    title: 'random image'
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

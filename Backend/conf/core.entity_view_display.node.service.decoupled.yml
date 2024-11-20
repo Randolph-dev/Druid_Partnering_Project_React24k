@@ -1,0 +1,30 @@
+uuid: 2339ee07-5e1e-4864-ad02-6cc76edd8748
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.service.field_magical_support_team
+    - field.field.node.service.field_magical_team_advantages
+    - field.field.node.service.field_maintenance_intro
+    - field.field.node.service.field_transition_section
+    - field.field.node.service.field_web_solutions
+    - node.type.service
+  module:
+    - user
+id: node.service.decoupled
+targetEntityType: node
+bundle: service
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_magical_support_team: true
+  field_magical_team_advantages: true
+  field_maintenance_intro: true
+  field_transition_section: true
+  field_web_solutions: true

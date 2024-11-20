@@ -1,0 +1,22 @@
+uuid: 313bc5ca-955b-4730-931c-73f1074fef96
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.decoupled
+    - taxonomy.vocabulary.project_category
+  module:
+    - text
+id: taxonomy_term.project_category.decoupled
+targetEntityType: taxonomy_term
+bundle: project_category
+mode: decoupled
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

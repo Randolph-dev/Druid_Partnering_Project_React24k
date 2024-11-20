@@ -1,0 +1,36 @@
+uuid: 6f4bbb81-2668-4f3b-867e-42c40f3a0190
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.decoupled
+    - field.field.node.jobs_page.body
+    - field.field.node.jobs_page.field_heading
+    - field.field.node.jobs_page.field_image_description
+    - field.field.node.jobs_page.field_image_url
+    - field.field.node.jobs_page.field_intro_paragraph
+    - field.field.node.jobs_page.field_jobspage_sections
+    - field.field.node.jobs_page.field_paragraph_description
+    - field.field.node.jobs_page.field_paragraph_title
+    - node.type.jobs_page
+  module:
+    - user
+id: node.jobs_page.decoupled
+targetEntityType: node
+bundle: jobs_page
+mode: decoupled
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_heading: true
+  field_image_description: true
+  field_image_url: true
+  field_intro_paragraph: true
+  field_jobspage_sections: true
+  field_paragraph_description: true
+  field_paragraph_title: true

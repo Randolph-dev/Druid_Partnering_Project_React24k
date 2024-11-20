@@ -1,0 +1,11 @@
+uuid: 62801ed2-29a6-436d-890a-11e226a62e9f
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.decoupled
+label: Decoupled
+description: ''
+targetEntityType: user
+cache: true
