@@ -8,7 +8,7 @@ import { Container, Row, Col, ListGroup } from "react-bootstrap";
 export default function Maintenance() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
   const dispatch = useDispatch();
-  const maintenanceData = useSelector(
+  const maintenanceData: any = useSelector(
     (state: RootState) => state.drupal.pageData.maintenance
   );
 
@@ -310,16 +310,16 @@ export default function Maintenance() {
                   {webSolutionsSection?.attributes.field_web_solution_icon[
                     index
                   ] && (
-                    <img
-                      src={
-                        webSolutionsSection.attributes.field_web_solution_icon[
-                          index
-                        ].uri
-                      }
-                      alt=""
-                      className="img-fluid"
-                    />
-                  )}
+                      <img
+                        src={
+                          webSolutionsSection.attributes.field_web_solution_icon[
+                            index
+                          ].uri
+                        }
+                        alt=""
+                        className="img-fluid"
+                      />
+                    )}
                 </Col>
                 <Col md={10}>
                   <p
