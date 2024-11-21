@@ -2,6 +2,7 @@
 
 namespace Drupal\mautic_content_integration\Service;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use GuzzleHttp\Client;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Exception;
@@ -13,10 +14,23 @@ class MauticContentService {
 
     protected Client $httpClient;
     protected $logger;
+    protected $config;
 
-    public function __construct(Client $httpClient, LoggerChannelFactoryInterface $loggerFactory) {
+    /**
+    * Constructor.
+    *
+    * @param \GuzzleHttp\Client $httpClient
+    *   The HTTP Client service.
+    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
+    *   The logger channel factory service.
+    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+    *   The configuraiton factory service.
+    */
+
+    public function __construct(Client $httpClient, LoggerChannelFactoryInterface $loggerFactory, ConfigFactoryInterface $configFactory) {
         $this->httpClient = $httpClient;
         $this->logger = $loggerFactory->get('mautic_content_integration');
+        $this->config = $configFactory->get('mautic_content_integration.settings');
     }
 
     /**
@@ -29,14 +43,20 @@ class MauticContentService {
      *   The user segment (e.g., region) or NULL if not found.
      */
     public function getUserSegment($userId) {
-        $mauticApiUrl = 'https://your-mautic-instance.com/api/contacts/' . $userId;
-        $apiKey = 'your-api-key-here';
+        // This retreives Mautic's API configuraiton values.
+        $mauticApiUrl = rtrim($this->config->get('mautic_api_url'), '/') . '/api/contacts/' . $userId;
+        $apiKey = $this->config->get('mautic_api_token');
+
+        if (!$mauticApiUrl || !$apiKey) {
+            $this->logger->error('Mautic API configuration is missing.');
+            return NULL;
+        }
 
         try {
             // Use the HTTP client to make a GET request.
             $response = $this->httpClient->get($mauticApiUrl, [
                 'headers' => [
-                    'Api-Auth-Key' => $apiKey,
+                    'Authorization' => 'Bearer ' . $apiKey,
                     'Content-Type' => 'application/json',
                 ],
             ]);
