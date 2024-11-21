@@ -30,6 +30,9 @@ class MauticSettingsForm extends ConfigFormBase {
     public function buildForm(array $form, FormStateInterface $form_state) {
         $config = $this->config('mautic_content_integration.settings');
 
+        // Fetch the stored API token from the state system.
+        $access_token = \Drupal::state()->get('mautic_integration.access_token') ?? 'No token available. Please authorize the app.';
+
         $form['mautic_api_url'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Mautic API URL'),
@@ -41,9 +44,9 @@ class MauticSettingsForm extends ConfigFormBase {
         $form['mautic_api_token'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Mautic API Token'),
-        '#default_value' => $config->get('mautic_api_token') ?? '',
-        '#description' => $this->t('Enter the API token for authenticating with Mautic.'),
-        '#required' => TRUE,
+        '#default_value' => $access_token,
+        '#description' => $this->t('This is the current API token used for authenticating with Mautic.'),
+        '#disabled' => TRUE,
         ];
 
         return parent::buildForm($form, $form_state);

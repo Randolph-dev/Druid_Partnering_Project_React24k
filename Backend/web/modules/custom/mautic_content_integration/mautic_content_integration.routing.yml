@@ -13,3 +13,11 @@ mautic_content_integration.settings:
     _title: 'Mautic Content Integration Settings'
   requirements:
     _permission: 'administer site configuration'
+
+mautic_content_integration.oauth_callback:
+  path: '/mautic/oauth/callback'
+  defaults:
+    _controller: '\Drupal\mautic_content_integration\Controller\MauticContentController::handleOAuthCallback'
+    _title: 'Mautic OAuth Callback'
+  requirements:
+    _permission: 'access content'
