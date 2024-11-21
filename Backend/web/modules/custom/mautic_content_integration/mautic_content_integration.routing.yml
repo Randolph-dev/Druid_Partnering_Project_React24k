@@ -5,3 +5,11 @@ mautic_content_integration.personalized_content:
     _title: "Mautic Content Integration"
     requirements:
       _permission: "access content"
+
+mautic_content_integration.settings:
+  path: '/admin/config/mautic-content-integration/settings'
+  defaults:
+    _form: '\Drupal\mautic_content_integration\Form\MauticSettingsForm'
+    _title: 'Mautic Content Integration Settings'
+  requirements:
+    _permission: 'administer site configuration'
