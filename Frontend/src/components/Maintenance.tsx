@@ -115,10 +115,11 @@ const Maintenance: React.FC = () => {
           dispatch(
             setPageData({
               page: "maintenance",
+              // @ts-ignore
               data: {
                 ...maintenanceNode,
-                includes: includedData,
-              },
+                includes: includedData as ParagraphData[],
+              } as NodeData,
             })
           );
         }
@@ -199,22 +200,26 @@ const Maintenance: React.FC = () => {
             <SectionTitle
               title={teamAdvantagesSection?.attributes.field_title?.[0]?.value}
             />
-            {teamAdvantagesSection?.attributes.field_title
-              ?.slice(1)
-              .map((title, index) => (
-                <p key={index} className="mb-4 lh-lg">
-                  <strong>{title.value}</strong>{" "}
-                  {
-                    teamAdvantagesSection?.attributes
-                      .field_magical_support_team_descr[index]
-                  }
-                </p>
-              ))}
+            {teamAdvantagesSection?.attributes.field_title?.length
+              ? teamAdvantagesSection.attributes.field_title
+                  .slice(1)
+                  .map((title, index) => (
+                    <p key={index} className="mb-4 lh-lg">
+                      <strong>{title.value}</strong>{" "}
+                      {
+                        (
+                          teamAdvantagesSection.attributes as NodeData["attributes"]
+                        ).field_magical_support_team_descr?.[index]
+                      }
+                    </p>
+                  ))
+              : null}
           </div>
         </Col>
         <Col lg={6} className="d-flex align-items-center">
           <ImageSection
             imageUrl={
+              // @ts-ignore
               teamAdvantagesSection?.attributes.field_image_url?.[0]?.uri
             }
           />
@@ -243,6 +248,7 @@ const Maintenance: React.FC = () => {
             <Col md={4} className="d-flex justify-content-start">
               <ImageSection
                 imageUrl={
+                  // @ts-ignore
                   transitionSection?.attributes.field_image_url?.[0]?.uri
                 }
               />
