@@ -89,7 +89,7 @@ const ParagraphList: React.FC<{ paragraphs?: string[] }> = ({ paragraphs }) => (
 const ImageSection: React.FC<{ imageUrl?: string }> = ({ imageUrl }) =>
   imageUrl ? <img src={imageUrl} alt="" className="img-fluid rounded" /> : null;
 
-export default function Maintenance() {
+const Maintenance: React.FC = () => {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
   const dispatch = useDispatch();
   const maintenanceData: any = useSelector(
@@ -156,18 +156,17 @@ export default function Maintenance() {
 
   return (
     <Container fluid className="py-5">
+      {/* Intro Section */}
       <Row className="mb-5">
         <Col lg={8} className="mx-auto text-center">
           {introSection?.attributes.field_title?.map((title, index) => (
             <SectionTitle key={index} title={title.value} />
           ))}
-          <div className="content-wrapper">
-            <ParagraphList
-              paragraphs={
-                introSection?.attributes.field_maintenance_intro_paragrap
-              }
-            />
-          </div>
+          <ParagraphList
+            paragraphs={
+              introSection?.attributes.field_maintenance_intro_paragrap
+            }
+          />
           <p className="mb-4">
             {introSection?.attributes.field_phone?.[0]} (
             {introSection?.attributes.field_contact_hours?.[0]})
@@ -298,4 +297,6 @@ export default function Maintenance() {
       </section>
     </Container>
   );
-}
+};
+
+export default Maintenance;
