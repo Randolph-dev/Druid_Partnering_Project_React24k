@@ -1,0 +1,56 @@
+uuid: f88a40d2-3d1e-4ef9-95a5-a9783e00cc95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.maintenance_page_hero_intro.field_contact_hours
+    - field.field.paragraph.maintenance_page_hero_intro.field_email
+    - field.field.paragraph.maintenance_page_hero_intro.field_maintenance_intro_paragrap
+    - field.field.paragraph.maintenance_page_hero_intro.field_phone
+    - field.field.paragraph.maintenance_page_hero_intro.field_title
+    - paragraphs.paragraphs_type.maintenance_page_hero_intro
+  module:
+    - text
+id: paragraph.maintenance_page_hero_intro.default
+targetEntityType: paragraph
+bundle: maintenance_page_hero_intro
+mode: default
+content:
+  field_contact_hours:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_maintenance_intro_paragrap:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

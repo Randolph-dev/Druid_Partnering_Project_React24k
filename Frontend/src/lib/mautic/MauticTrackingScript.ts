@@ -25,8 +25,32 @@ function MauticTrackingScript(): null {
       mt('send', 'pageview');
     `;
 
-      // append the script to the of body
+      const mauticFormScript = document.createElement('script');
+      mauticFormScript.async = true;
+      mauticFormScript.type = 'text/javascript';
+      mauticFormScript.innerHTML = `
+        if (typeof MauticSDKLoaded == 'undefined') {
+            var MauticSDKLoaded = true;
+            var head            = document.getElementsByTagName('head')[0];
+            var script          = document.createElement('script');
+            script.type         = 'text/javascript';
+            script.src          = '${mauticUrl}media/js/mautic-form.js?v6d726160';
+            script.onload       = function() {
+                MauticSDK.onLoad();
+            };
+            head.appendChild(script);
+            var MauticDomain = '${mauticUrl}';
+            var MauticLang   = {
+                'submittingMessage': "Please wait..."
+            }
+        }else if (typeof MauticSDK != 'undefined') {
+            MauticSDK.onLoad();
+        }
+      `;
+
+      // append the scripts to the of body / head
       document.body.appendChild(mauticScript);
+      document.head.appendChild(mauticFormScript);
 
       // mark the script as added
       scriptAdded.current = true;

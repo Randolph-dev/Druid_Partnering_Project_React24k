@@ -1,0 +1,28 @@
+uuid: 91086317-6af1-42e5-b87f-a4c9a1f22d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_url
+    - paragraphs.paragraphs_type.magical_team_advantages
+  module:
+    - link
+id: paragraph.magical_team_advantages.field_image_url
+field_name: field_image_url
+entity_type: paragraph
+bundle: magical_team_advantages
+label: image_url
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://druid.fi/wp-content/uploads/2023/09/Druid-drupal-yllapito.jpg'
+    title: ''
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

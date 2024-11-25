@@ -1,0 +1,19 @@
+uuid: e0e01f07-e8fe-4edd-ab0e-2045468e9121
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_transition_paragraph
+    - paragraphs.paragraphs_type.transitioning_maintenance_sectio
+id: paragraph.transitioning_maintenance_sectio.field_transition_paragraph
+field_name: field_transition_paragraph
+entity_type: paragraph
+bundle: transitioning_maintenance_sectio
+label: 'transition paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

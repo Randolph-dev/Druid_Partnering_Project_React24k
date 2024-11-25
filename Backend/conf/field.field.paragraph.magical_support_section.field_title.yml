@@ -1,0 +1,24 @@
+uuid: 2f4b9bd5-98fa-4d78-b695-ec8431ed194c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.magical_support_section
+  module:
+    - text
+id: paragraph.magical_support_section.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: magical_support_section
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

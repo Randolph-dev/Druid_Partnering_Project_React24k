@@ -1,0 +1,44 @@
+uuid: 49dae2e5-b70d-43c1-a193-7799900aa1fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.magical_team_advantages.field_image_url
+    - field.field.paragraph.magical_team_advantages.field_magical_support_team_descr
+    - field.field.paragraph.magical_team_advantages.field_title
+    - paragraphs.paragraphs_type.magical_team_advantages
+  module:
+    - link
+    - text
+id: paragraph.magical_team_advantages.default
+targetEntityType: paragraph
+bundle: magical_team_advantages
+mode: default
+content:
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_magical_support_team_descr:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

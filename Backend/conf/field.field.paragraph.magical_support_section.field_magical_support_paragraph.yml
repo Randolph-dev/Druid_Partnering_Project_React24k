@@ -1,0 +1,19 @@
+uuid: 6b58da40-de0d-47ac-97ec-66ccdb0765b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_magical_support_paragraph
+    - paragraphs.paragraphs_type.magical_support_section
+id: paragraph.magical_support_section.field_magical_support_paragraph
+field_name: field_magical_support_paragraph
+entity_type: paragraph
+bundle: magical_support_section
+label: 'magical support paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

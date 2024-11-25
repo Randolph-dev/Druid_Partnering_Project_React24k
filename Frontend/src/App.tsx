@@ -6,16 +6,18 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Layout from './pages/Layout';
 import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
-import { useAppDispatch } from './hooks/hooks';
+import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Jobs from './components/Jobs';
 import Consultation from './components/Consultation';
 import Maintenance from './components/Maintenance';
-import { setLoading } from './features/drupalData/drupalSlice';
+import { setLoading, setUserType } from './features/drupalData/drupalSlice';
+import { fetchUserSegments } from './lib/mautic/fetchUserSegments';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
+  const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +25,18 @@ const App: React.FC = () => {
       await dispatch(fetchJsonApiLinksFromDrupal());
       dispatch(setLoading(false));
     };
-    fetchData();
+    if (!jsonApiLinks.self) {
+      fetchData();
+    }
+  }, []);
+
+  // find the user type from Mautic and store it in redux
+  useEffect(() => {
+    const setUserSegments = async () => {
+      const userSegment = await fetchUserSegments();
+      dispatch(setUserType(userSegment));
+    }
+    setUserSegments();
   }, []);
 
   return (

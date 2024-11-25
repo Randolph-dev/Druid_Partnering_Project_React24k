@@ -1,0 +1,79 @@
+uuid: 65d2f98c-9fbb-47ba-89a4-99032a3d4dc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_web_solutions
+    - node.type.service
+    - paragraphs.paragraphs_type.web_solution
+  module:
+    - entity_reference_revisions
+id: node.service.field_web_solutions
+field_name: field_web_solutions
+entity_type: node
+bundle: service
+label: 'web solutions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      web_solution: web_solution
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 18
+        enabled: false
+      frontpage_hero_intro:
+        weight: 19
+        enabled: false
+      frontpage_project:
+        weight: 20
+        enabled: false
+      frontpage_projects:
+        weight: 21
+        enabled: false
+      frontpage_quote:
+        weight: 22
+        enabled: false
+      frontpage_service_pakage:
+        weight: 23
+        enabled: false
+      frontpage_service_pakages:
+        weight: 24
+        enabled: false
+      jobspage_about_company:
+        weight: 25
+        enabled: false
+      jobspage_benefit:
+        weight: 26
+        enabled: false
+      jobspage_benefits:
+        weight: 27
+        enabled: false
+      jobspage_hero_intro:
+        weight: 28
+        enabled: false
+      magical_support_section:
+        weight: 29
+        enabled: false
+      magical_team_advantages:
+        weight: 30
+        enabled: false
+      maintenance_page_hero_intro:
+        weight: 31
+        enabled: false
+      mautic:
+        weight: 32
+        enabled: false
+      transitioning_maintenance_sectio:
+        weight: 33
+        enabled: false
+      web_solution:
+        weight: 34
+        enabled: true
+field_type: entity_reference_revisions
