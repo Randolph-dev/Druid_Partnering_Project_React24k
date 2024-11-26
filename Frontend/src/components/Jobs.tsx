@@ -9,6 +9,7 @@ import { RootState } from "../store/store";
 import Hero from "./JobsPage/Hero";
 import Benefits from "./JobsPage/Benefits";
 import AboutCompany from "./JobsPage/AboutCompany";
+import Questions from "./JobsPage/Questions";
 
 export default function Jobs() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
@@ -37,7 +38,7 @@ export default function Jobs() {
     if (!jobsPageData) {
       fetchData();
     }
-  }, [jobsPageData, dispatch]);
+  }, []);
 
   if (!jobsPageData) {
     return <p>Loading...</p>;
@@ -54,6 +55,8 @@ export default function Jobs() {
             return <Benefits key={key} section={section} />;
           case "jobspage_about_company":
             return <AboutCompany key={key} section={section} />;
+          case "jobspage_questions":
+            return <Questions key={key} section={section} />;
           default:
             return null;
         }
