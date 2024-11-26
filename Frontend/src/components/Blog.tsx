@@ -22,23 +22,25 @@ interface HeaderData {
 const Blog: React.FC = () => {
   const [blogItems, setBlogItems] = useState<BlogItem[]>([]);
   const [headerData, setHeaderData] = useState<HeaderData | null>(null);
+  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(
+    null
+  );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetching all articles
         const response = await axios.get(
           "https://druidpartneringapp.lndo.site/api/node/article"
         );
         const articles = response.data.data;
 
-        // Set header data
         const headerArticle = articles.find(
           (article: { id: string; attributes: any }) =>
             article.id === "b00ecad0-8f38-4520-b5e1-8bd6ea308144"
         );
+
         if (headerArticle) {
           setHeaderData({
             title: headerArticle.attributes.field_heading[0],
@@ -48,13 +50,11 @@ const Blog: React.FC = () => {
           });
         }
 
-        // Filter out the header article from the blog items
         const filteredBlogItems = articles.filter(
           (article: { id: string; attributes: any }) =>
             article.id !== "b00ecad0-8f38-4520-b5e1-8bd6ea308144"
         );
 
-        // Sort blog items in descending order by creation date
         const sortedBlogItems = filteredBlogItems.sort(
           (
             a: { attributes: { field_date: string[] } },
@@ -68,7 +68,6 @@ const Blog: React.FC = () => {
 
         setBlogItems(sortedBlogItems);
       } catch (err) {
-        console.error("Error fetching blog data:", err);
         setError("Failed to load blog data.");
       } finally {
         setLoading(false);
@@ -77,6 +76,16 @@ const Blog: React.FC = () => {
 
     fetchData();
   }, []);
+
+  const handleTechnologyClick = (tech: string) => {
+    setSelectedTechnology((prev) => (prev === tech ? null : tech));
+  };
+
+  const filteredBlogItems = selectedTechnology
+    ? blogItems.filter((item) =>
+        item.attributes.field_technology?.includes(selectedTechnology)
+      )
+    : blogItems;
 
   if (loading) {
     return <p className="text-center mt-5">Loading</p>;
@@ -88,7 +97,6 @@ const Blog: React.FC = () => {
 
   return (
     <div className="container py-5">
-      {/*  Blog Header */}
       {headerData && (
         <header className="text-center mb-5">
           <h2 className="display-4">{headerData.title}</h2>
@@ -97,7 +105,13 @@ const Blog: React.FC = () => {
             {headerData.field_technology.map((tech) => (
               <span
                 key={tech}
-                className="tech-term bg-white text-black border border-danger rounded-pill d-inline-block p-2 mx-2"
+                className={`p-2 rounded-pill border border-1 ${
+                  selectedTechnology === tech
+                    ? "bg-danger text-white"
+                    : "bg-white text-black border-danger"
+                } fw-light custom-cursor cursor-pointer`}
+                onClick={() => handleTechnologyClick(tech)}
+                style={{ cursor: "pointer" }}
               >
                 {tech}
               </span>
@@ -106,48 +120,59 @@ const Blog: React.FC = () => {
         </header>
       )}
 
-      {/* Blog Grid */}
       <div className="row gy-4">
-        {blogItems.map((item) => (
-          <div className="col-md-6" key={item.drupal_internal__nid}>
-            <div className="card h-100 shadow-sm">
-              {item.attributes.field_image_url?.[0] && (
-                <img
-                  src={item.attributes.field_image_url[0].uri}
-                  className="card-img-top"
-                  alt={item.attributes.field_heading[0]}
-                />
-              )}
-              <div className="card-body">
-                <h5 className="card-title">
-                  {item.attributes.field_heading[0]}
-                </h5>
-                <p className="text-muted mb-2 small">
-                  {item.attributes.field_date?.[0]}{" "}
-                  <span className="mx-2">|</span>{" "}
-                  {item.attributes.field_author?.[0]}{" "}
-                  <span className="mx-2">|</span>{" "}
-                  {item.attributes.field_technology &&
-                  item.attributes.field_technology.length > 0
-                    ? item.attributes.field_technology.map((tech, index) => (
-                        <span key={index} className="text-muted small mx-1">
-                          {tech}
-                          {index <
-                            //@ts-ignore
-                            item.attributes.field_technology.length - 1 && (
-                            <span className="mx-2">|</span>
-                          )}
-                        </span>
-                      ))
-                    : null}
-                </p>
-                <p className="card-text">
-                  {item.attributes.field_paragraph_description?.[0]}
-                </p>
+        {filteredBlogItems.length > 0 ? (
+          filteredBlogItems.map((item) => (
+            <div className="col-md-6" key={item.drupal_internal__nid}>
+              <div
+                className="card h-100 shadow-sm transition-transform"
+                onMouseEnter={(e) => {
+                  e.currentTarget.classList.add("shadow-lg", "scale-102");
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.classList.remove("shadow-lg", "scale-100");
+                }}
+              >
+                {item.attributes.field_image_url?.[0] && (
+                  <img
+                    src={item.attributes.field_image_url[0].uri}
+                    className="card-img-top"
+                    alt={item.attributes.field_heading[0]}
+                  />
+                )}
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {item.attributes.field_heading[0]}
+                  </h5>
+                  <p className="text-muted mb-2 small">
+                    {item.attributes.field_date?.[0]}{" "}
+                    <span className="mx-2">|</span>{" "}
+                    {item.attributes.field_author?.[0]}{" "}
+                    <span className="mx-2">|</span>{" "}
+                    {item.attributes.field_technology &&
+                    item.attributes.field_technology.length > 0
+                      ? item.attributes.field_technology.map((tech, index) => (
+                          <span key={index} className="text-muted small mx-1">
+                            {tech}
+                            {index <
+                              //@ts-ignore
+                              item.attributes.field_technology.length - 1 && (
+                              <span className="mx-2">|</span>
+                            )}
+                          </span>
+                        ))
+                      : null}
+                  </p>
+                  <p className="card-text">
+                    {item.attributes.field_paragraph_description?.[0]}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-center mt-4">No blog items available.</p>
+        )}
       </div>
     </div>
   );
