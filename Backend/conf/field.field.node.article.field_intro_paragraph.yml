@@ -1,0 +1,19 @@
+uuid: d01932ca-c33f-4ed5-a6c4-fd7529c7bcde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_paragraph
+    - node.type.article
+id: node.article.field_intro_paragraph
+field_name: field_intro_paragraph
+entity_type: node
+bundle: article
+label: 'intro paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
