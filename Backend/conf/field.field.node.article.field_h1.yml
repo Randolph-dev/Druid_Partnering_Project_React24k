@@ -1,0 +1,19 @@
+uuid: 407b1ae6-4e4c-48db-8813-8a67a00be9e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_h1
+    - node.type.article
+id: node.article.field_h1
+field_name: field_h1
+entity_type: node
+bundle: article
+label: H1
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
