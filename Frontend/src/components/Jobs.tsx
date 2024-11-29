@@ -11,6 +11,7 @@ import Benefits from "./JobsPage/Benefits";
 import AboutCompany from "./JobsPage/AboutCompany";
 import Questions from "./JobsPage/Questions";
 import Druids from "./JobsPage/Druids";
+import Careers from "./JobsPage/Careers";
 
 export default function Jobs() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
@@ -60,6 +61,8 @@ export default function Jobs() {
             return <Questions key={key} section={section} />;
           case "jobspage_team_members":
             return <Druids key={key} section={section} />;
+          case "jobspage_careers":
+            return <Careers key={key} section={section} />;
           default:
             return null;
         }

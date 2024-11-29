@@ -14,9 +14,10 @@ interface Question extends Paragraph {
 
 export default function Questions(props: QuestionsProps) {
   const { section } = props;
-  const { field_jobspage_questions } = section;
+  const { field_jobspage_questions, field_title } = section;
 
   const questions = field_jobspage_questions as Question[];
+  const titles = field_title as Field[];
 
   if (!section) {
     return <p>Loading</p>;
@@ -24,6 +25,13 @@ export default function Questions(props: QuestionsProps) {
 
   return (
     <Container className="my-5">
+      {titles.map((title, index) => (
+        <h1
+          className="py-5 text-center"
+          key={generateFieldKey(title, index)}
+          dangerouslySetInnerHTML={{ __html: title.value }}
+        />
+      ))}
       <Accordion defaultActiveKey="0">
         {questions.map((question, index) => (
           <Accordion.Item eventKey={index.toString()} key={index}>
