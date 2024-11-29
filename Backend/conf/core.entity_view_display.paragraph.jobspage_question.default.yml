@@ -1,0 +1,30 @@
+uuid: 2a869073-56ba-4e1a-8625-2f6d392cf83c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_question.field_paragraph
+    - field.field.paragraph.jobspage_question.field_title
+    - paragraphs.paragraphs_type.jobspage_question
+  module:
+    - text
+id: paragraph.jobspage_question.default
+targetEntityType: paragraph
+bundle: jobspage_question
+mode: default
+content:
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

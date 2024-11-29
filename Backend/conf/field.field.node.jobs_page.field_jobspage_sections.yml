@@ -7,7 +7,10 @@ dependencies:
     - node.type.jobs_page
     - paragraphs.paragraphs_type.jobspage_about_company
     - paragraphs.paragraphs_type.jobspage_benefits
+    - paragraphs.paragraphs_type.jobspage_careers
     - paragraphs.paragraphs_type.jobspage_hero_intro
+    - paragraphs.paragraphs_type.jobspage_questions
+    - paragraphs.paragraphs_type.jobspage_team_members
   module:
     - entity_reference_revisions
 id: node.jobs_page.field_jobspage_sections
@@ -27,6 +30,9 @@ settings:
       jobspage_about_company: jobspage_about_company
       jobspage_hero_intro: jobspage_hero_intro
       jobspage_benefits: jobspage_benefits
+      jobspage_questions: jobspage_questions
+      jobspage_careers: jobspage_careers
+      jobspage_team_members: jobspage_team_members
     negate: 0
     target_bundles_drag_drop:
       frontpage_advertise:
@@ -40,6 +46,9 @@ settings:
         enabled: false
       frontpage_projects:
         weight: 12
+        enabled: false
+      frontpage_quote:
+        weight: 24
         enabled: false
       frontpage_service_pakage:
         weight: 13
@@ -56,10 +65,43 @@ settings:
       jobspage_benefits:
         weight: 18
         enabled: true
+      jobspage_career:
+        weight: 34
+        enabled: false
+      jobspage_careers:
+        weight: 35
+        enabled: true
       jobspage_hero_intro:
         weight: 15
         enabled: true
+      jobspage_question:
+        weight: 31
+        enabled: false
+      jobspage_questions:
+        weight: 32
+        enabled: true
+      jobspage_team_member:
+        weight: 35
+        enabled: false
+      jobspage_team_members:
+        weight: 36
+        enabled: true
+      magical_support_section:
+        weight: 33
+        enabled: false
+      magical_team_advantages:
+        weight: 34
+        enabled: false
+      maintenance_page_hero_intro:
+        weight: 35
+        enabled: false
       mautic:
         weight: 16
+        enabled: false
+      transitioning_maintenance_sectio:
+        weight: 37
+        enabled: false
+      web_solution:
+        weight: 38
         enabled: false
 field_type: entity_reference_revisions
