@@ -55,7 +55,7 @@ export default function Home() {
         dispatch(setCurrentHomepageData({ page: "frontpage", data: dynamicContent[0]["field_frontpage_sections"] }));
       }
     }
-  }, [userType]);
+  }, [homepagesData, userType]);
 
   // console.log(frontPageData);
 
