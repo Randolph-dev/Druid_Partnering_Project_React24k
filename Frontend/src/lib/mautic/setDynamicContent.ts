@@ -1,7 +1,7 @@
 import { RestResponseData } from "../../types/drupal";
 
 const content: { [key: string]: string } = {
-  Visior: "Front page",
+  Visitor: "Front page",
   Client: "Front page - Client",
   Partner: "Front page - Partner",
   JobSeeker: "Front page - Job seeker",

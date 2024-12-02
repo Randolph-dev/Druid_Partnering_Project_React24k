@@ -285,19 +285,13 @@ const Maintenance: React.FC = () => {
             (desc, index) => (
               <Row key={index} className="mb-4 align-items-center">
                 <Col md={2} className="text-center">
-                  {webSolutionsSection?.attributes.field_web_solution_icon[
-                    index
-                  ] && (
-                      <img
-                        src={
-                          webSolutionsSection.attributes.field_web_solution_icon[
-                            index
-                          ].uri
-                        }
-                        alt=""
-                        className="img-fluid"
-                      />
-                    )}
+                  <ImageSection
+                    imageUrl={
+                      webSolutionsSection?.attributes.field_web_solution_icon?.[
+                        index
+                      ]?.uri
+                    }
+                  />
                 </Col>
                 <Col md={10}>
                   <p>{desc}</p>
