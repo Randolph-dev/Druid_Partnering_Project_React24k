@@ -12,7 +12,6 @@ import { RootState } from "../store/store";
 import Quotes from "./HomePage/Quotes";
 import { useAppSelector } from "../hooks/hooks";
 import { setDynamicContent } from "../lib/mautic/setDynamicContent";
-// import { setDynamicContent } from "../lib/mautic/setDynamicContent";
 
 export default function Home() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
@@ -25,10 +24,23 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get<RestResponseData[]>(`${drupalUrl}frontpage`);
-      dispatch(setHomepagesData(data));
+      localStorage.setItem("homepagesData", JSON.stringify(data));
     };
-    if (homepagesData.length === 0) {
-      fetchData()
+
+    const storedData = localStorage.getItem("homepagesData");
+
+    if (storedData) {
+      // load data from local storage and then update fresh data in background
+      dispatch(setHomepagesData(JSON.parse(storedData)));
+      fetchData();
+    } else {
+      // this is only for new user, fetch fresh data and store in local storage
+      fetchData().then(() => {
+        const newData = localStorage.getItem("homepagesData");
+        if (newData) {
+          dispatch(setHomepagesData(JSON.parse(newData)));
+        }
+      })
     }
   }, []);
 
@@ -43,7 +55,7 @@ export default function Home() {
         dispatch(setCurrentHomepageData({ page: "frontpage", data: dynamicContent[0]["field_frontpage_sections"] }));
       }
     }
-  }, [userType]);
+  }, [homepagesData, userType]);
 
   // console.log(frontPageData);
 
