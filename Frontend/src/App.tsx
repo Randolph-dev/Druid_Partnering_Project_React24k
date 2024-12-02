@@ -30,19 +30,22 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // find the user type from Mautic and store it in redux
+  // find and update the user segment in local storage
   useEffect(() => {
-    const setUserSegments = async () => {
-      const userSegment = localStorage.getItem('userSegment');
-      if (!userSegment) {
-        const fetchedUserSegment = await fetchUserSegments();
-        localStorage.setItem('userSegment', fetchedUserSegment);
-        dispatch(setUserType(fetchedUserSegment));
-      } else {
-        dispatch(setUserType(userSegment));
-      }
+    // find the userSegment in localstorage and set it in redux, it now found set the default 'Visitor'
+    const userSegment = localStorage.getItem('userSegment');
+    if (!userSegment) {
+      dispatch(setUserType('Visitor'));
+    } else {
+      dispatch(setUserType(userSegment));
     }
-    setUserSegments();
+
+    // this will update the user segment in local storage in background to avoid slow down the initial loading
+    const updateUserSegments = async () => {
+      const updatedUserSegment = await fetchUserSegments();
+      localStorage.setItem('userSegment', updatedUserSegment);
+    }
+    updateUserSegments();
   }, []);
 
   return (
