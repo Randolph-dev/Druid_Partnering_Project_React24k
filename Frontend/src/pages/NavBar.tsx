@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
       style={{ borderBottom: "0.5px solid #000" }}
     >
       <Container>
-      <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
             src={logo}
             alt="Druid logo"
@@ -77,6 +77,7 @@ const NavBar: React.FC = () => {
             >
               {/* this is a dropdown list for service pages including: projects, maintenance and consultation */}
               {/* TODO: style this */}
+              <NavLink path="/">Home</NavLink>
               <NavLink path="/about-us">About Us</NavLink>
               <NavDropdown title="Services" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/projects">Projects</NavDropdown.Item>

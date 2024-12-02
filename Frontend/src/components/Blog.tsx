@@ -83,8 +83,8 @@ const Blog: React.FC = () => {
 
   const filteredBlogItems = selectedTechnology
     ? blogItems.filter((item) =>
-        item.attributes.field_technology?.includes(selectedTechnology)
-      )
+      item.attributes.field_technology?.includes(selectedTechnology)
+    )
     : blogItems;
 
   if (loading) {
@@ -105,11 +105,10 @@ const Blog: React.FC = () => {
             {headerData.field_technology.map((tech) => (
               <span
                 key={tech}
-                className={`p-2 rounded-pill border border-1 ${
-                  selectedTechnology === tech
-                    ? "bg-danger text-white"
-                    : "bg-white text-black border-danger"
-                } fw-light custom-cursor cursor-pointer`}
+                className={`p-2 rounded-pill border border-1 ${selectedTechnology === tech
+                  ? "bg-danger text-white"
+                  : "bg-white text-black border-danger"
+                  } fw-light custom-cursor cursor-pointer`}
                 onClick={() => handleTechnologyClick(tech)}
                 style={{ cursor: "pointer" }}
               >
@@ -122,8 +121,8 @@ const Blog: React.FC = () => {
 
       <div className="row gy-4">
         {filteredBlogItems.length > 0 ? (
-          filteredBlogItems.map((item) => (
-            <div className="col-md-6" key={item.drupal_internal__nid}>
+          filteredBlogItems.map((item, index) => (
+            <div className="col-md-6" key={`${index}_${item.drupal_internal__nid}`}>
               <div
                 className="card h-100 shadow-sm transition-transform"
                 onMouseEnter={(e) => {
@@ -150,17 +149,17 @@ const Blog: React.FC = () => {
                     {item.attributes.field_author?.[0]}{" "}
                     <span className="mx-2">|</span>{" "}
                     {item.attributes.field_technology &&
-                    item.attributes.field_technology.length > 0
+                      item.attributes.field_technology.length > 0
                       ? item.attributes.field_technology.map((tech, index) => (
-                          <span key={index} className="text-muted small mx-1">
-                            {tech}
-                            {index <
-                              //@ts-ignore
-                              item.attributes.field_technology.length - 1 && (
+                        <span key={index} className="text-muted small mx-1">
+                          {tech}
+                          {index <
+                            //@ts-ignore
+                            item.attributes.field_technology.length - 1 && (
                               <span className="mx-2">|</span>
                             )}
-                          </span>
-                        ))
+                        </span>
+                      ))
                       : null}
                   </p>
                   <p className="card-text">
@@ -171,7 +170,7 @@ const Blog: React.FC = () => {
             </div>
           ))
         ) : (
-          <p className="text-center mt-4">No blog items available.</p>
+          <p key="no-blog-found" className="text-center mt-4">No blog items available.</p>
         )}
       </div>
     </div>
