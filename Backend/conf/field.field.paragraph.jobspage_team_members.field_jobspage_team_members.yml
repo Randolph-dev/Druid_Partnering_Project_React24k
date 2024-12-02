@@ -1,0 +1,91 @@
+uuid: 3b9200f9-4b86-4212-a160-271e5a6b6053
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_jobspage_team_members
+    - paragraphs.paragraphs_type.jobspage_team_member
+    - paragraphs.paragraphs_type.jobspage_team_members
+  module:
+    - entity_reference_revisions
+id: paragraph.jobspage_team_members.field_jobspage_team_members
+field_name: field_jobspage_team_members
+entity_type: paragraph
+bundle: jobspage_team_members
+label: jobspage_team_members
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      jobspage_team_member: jobspage_team_member
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 22
+        enabled: false
+      frontpage_hero_intro:
+        weight: 23
+        enabled: false
+      frontpage_project:
+        weight: 24
+        enabled: false
+      frontpage_projects:
+        weight: 25
+        enabled: false
+      frontpage_quote:
+        weight: 26
+        enabled: false
+      frontpage_service_pakage:
+        weight: 27
+        enabled: false
+      frontpage_service_pakages:
+        weight: 28
+        enabled: false
+      jobspage_about_company:
+        weight: 29
+        enabled: false
+      jobspage_benefit:
+        weight: 30
+        enabled: false
+      jobspage_benefits:
+        weight: 31
+        enabled: false
+      jobspage_hero_intro:
+        weight: 32
+        enabled: false
+      jobspage_question:
+        weight: 33
+        enabled: false
+      jobspage_questions:
+        weight: 34
+        enabled: false
+      jobspage_team_member:
+        weight: 35
+        enabled: true
+      jobspage_team_members:
+        weight: 36
+        enabled: false
+      magical_support_section:
+        weight: 37
+        enabled: false
+      magical_team_advantages:
+        weight: 38
+        enabled: false
+      maintenance_page_hero_intro:
+        weight: 39
+        enabled: false
+      mautic:
+        weight: 40
+        enabled: false
+      transitioning_maintenance_sectio:
+        weight: 41
+        enabled: false
+      web_solution:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

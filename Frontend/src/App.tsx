@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import AboutUs from './components/AboutUs';
-import Services from './components/Services';
-import Contact from './components/Contact';
-import Layout from './pages/Layout';
-import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
-import Blog from './components/Blog';
-import Projects from './components/Projects';
-import Jobs from './components/Jobs';
-import Consultation from './components/Consultation';
-import Maintenance from './components/Maintenance';
-import { setLoading, setUserType } from './features/drupalData/drupalSlice';
-import { fetchUserSegments } from './lib/mautic/fetchUserSegments';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import Layout from "./pages/Layout";
+import fetchJsonApiLinksFromDrupal from "./lib/drupal/drupal-api";
+import { useAppDispatch, useAppSelector } from "./hooks/hooks";
+import Blog from "./components/Blog";
+import Projects from "./components/Projects";
+import Jobs from "./components/Jobs";
+import Consultation from "./components/Consultation";
+import Maintenance from "./components/Maintenance";
+import { setLoading, setUserType } from "./features/drupalData/drupalSlice";
+import { fetchUserSegments } from "./lib/mautic/fetchUserSegments";
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -33,9 +33,9 @@ const App: React.FC = () => {
   // find and update the user segment in local storage
   useEffect(() => {
     // find the userSegment in localstorage and set it in redux, it now found set the default 'Visitor'
-    const userSegment = localStorage.getItem('userSegment');
+    const userSegment = localStorage.getItem("userSegment");
     if (!userSegment) {
-      dispatch(setUserType('Visitor'));
+      dispatch(setUserType("Visitor"));
     } else {
       dispatch(setUserType(userSegment));
     }
@@ -43,8 +43,8 @@ const App: React.FC = () => {
     // this will update the user segment in local storage in background to avoid slow down the initial loading
     const updateUserSegments = async () => {
       const updatedUserSegment = await fetchUserSegments();
-      localStorage.setItem('userSegment', updatedUserSegment);
-    }
+      localStorage.setItem("userSegment", updatedUserSegment);
+    };
     updateUserSegments();
   }, []);
 

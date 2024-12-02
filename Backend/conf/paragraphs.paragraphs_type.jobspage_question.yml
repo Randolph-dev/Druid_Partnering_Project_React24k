@@ -1,0 +1,10 @@
+uuid: 99bbb36a-87ae-45aa-b605-d47c5fdbb7d2
+langcode: en
+status: true
+dependencies: {  }
+id: jobspage_question
+label: jobspage_question
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

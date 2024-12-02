@@ -1,0 +1,45 @@
+uuid: 64e9b80d-661a-4c89-834c-dca022278535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_team_member.field_image_url
+    - field.field.paragraph.jobspage_team_member.field_member_name
+    - field.field.paragraph.jobspage_team_member.field_paragraph
+    - paragraphs.paragraphs_type.jobspage_team_member
+  module:
+    - link
+    - text
+id: paragraph.jobspage_team_member.default
+targetEntityType: paragraph
+bundle: jobspage_team_member
+mode: default
+content:
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_member_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

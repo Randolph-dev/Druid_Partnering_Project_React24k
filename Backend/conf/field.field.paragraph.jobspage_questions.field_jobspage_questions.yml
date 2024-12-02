@@ -1,0 +1,85 @@
+uuid: 453104aa-03f6-4ce6-ac52-e86bc882703a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_jobspage_questions
+    - paragraphs.paragraphs_type.jobspage_question
+    - paragraphs.paragraphs_type.jobspage_questions
+  module:
+    - entity_reference_revisions
+id: paragraph.jobspage_questions.field_jobspage_questions
+field_name: field_jobspage_questions
+entity_type: paragraph
+bundle: jobspage_questions
+label: jobspage_questions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      jobspage_question: jobspage_question
+    negate: 0
+    target_bundles_drag_drop:
+      frontpage_advertise:
+        weight: 21
+        enabled: false
+      frontpage_hero_intro:
+        weight: 22
+        enabled: false
+      frontpage_project:
+        weight: 23
+        enabled: false
+      frontpage_projects:
+        weight: 24
+        enabled: false
+      frontpage_quote:
+        weight: 25
+        enabled: false
+      frontpage_service_pakage:
+        weight: 26
+        enabled: false
+      frontpage_service_pakages:
+        weight: 27
+        enabled: false
+      jobspage_about_company:
+        weight: 28
+        enabled: false
+      jobspage_benefit:
+        weight: 29
+        enabled: false
+      jobspage_benefits:
+        weight: 30
+        enabled: false
+      jobspage_hero_intro:
+        weight: 31
+        enabled: false
+      jobspage_question:
+        weight: 32
+        enabled: true
+      jobspage_questions:
+        weight: 20
+        enabled: false
+      magical_support_section:
+        weight: 33
+        enabled: false
+      magical_team_advantages:
+        weight: 34
+        enabled: false
+      maintenance_page_hero_intro:
+        weight: 35
+        enabled: false
+      mautic:
+        weight: 36
+        enabled: false
+      transitioning_maintenance_sectio:
+        weight: 37
+        enabled: false
+      web_solution:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

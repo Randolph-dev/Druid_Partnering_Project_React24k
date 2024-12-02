@@ -15,7 +15,7 @@ export default function AboutCompany(props: AboutCompanyProps) {
   const images = field_image_url as ImageField[];
 
   return (
-    <Container fluid className="my-5 py-5 bg-dark text-light">
+    <Container fluid className="my-5 py-5 bg-light text-dark">
       <Row className="d-flex justify-content-center">
         <Col md={5} className="d-flex align-items-center">
           <div>

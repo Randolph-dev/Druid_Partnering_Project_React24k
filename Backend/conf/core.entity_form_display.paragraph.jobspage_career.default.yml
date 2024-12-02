@@ -1,0 +1,34 @@
+uuid: dcc7e43d-9596-4cda-a032-1174a12ee70d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_career.field_job_tags
+    - field.field.paragraph.jobspage_career.field_link
+    - paragraphs.paragraphs_type.jobspage_career
+  module:
+    - link
+id: paragraph.jobspage_career.default
+targetEntityType: paragraph
+bundle: jobspage_career
+mode: default
+content:
+  field_job_tags:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

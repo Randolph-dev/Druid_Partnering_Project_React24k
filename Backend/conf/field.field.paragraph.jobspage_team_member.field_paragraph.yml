@@ -1,0 +1,24 @@
+uuid: da57f990-4213-420a-ba2a-da6f80bad767
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.jobspage_team_member
+  module:
+    - text
+id: paragraph.jobspage_team_member.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: jobspage_team_member
+label: paragraph
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long
