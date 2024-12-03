@@ -24,6 +24,7 @@
         "drupal/jsonapi_extras": "^3.26",
         "drupal/mautic_paragraph": "^1.1",
         "drupal/paragraphs": "^1.18",
+        "drupal/require_login": "^3.0",
         "drupal/rest_entity_recursive": "^2.0@RC",
         "drush/drush": "^12.5",
         "mautic/api-library": "^3.1"
