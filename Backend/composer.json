@@ -22,6 +22,7 @@
         "drupal/core-recommended": "^10.3",
         "drupal/entity_clone": "2.x-dev@dev",
         "drupal/jsonapi_extras": "^3.26",
+        "drupal/key_auth": "^2.1",
         "drupal/mautic_paragraph": "^1.1",
         "drupal/paragraphs": "^1.18",
         "drupal/require_login": "^3.0",
