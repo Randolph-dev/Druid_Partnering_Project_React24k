@@ -1,0 +1,59 @@
+uuid: b515db9c-2f28-40b0-8b35-801e8a4f114a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.projects_page.field_client_logo_link
+    - field.field.node.projects_page.field_heading
+    - field.field.node.projects_page.field_intro_paragraph
+    - field.field.node.projects_page.field_title
+    - node.type.projects_page
+  module:
+    - link
+    - user
+id: node.projects_page.default
+targetEntityType: node
+bundle: projects_page
+mode: default
+content:
+  field_client_logo_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_intro_paragraph:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
