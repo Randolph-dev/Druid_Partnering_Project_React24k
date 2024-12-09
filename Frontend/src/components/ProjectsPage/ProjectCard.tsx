@@ -1,43 +1,54 @@
-import React from "react";
 import { Card } from "react-bootstrap";
 
-interface ProjectCardProps {
-  imageUrl: string;
-  projectTitle: string;
-  projectDescription: string;
-  projectCategory: string;
-  projectLink?: string;
+interface Props {
+  projectData: JsonApiProjectCardData;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  imageUrl,
-  projectTitle,
-  projectDescription,
-  projectCategory,
-  projectLink,
-}) => {
+interface JsonApiProjectCardData {
+  drupal_internal__nid: number;
+  title: string;
+  field_image_url: Array<{
+    uri: string;
+    title: string;
+    options: any[];
+  }>;
+  field_link: Array<{
+    uri: string;
+    title: string;
+    options: any[];
+  }>;
+  field_project_description: string[];
+  field_project_tiltle: string[];
+  [key: string]: any;
+}
+
+export default function ProjectCard({ projectData }: Props) {
   return (
     <Card className="h-100">
       <Card.Img
         variant="top"
-        src={imageUrl}
-        alt={projectTitle}
-        style={{ objectFit: "cover", height: "200px" }}
+        src={projectData.field_image_url[0]?.uri}
+        alt={projectData.field_project_tiltle[0]}
+        style={{ objectFit: "cover", height: "300px" }}
       />
       <Card.Body>
         <div className="d-flex py-4 justify-content-between align-items-center">
-          <Card.Title className="mb-0">{projectTitle || "Untitled"}</Card.Title>
-          <span className="text-muted small">
-            {projectCategory || "Uncategorized"}
-          </span>
+          <Card.Title className="mb-0">
+            {projectData.title || "Untitled"}
+          </Card.Title>
+          <span className="text-muted small">{"Uncategorized"}</span>
         </div>
         <Card.Text>
-          {projectDescription ||
+          {projectData.field_project_description[0] ||
             "This is a placeholder description for the project."}
         </Card.Text>
-        {projectLink && (
+        {projectData.field_link[0]?.uri && (
           <p className="text-primary mb-0">
-            <a href={projectLink} target="_blank" rel="noopener noreferrer">
+            <a
+              href={projectData.field_link[0]?.uri}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               &rarr; Read more
             </a>
           </p>
@@ -45,6 +56,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </Card.Body>
     </Card>
   );
-};
-
-export default ProjectCard;
+}
