@@ -83,7 +83,23 @@ const ProjectsPage: React.FC = () => {
         </div>
       </Container>
 
-      <Container fluid className="p-0" style={{ backgroundColor: "#000000" }}>
+      {/* Project Cards Section */}
+      <Container className="py-5">
+        <h2 className="text-center mb-5">Our Projects</h2>
+        <Row className="gy-4">
+          {projectData.map((project: any) => (
+            <Col key={project.drupal_internal__nid} xs={12} sm={6} md={6}>
+              <ProjectCard projectData={project} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      <Container
+        fluid
+        className="p- mt-5"
+        style={{ backgroundColor: "#000000" }}
+      >
         <Row className="gy-5 py-5 mx-5">
           <h1 className="my-3 text-center text-light">
             {field_title && field_title.length > 0
@@ -112,40 +128,6 @@ const ProjectsPage: React.FC = () => {
               </Col>
             )
           )}
-        </Row>
-      </Container>
-
-      {/* Project Cards Section */}
-      <Container fluid className="py-5">
-        <h2 className="text-center mb-5">Our Projects</h2>
-        <Row className="gy-4">
-          {projectData.map((project, index) => {
-            const {
-              field_image_url,
-              field_project_title,
-              field_project_description,
-              field_category,
-              field_link,
-            } = project;
-
-            return (
-              <Col key={index} xs={12} sm={6} md={6} lg={6}>
-                <ProjectCard
-                  imageUrl={
-                    field_image_url?.uri ||
-                    "https://via.placeholder.com/300x200?text=No+Image"
-                  }
-                  projectTitle={field_project_title || "Untitled Project"}
-                  projectDescription={
-                    field_project_description ||
-                    "This is a placeholder description."
-                  }
-                  projectCategory={field_category || "Uncategorized"}
-                  projectLink={field_link?.uri}
-                />
-              </Col>
-            );
-          })}
         </Row>
       </Container>
     </Container>
