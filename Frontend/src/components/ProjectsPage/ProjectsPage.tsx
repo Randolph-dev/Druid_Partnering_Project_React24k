@@ -48,47 +48,49 @@ const ProjectsPage: React.FC = () => {
   return (
     <Container fluid className="p-0">
       <Container fluid className="p-5 mb-5">
-        {/* Render `field_heading` with fallback */}
-        <h1 className="my-3 d-flex gap-2">
-          {field_heading && field_heading.length > 0
-            ? field_heading[0]
-            : "Default Heading"}
-        </h1>
-
-        {/* Render `field_intro_paragraph` with fallback */}
-        <p style={{ maxWidth: "500px" }} className="d-flex flex-column gap-3">
-          {field_intro_paragraph && field_intro_paragraph.length > 0
-            ? field_intro_paragraph[0]
-            : "Default intro paragraph content."}
-        </p>
-        <div className="d-flex gap-2">
-          <Button
-            variant="outline-danger"
-            className="text-dark rounded-pill px-4"
-          >
-            Web Service
-          </Button>
-          <Button
-            variant="outline-danger"
-            className="text-dark rounded-pill px-4"
-          >
-            Websites
-          </Button>
-          <Button
-            variant="outline-danger"
-            className="text-dark rounded-pill px-4"
-          >
-            Webshop
-          </Button>
+        <div>
+          <h1 className="my-3 d-flex gap-2">
+            {
+              <>
+                <strong>{field_heading[0].split(" ")[0]}</strong>
+                <i>{field_heading[0].split(" ").slice(1).join(" ")}</i>
+              </>
+            }
+          </h1>
+          <p style={{ maxWidth: "500px" }} className="d-flex flex-column gap-3">
+            {field_intro_paragraph && field_intro_paragraph.length > 0
+              ? field_intro_paragraph[0]
+              : "Default intro paragraph content."}
+          </p>
+          <div className="d-flex gap-2">
+            <Button
+              variant="outline-danger"
+              className="text-dark rounded-pill px-4"
+            >
+              Web Service
+            </Button>
+            <Button
+              variant="outline-danger"
+              className="text-dark rounded-pill px-4"
+            >
+              Websites
+            </Button>
+            <Button
+              variant="outline-danger"
+              className="text-dark rounded-pill px-4"
+            >
+              Webshop
+            </Button>
+          </div>
         </div>
       </Container>
 
       {/* Project Cards Section */}
       <Container className="py-5">
-        <h2 className="text-center mb-5">Our Projects</h2>
-        <Row className="gy-4">
+        <h1 className="text-center mb-5">Our Projects</h1>
+        <Row className="gy-4 mb-5">
           {projectData.map((project: any) => (
-            <Col key={project.drupal_internal__nid} xs={12} sm={6} md={6}>
+            <Col key={project.drupal_internal__nid} xs={12} sm={12} md={6}>
               <ProjectCard projectData={project} />
             </Col>
           ))}
@@ -97,11 +99,11 @@ const ProjectsPage: React.FC = () => {
 
       <Container
         fluid
-        className="p- mt-5"
+        className="mt-5 pb-5"
         style={{ backgroundColor: "#000000" }}
       >
         <Row className="gy-5 py-5 mx-5">
-          <h1 className="my-3 text-center text-light">
+          <h1 className="my-5 text-center text-light">
             {field_title && field_title.length > 0
               ? field_title[0]
               : "Default Heading"}
@@ -121,7 +123,7 @@ const ProjectsPage: React.FC = () => {
                   className="img-fluid"
                   style={{
                     maxWidth: "100%",
-                    maxHeight: "100px",
+                    maxHeight: "80px",
                     objectFit: "contain",
                   }}
                 />
