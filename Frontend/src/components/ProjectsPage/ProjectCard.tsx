@@ -61,11 +61,10 @@ export default function ProjectCard({ projectData }: Props) {
           {projectData.field_link[0]?.uri && (
             <p className="text-primary my-2">
               <Link
-                to={projectData.field_link[0]?.uri}
-                target="_blank"
+                to={`/projects/${projectData.drupal_internal__nid}`} // Navigate to the dynamic project detail page
                 style={{ textDecoration: "none", color: "black" }}
               >
-                &rarr; Read more
+                <span style={{ color: "red" }}>&rarr;</span> Read more
               </Link>
             </p>
           )}
