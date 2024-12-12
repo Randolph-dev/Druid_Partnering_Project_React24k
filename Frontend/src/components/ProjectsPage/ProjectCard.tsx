@@ -27,6 +27,7 @@ interface JsonApiProjectCardData {
       };
     }>;
   };
+  field_projects_categories: string[];
   [key: string]: any;
 }
 
@@ -46,10 +47,8 @@ export default function ProjectCard({ projectData }: Props) {
           </Card.Title>
           {/* Dynamically display categories */}
           <span className="text-muted small">
-            {projectData.field_category?.data?.length
-              ? projectData.field_category.data
-                  .map((category) => category.attributes?.name)
-                  .join(", ")
+            {projectData.field_projects_categories?.length
+              ? projectData.field_projects_categories.join(" / ")
               : "Uncategorized"}
           </span>
         </div>

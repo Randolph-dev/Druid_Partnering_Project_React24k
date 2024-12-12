@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_author
+    - field.field.node.article.field_content
     - field.field.node.article.field_date
     - field.field.node.article.field_h1
     - field.field.node.article.field_heading
@@ -15,6 +16,7 @@ dependencies:
   module:
     - datetime
     - link
+    - text
     - user
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
@@ -30,6 +32,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_date:
     type: datetime_default

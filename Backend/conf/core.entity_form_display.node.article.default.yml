@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_author
+    - field.field.node.article.field_content
     - field.field.node.article.field_date
     - field.field.node.article.field_h1
     - field.field.node.article.field_heading
@@ -16,6 +17,7 @@ dependencies:
     - datetime
     - link
     - path
+    - text
 _core:
   default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
 id: node.article.default
@@ -36,6 +38,16 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_content:
+    type: text_textarea_with_summary
+    weight: 132
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
     third_party_settings: {  }
   field_date:
     type: datetime_default

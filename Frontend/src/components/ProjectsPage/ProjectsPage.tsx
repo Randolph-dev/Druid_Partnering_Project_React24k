@@ -13,6 +13,10 @@ const ProjectsPage: React.FC = () => {
   const [projectsPageData, setProjectsPageData] =
     useState<JsonApiDataAttributes | null>(null);
   const [projectData, setProjectData] = useState<JsonApiDataAttributes[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<
+    JsonApiDataAttributes[]
+  >([]); // For filtered projects
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null); // For category selection
 
   useEffect(() => {
     if (!jsonApiLinksLoading) {
@@ -27,60 +31,104 @@ const ProjectsPage: React.FC = () => {
         const projectDataResponse = await fetchContentFromDrupal(
           jsonApiLinks["node--projects"]
         );
-        setProjectData(projectDataResponse.data); // Assume it's an array
+        setProjectData(projectDataResponse.data);
+        setFilteredProjects(projectDataResponse.data); // Initially show all projects
       };
       fetchData();
     }
   }, [jsonApiLinksLoading]);
 
+  // Handle category filter
+  const handleCategoryFilter = (category: string | null) => {
+    setSelectedCategory(category); // Update selected category
+    if (category) {
+      // Filter projects by category
+      const filtered = projectData.filter((project: any) =>
+        project.field_projects_categories?.includes(category)
+      );
+      setFilteredProjects(filtered);
+    } else {
+      // Show all projects if no category is selected
+      setFilteredProjects(projectData);
+    }
+  };
+
   if (!projectsPageData) {
     return <p>Loading...</p>;
   }
 
-  // Destructure fields for the projects page metadata
   const {
     field_heading,
     field_intro_paragraph,
     field_title,
     field_client_logo_link,
+    field_projects_categories,
   } = projectsPageData;
 
   return (
     <Container fluid className="p-0">
       <Container fluid className="p-5 mb-5">
-        <div>
-          <h1 className="my-3 d-flex gap-2">
-            {
-              <>
-                <strong>{field_heading[0].split(" ")[0]}</strong>
-                <i>{field_heading[0].split(" ").slice(1).join(" ")}</i>
-              </>
-            }
-          </h1>
-          <p style={{ maxWidth: "500px" }} className="d-flex flex-column gap-3">
+        <div
+          className="d-flex flex-column align-items-center text-center"
+          style={{ margin: "0 auto" }}
+        >
+          <h1 className="mt-5 d-flex gap-2">{field_heading[0]}</h1>
+          <p className="my-4 lead d-flex flex-column gap-3">
             {field_intro_paragraph && field_intro_paragraph.length > 0
               ? field_intro_paragraph[0]
               : "Default intro paragraph content."}
           </p>
-          <div className="d-flex gap-2">
+          <div className="d-flex gap-2 flex-wrap justify-content-center">
+            {/* Category buttons */}
             <Button
-              variant="outline-danger"
-              className="text-dark rounded-pill px-4"
+              variant={selectedCategory === null ? "danger" : "outline-danger"}
+              className={`rounded-pill px-4 ${
+                selectedCategory === null ? "text-white" : "text-dark"
+              }`}
+              onClick={() => handleCategoryFilter(null)} // Show all projects
+              style={{
+                color: selectedCategory === null ? "white" : undefined,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
+              onMouseLeave={(e) =>
+                selectedCategory === null
+                  ? (e.currentTarget.style.color = "white")
+                  : (e.currentTarget.style.color = "black")
+              }
             >
-              Web Service
+              All
             </Button>
-            <Button
-              variant="outline-danger"
-              className="text-dark rounded-pill px-4"
-            >
-              Websites
-            </Button>
-            <Button
-              variant="outline-danger"
-              className="text-dark rounded-pill px-4"
-            >
-              Webshop
-            </Button>
+            {field_projects_categories &&
+              field_projects_categories.map(
+                (category: string, index: number) => (
+                  <Button
+                    key={index}
+                    variant={
+                      selectedCategory === category
+                        ? "danger"
+                        : "outline-danger"
+                    }
+                    className={`rounded-pill px-4 ${
+                      selectedCategory === category ? "text-white" : "text-dark"
+                    }`}
+                    onClick={() => handleCategoryFilter(category)}
+                    style={{
+                      color:
+                        selectedCategory === category ? "white" : undefined,
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "white")
+                    }
+                    onMouseLeave={(e) =>
+                      selectedCategory === category
+                        ? (e.currentTarget.style.color = "white")
+                        : (e.currentTarget.style.color = "black")
+                    }
+                  >
+                    {category}
+                  </Button>
+                )
+              )}
           </div>
         </div>
       </Container>
@@ -89,7 +137,7 @@ const ProjectsPage: React.FC = () => {
       <Container className="py-5">
         <h1 className="text-center mb-5">Our Projects</h1>
         <Row className="gy-4 mb-5">
-          {projectData.map((project: any) => (
+          {filteredProjects.map((project: any) => (
             <Col key={project.drupal_internal__nid} xs={12} sm={12} md={6}>
               <ProjectCard projectData={project} />
             </Col>
