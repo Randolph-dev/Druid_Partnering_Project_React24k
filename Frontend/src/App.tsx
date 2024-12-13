@@ -7,12 +7,14 @@ import Contact from "./components/Contact";
 import Layout from "./pages/Layout";
 import fetchJsonApiLinksFromDrupal from "./lib/drupal/drupal-api";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
-import Blog from "./components/Blog";
+import Blog from "./components/BlogsPage/Blog";
+import Projects from "./components/Projects";
 import Jobs from "./components/Jobs";
 import Consultation from "./components/Consultation";
 import Maintenance from "./components/Maintenance";
 import { setLoading, setUserType } from "./features/drupalData/drupalSlice";
 import { fetchUserSegments } from "./lib/mautic/fetchUserSegments";
+import BlogPage from "./components/BlogsPage/BlogPage";
 import ProjectsPage from "./components/ProjectsPage/ProjectsPage";
 import ProjectDetailPage from "./components/ProjectsPage/ProjectDetailPage";
 
@@ -63,6 +65,7 @@ const App: React.FC = () => {
           <Route path="consultation" element={<Consultation />} />
           <Route path="jobs" element={<Jobs />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="article/:id" element={<BlogPage />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
