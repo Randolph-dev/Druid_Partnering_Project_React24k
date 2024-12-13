@@ -15,6 +15,8 @@ import Maintenance from "./components/Maintenance";
 import { setLoading, setUserType } from "./features/drupalData/drupalSlice";
 import { fetchUserSegments } from "./lib/mautic/fetchUserSegments";
 import BlogPage from "./components/BlogsPage/BlogPage";
+import ProjectsPage from "./components/ProjectsPage/ProjectsPage";
+import ProjectDetailPage from "./components/ProjectsPage/ProjectDetailPage";
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -57,7 +59,8 @@ const App: React.FC = () => {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="services" element={<Services />} />
           {/* the next 3 routes belongs to types service pages */}
-          <Route path="projects" element={<Projects />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
           <Route path="maintenance" element={<Maintenance />} />
           <Route path="consultation" element={<Consultation />} />
           <Route path="jobs" element={<Jobs />} />

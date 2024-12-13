@@ -1,0 +1,28 @@
+uuid: c921ba2f-8ece-470d-b7ed-1cef9ee5ff9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.article
+  module:
+    - text
+id: node.article.field_content
+field_name: field_content
+entity_type: node
+bundle: article
+label: content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_with_summary
