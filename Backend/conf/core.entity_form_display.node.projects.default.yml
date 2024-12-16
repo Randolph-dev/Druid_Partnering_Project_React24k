@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.projects.field_link
     - field.field.node.projects.field_project_description
     - field.field.node.projects.field_project_tiltle
+    - field.field.node.projects.field_projects_categories
     - node.type.projects
   module:
     - link
@@ -60,6 +61,14 @@ content:
   field_project_tiltle:
     type: string_textfield
     weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_projects_categories:
+    type: string_textfield
+    weight: 132
     region: content
     settings:
       size: 60

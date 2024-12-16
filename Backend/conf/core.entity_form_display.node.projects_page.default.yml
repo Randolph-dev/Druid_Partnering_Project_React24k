@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.projects_page.field_client_logo_link
     - field.field.node.projects_page.field_heading
     - field.field.node.projects_page.field_intro_paragraph
+    - field.field.node.projects_page.field_projects_categories
     - field.field.node.projects_page.field_title
     - node.type.projects_page
   module:
@@ -44,6 +45,22 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_project_categories:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_projects_categories:
+    type: string_textfield
+    weight: 132
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_title:

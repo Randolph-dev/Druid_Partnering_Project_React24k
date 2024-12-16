@@ -1,0 +1,19 @@
+uuid: d87bdcd3-4e66-4343-9b0e-046902161ad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_projects_categories
+    - node.type.projects
+id: node.projects.field_projects_categories
+field_name: field_projects_categories
+entity_type: node
+bundle: projects
+label: 'projects categories'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

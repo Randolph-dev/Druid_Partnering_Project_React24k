@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.projects_page.field_client_logo_link
     - field.field.node.projects_page.field_heading
     - field.field.node.projects_page.field_intro_paragraph
+    - field.field.node.projects_page.field_projects_categories
     - field.field.node.projects_page.field_title
     - node.type.projects_page
   module:
@@ -25,4 +26,5 @@ hidden:
   field_client_logo_link: true
   field_heading: true
   field_intro_paragraph: true
+  field_projects_categories: true
   field_title: true
