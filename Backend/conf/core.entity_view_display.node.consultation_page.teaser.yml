@@ -1,0 +1,32 @@
+uuid: 1459f02d-5ae9-4341-9499-6a0f8405c6e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.consultation_page.field_first_section_header
+    - field.field.node.consultation_page.field_image_url
+    - field.field.node.consultation_page.field_second_section_header
+    - field.field.node.consultation_page.field_second_section_paragraph
+    - field.field.node.consultation_page.field_section_paragraph
+    - field.field.node.consultation_page.field_title
+    - node.type.consultation_page
+  module:
+    - user
+id: node.consultation_page.teaser
+targetEntityType: node
+bundle: consultation_page
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_first_section_header: true
+  field_image_url: true
+  field_second_section_header: true
+  field_second_section_paragraph: true
+  field_section_paragraph: true
+  field_title: true

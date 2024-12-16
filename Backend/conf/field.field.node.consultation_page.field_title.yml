@@ -1,0 +1,19 @@
+uuid: 1acb98af-93ac-45bf-b937-8599d7c0cd00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.consultation_page
+id: node.consultation_page.field_title
+field_name: field_title
+entity_type: node
+bundle: consultation_page
+label: title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

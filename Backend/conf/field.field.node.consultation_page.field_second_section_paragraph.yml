@@ -1,0 +1,24 @@
+uuid: 3742ef45-bbed-4e4f-8d2d-87c406f86074
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_second_section_paragraph
+    - filter.format.basic_html
+    - node.type.consultation_page
+  module:
+    - text
+id: node.consultation_page.field_second_section_paragraph
+field_name: field_second_section_paragraph
+entity_type: node
+bundle: consultation_page
+label: second_section_paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

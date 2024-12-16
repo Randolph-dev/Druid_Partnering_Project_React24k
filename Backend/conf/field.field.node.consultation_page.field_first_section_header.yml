@@ -1,0 +1,24 @@
+uuid: e7a4d499-5c4a-4ea8-bfb9-d70807ced0f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_section_header
+    - filter.format.basic_html
+    - node.type.consultation_page
+  module:
+    - text
+id: node.consultation_page.field_first_section_header
+field_name: field_first_section_header
+entity_type: node
+bundle: consultation_page
+label: first_section_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

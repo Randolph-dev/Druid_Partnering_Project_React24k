@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.projects.field_link
     - field.field.node.projects.field_project_description
     - field.field.node.projects.field_project_tiltle
+    - field.field.node.projects.field_projects_categories
     - node.type.projects
   module:
     - link
@@ -63,6 +64,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_projects_categories:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
     region: content
   links:
     settings: {  }
