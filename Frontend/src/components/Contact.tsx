@@ -40,6 +40,9 @@ const Contact: React.FC = () => {
     field_first_section_paragraph,
     field_second_section_header,
     field_second_section_paragraph,
+    field_info_section_heading,
+    field_info_title,
+    field_info_description,
   } = contactPageData;
 
   type ContactPageField = {
@@ -109,34 +112,35 @@ const Contact: React.FC = () => {
             <ContactForm />
           </Col>
           <Col md={6} className="bg-dark text-light py-5">
-            <h3 className="my-5 text-center">
-              Interested in joining our team?
+            <h3 className="my-5 pb-2 text-center">
+              {field_info_section_heading.map(
+                (span: ContactPageField, index: number) => (
+                  <span
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: span.processed }}
+                  />
+                )
+              )}
             </h3>
 
-            <div className="d-flex flex-column  justify-content-center align-items-center text-center gap-4">
+            <div className="d-flex flex-column justify-content-center align-items-center text-center gap-4">
               <div>
-                <span>
-                  <span className="text-danger pe-1">&rarr;</span>Take a look at
-                  our open positions
-                </span>
-              </div>
-              <div>
-                <p>Client support</p>
-                <span>+358 20 187 6601 (Mon to Fri 8-17)</span>
-              </div>
-              <div>
-                <p>Sales</p>
-                <span>+358 20 187 6601 (Mon to Fri 8-17)</span>
-              </div>
-              <div>
-                <p>Office</p>
-                <span>+358 20 187 6601 (Mon to Fri 8-17)</span>
-              </div>
-              <div>
-                <span>
-                  <span className="text-danger pe-1">&rarr;</span> Billing
-                  information
-                </span>
+                {field_info_title.map(
+                  (title: ContactPageField, index: number) => (
+                    <div key={index} className="mb-4">
+                      <p
+                        dangerouslySetInnerHTML={{ __html: title.processed }}
+                      />
+                      {field_info_description[index] && (
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: `<span style="color: red;">&rarr;</span> ${field_info_description[index].processed}`,
+                          }}
+                        />
+                      )}
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </Col>
