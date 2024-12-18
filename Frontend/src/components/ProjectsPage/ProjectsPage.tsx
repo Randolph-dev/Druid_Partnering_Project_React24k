@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import fetchContentFromDrupal, {
   JsonApiDataAttributes,
 } from "../../lib/drupal/drupal-content-api";
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import ProjectCard from "./ProjectCard";
+import { setProjectsData } from "../../features/drupalData/drupalSlice";
 
 const ProjectsPage: React.FC = () => {
   const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
   const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
+  const projectData = useAppSelector((state) => state.drupal.projectsData); // should be projectsData with an s, but keeping the variable name for now
+  const dispatch = useAppDispatch();
 
   const [projectsPageData, setProjectsPageData] =
     useState<JsonApiDataAttributes | null>(null);
-  const [projectData, setProjectData] = useState<JsonApiDataAttributes[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<
     JsonApiDataAttributes[]
   >([]); // For filtered projects
@@ -31,7 +33,9 @@ const ProjectsPage: React.FC = () => {
         const projectDataResponse = await fetchContentFromDrupal(
           jsonApiLinks["node--projects"]
         );
-        setProjectData(projectDataResponse.data);
+
+        // Store the project data in redux store for later single project page use
+        dispatch(setProjectsData(projectDataResponse.data));
         setFilteredProjects(projectDataResponse.data); // Initially show all projects
       };
       fetchData();
@@ -82,9 +86,8 @@ const ProjectsPage: React.FC = () => {
             {/* Category buttons */}
             <Button
               variant={selectedCategory === null ? "danger" : "outline-danger"}
-              className={`rounded-pill px-4 ${
-                selectedCategory === null ? "text-white" : "text-dark"
-              }`}
+              className={`rounded-pill px-4 ${selectedCategory === null ? "text-white" : "text-dark"
+                }`}
               onClick={() => handleCategoryFilter(null)} // Show all projects
               style={{
                 color: selectedCategory === null ? "white" : undefined,
@@ -108,9 +111,8 @@ const ProjectsPage: React.FC = () => {
                         ? "danger"
                         : "outline-danger"
                     }
-                    className={`rounded-pill px-4 ${
-                      selectedCategory === category ? "text-white" : "text-dark"
-                    }`}
+                    className={`rounded-pill px-4 ${selectedCategory === category ? "text-white" : "text-dark"
+                      }`}
                     onClick={() => handleCategoryFilter(category)}
                     style={{
                       color:
