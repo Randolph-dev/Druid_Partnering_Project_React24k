@@ -33,17 +33,14 @@ const ProjectsPage: React.FC = () => {
         const projectDataResponse = await fetchContentFromDrupal(
           jsonApiLinks["node--projects"]
         );
-        console.log(projectDataResponse.data);
 
+        // Store the project data in redux store for later single project page use
         dispatch(setProjectsData(projectDataResponse.data));
         setFilteredProjects(projectDataResponse.data); // Initially show all projects
       };
       fetchData();
     }
   }, [jsonApiLinksLoading]);
-
-  // console.log(projectData);
-
 
   // Handle category filter
   const handleCategoryFilter = (category: string | null) => {

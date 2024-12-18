@@ -23,8 +23,6 @@ const ProjectDetailPage: React.FC = () => {
 
   const { title, field_image_url, field_project_description } = thisProjectData;
 
-  console.log(thisProjectData);
-
   return (
     <Container className="py-5">
       <Row className="mb-4">
