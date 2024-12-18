@@ -6,14 +6,21 @@ import { useAppSelector } from "../hooks/hooks";
 import ContactForm from "./ContactForm";
 import { Col, Container, Row } from "react-bootstrap";
 import ContactPageTeam from "./ContactPageTeam";
+import { useLocation } from "react-router-dom";
 
 const Contact: React.FC = () => {
   const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
   const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
-  const [contactPageData, setContactPageData] =
-    useState<JsonApiDataAttributes | null>(null);
-  const [teamMembersData, setTeamMembersData] =
-    useState<JsonApiDataAttributes | null>(null);
+  const [contactPageData, setContactPageData] = useState<JsonApiDataAttributes | null>(null);
+  const [teamMembersData, setTeamMembersData] = useState<JsonApiDataAttributes | null>(null);
+  const { search } = useLocation();
+
+  useEffect(() => {
+    if (search == "?messageSent") {
+      console.log("Message sent");
+
+    }
+  }, [search]);
 
   useEffect(() => {
     if (!jsonApiLinksLoading) {
