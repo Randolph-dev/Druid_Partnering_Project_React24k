@@ -15,10 +15,12 @@ const Contact: React.FC = () => {
   const [teamMembersData, setTeamMembersData] = useState<JsonApiDataAttributes | null>(null);
   const [messageSent, setMessageSent] = useState<boolean>(false);
   const { search } = useLocation();
+  const isContacted = localStorage.getItem("contactInProgress") === "true";
 
   useEffect(() => {
     if (search == "?messageSent") {
       setMessageSent(true);
+      localStorage.setItem("contactInProgress", "true");
     }
   }, [search]);
 
@@ -61,10 +63,15 @@ const Contact: React.FC = () => {
   return (
     <Container fluid className="p-0">
       <Container className="py-5 d-flex flex-column">
-        {messageSent &&
+        {messageSent ? (
           <p className="text-center" style={{ color: "green" }}>
             Thank you for your message. We will get back to you soon!
           </p>
+        ) : isContacted ? (
+          <p className="text-center" style={{ color: "green" }}>
+            We are still processing your contact message. Please check your inbox in a couple days!
+          </p>
+        ) : null
         }
         <h1 className="my-3 gap-2">
           {field_first_section_header.map(
