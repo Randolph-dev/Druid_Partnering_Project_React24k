@@ -1,10 +1,45 @@
 # Druid_Partnering_Project_React24k
+A decoupled full-stack company website features React, Drupal, Mautic analytic tool and Content personalization system. 
+
 This is a team project from the company Druid about creating a new website for their business as a final assignment for Business College Helsinki students.
 
 ## Live site
 - Live client site: [https://druid-project.alextran.dev](https://druid-project.alextran.dev)
 - Drupal backend: [https://dev-druid-partnering-project-react24k.pantheonsite.io/](https://dev-druid-partnering-project-react24k.pantheonsite.io/)
 - Mautic analytics dashboard: [https://mautic.alextran.cloud/](https://mautic.alextran.cloud/)
+
+## Functions:
+- Different pages based on client's need
+- Client can use the Drupal page builder to change page contents, add new sections, move and update existed sections, etc.
+- Analytic tool collect user activities, data and categorize user into segments
+- Content personalization system help boosting conversion rate of the site
+- The React frontend client is lighning fast, lightweight, responsive and mobile friendly
+- The Drupal backend server is robust, well-structured and secured
+
+## Technologies used
+
+Languages:
+- JavaScript
+- PHP
+
+Frontend:
+- Redux
+- Bootstrap
+
+Backend:
+- Drush
+- Drupal Paragraphs
+- Drupal Rest Entity Recursive
+- Drupal Json Api Extras
+- Drupal Key Auth
+- Drupal Require Login
+- Drupal Entity clone
+- Mautic Api Library
+- Drupal Mautic Paragraph
+- Composer patches
+
+Analytic:
+- Mautic
 
 ## For development team
 ### Setup the dev environment
