@@ -41,6 +41,26 @@ Backend:
 Analytic:
 - Mautic
 
+## Setup and usage
+**To host project locally**
+- Clone the project
+- Change working directory ```cd Druid_Partnering_Project_React24k```
+
+**TODO**
+Setup the Drupal Backend:
+Setup the React Frontend:
+Setup a local Mautic instance for activities tracking:
+
+## Screenshot
+**TODO**
+
+## Acknowledgment
+- Special thanks to our client [Druid](https://druid.fi) for this wonderful project.
+
+- Big thanks to our teacher at Helsinki Business College for the best guidance, teaching and to be our mentor for this project: [Margit Tennosaar 🦊](https://github.com/margittennosaar) & [Santosh Kalwar](https://github.com/kalwar)
+
+- Thank you [Laurie](https://github.com/laurielim/), [Oscar](https://github.com/OscarJonasson) and other Druids for all the help during development.
+
 ## For development team
 ### Setup the dev environment
 1. Clone the project: `git clone https://github.com/Randolph-dev/Druid_Partnering_Project_React24k.git`
