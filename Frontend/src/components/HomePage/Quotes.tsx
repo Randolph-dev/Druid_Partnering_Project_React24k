@@ -2,7 +2,6 @@ import { Container } from "react-bootstrap";
 import { Field, LinkField, Paragraph } from "../../types/drupal";
 import { Link } from "react-router-dom";
 
-
 interface QuotesProps {
   section: Paragraph;
 }
@@ -17,15 +16,12 @@ export default function Quotes(props: QuotesProps) {
 
   if (!section) {
     return <p>Loading</p>;
-  };
+  }
 
   return (
-    <Container className="my-5 text-center">
+    <Container className="my-5 py-5 text-center">
       {titles.map((title, index) => (
-        <h1
-          key={index}
-          dangerouslySetInnerHTML={{ __html: title.value }}
-        />
+        <h1 key={index} dangerouslySetInnerHTML={{ __html: title.value }} />
       ))}
       {links.map((link, index) => (
         <Link
@@ -36,5 +32,5 @@ export default function Quotes(props: QuotesProps) {
         />
       ))}
     </Container>
-  )
+  );
 }
