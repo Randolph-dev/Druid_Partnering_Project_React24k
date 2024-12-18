@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArticlesResponse } from "../../types/frontend";
+import { Button } from "react-bootstrap";
 
 const Blog: React.FC = () => {
   const [headerData, setHeaderData] = useState<{
@@ -85,14 +86,14 @@ const Blog: React.FC = () => {
     <div className="container py-5">
       {/* Header Section */}
       {headerData && (
-        <header className="text-center mb-5">
-          <h2 className="display-4">{headerData.heading}</h2>
-          <p className="lead">{headerData.intro}</p>
+        <header className="text-center my-5 pb-5">
+          <h1 className="">{headerData.heading}</h1>
+          <p className="lead py-4">{headerData.intro}</p>
           <div className="d-flex justify-content-center flex-wrap gap-3">
             {headerData.technologies?.map((tech) => (
-              <span
+              <Button
                 key={tech}
-                className={`p-2 rounded-pill border border-1 ${
+                className={`px-4 rounded-pill border border-1 ${
                   selectedTechnology === tech
                     ? "bg-danger text-white"
                     : "bg-white text-black border-danger"
@@ -101,14 +102,14 @@ const Blog: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 {tech}
-              </span>
+              </Button>
             ))}
           </div>
         </header>
       )}
 
       {/* Articles Section */}
-      <div className="row gy-4">
+      <div className="row gy-4 my-5">
         {filteredArticles.map((article) => (
           <div className="col-md-6" key={article.id}>
             <div
