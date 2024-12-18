@@ -13,12 +13,12 @@ const Contact: React.FC = () => {
   const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
   const [contactPageData, setContactPageData] = useState<JsonApiDataAttributes | null>(null);
   const [teamMembersData, setTeamMembersData] = useState<JsonApiDataAttributes | null>(null);
+  const [messageSent, setMessageSent] = useState<boolean>(false);
   const { search } = useLocation();
 
   useEffect(() => {
     if (search == "?messageSent") {
-      console.log("Message sent");
-
+      setMessageSent(true);
     }
   }, [search]);
 
@@ -61,6 +61,11 @@ const Contact: React.FC = () => {
   return (
     <Container fluid className="p-0">
       <Container className="py-5 d-flex flex-column">
+        {messageSent &&
+          <p className="text-center" style={{ color: "green" }}>
+            Thank you for your message. We will get back to you soon!
+          </p>
+        }
         <h1 className="my-3 gap-2">
           {field_first_section_header.map(
             (span: ContactPageField, index: number) => (
