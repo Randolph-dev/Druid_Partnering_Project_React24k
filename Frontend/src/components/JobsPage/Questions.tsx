@@ -32,10 +32,21 @@ export default function Questions(props: QuestionsProps) {
           dangerouslySetInnerHTML={{ __html: title.value }}
         />
       ))}
+
       <Accordion defaultActiveKey="0">
         {questions.map((question, index) => (
-          <Accordion.Item eventKey={index.toString()} key={index}>
-            <Accordion.Header>
+          <Accordion.Item
+            eventKey={index.toString()}
+            key={index}
+            className="mb-3"
+          >
+            <Accordion.Header
+              className="px-4 py-3 bg-light rounded"
+              style={{
+                fontWeight: "500",
+                transition: "background-color 0.3s ease",
+              }}
+            >
               {question.field_title.map((title, i) => (
                 <span
                   key={generateFieldKey(title, i)}
@@ -43,7 +54,13 @@ export default function Questions(props: QuestionsProps) {
                 />
               ))}
             </Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Body
+              className="p-4"
+              style={{
+                backgroundColor: "#f9f9f9",
+                borderRadius: "5px",
+              }}
+            >
               {question.field_paragraph.map((paragraph, i) => (
                 <div
                   key={generateFieldKey(paragraph, i)}

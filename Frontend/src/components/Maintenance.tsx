@@ -73,13 +73,13 @@ interface ParagraphData {
 }
 
 const SectionTitle: React.FC<{ title?: string }> = ({ title }) => (
-  <h2 className="mb-4 h3 fw-bold">{title}</h2>
+  <h2 className="h3">{title}</h2>
 );
 
 const ParagraphList: React.FC<{ paragraphs?: string[] }> = ({ paragraphs }) => (
   <>
     {paragraphs?.map((paragraph, index) => (
-      <p key={index} className="mb-4">
+      <p key={index} className="lead mb-4">
         {paragraph}
       </p>
     ))}
@@ -156,30 +156,32 @@ const Maintenance: React.FC = () => {
   );
 
   return (
-    <Container fluid className="py-5">
+    <Container fluid className="p-0">
       {/* Intro Section */}
-      <Row className="mb-5">
-        <Col lg={8} className="mx-auto text-center">
+      <Row className="my-5">
+        <Col lg={8} className="mt-5 mx-auto text-center">
           {introSection?.attributes.field_title?.map((title, index) => (
             <SectionTitle key={index} title={title.value} />
           ))}
-          <ParagraphList
-            paragraphs={
-              introSection?.attributes.field_maintenance_intro_paragrap
-            }
-          />
-          <p className="mb-4">
-            {introSection?.attributes.field_phone?.[0]} (
-            {introSection?.attributes.field_contact_hours?.[0]})
-          </p>
-          <p className="mb-4">{introSection?.attributes.field_email?.[0]}</p>
+          <div className="my-5">
+            <ParagraphList
+              paragraphs={
+                introSection?.attributes.field_maintenance_intro_paragrap
+              }
+            />
+            <p className="mb-4">
+              {introSection?.attributes.field_phone?.[0]} (
+              {introSection?.attributes.field_contact_hours?.[0]})
+            </p>
+            <p className="mb-4">{introSection?.attributes.field_email?.[0]}</p>
+          </div>
         </Col>
       </Row>
 
       {/* Magical Support Section */}
-      <Row className="mb-5">
-        <Col lg={8} className="ps-4">
-          <div className="bg-light p-4 rounded shadow-sm">
+      <Row className="d-flex justify-content-center my-5">
+        <Col lg={10} className="">
+          <div className="bg-light p-5 rounded shadow-sm">
             <SectionTitle
               title={magicalSupportSection?.attributes.field_title?.[0]?.value}
             />
@@ -194,9 +196,9 @@ const Maintenance: React.FC = () => {
       </Row>
 
       {/* Magical Team Advantages Section */}
-      <Row>
-        <Col lg={6} className="ps-4">
-          <div className="bg-white p-4 rounded shadow-sm">
+      <Container className="my-5 py-5">
+        <Row>
+          <Col lg={6}>
             <SectionTitle
               title={teamAdvantagesSection?.attributes.field_title?.[0]?.value}
             />
@@ -214,67 +216,68 @@ const Maintenance: React.FC = () => {
                     </p>
                   ))
               : null}
-          </div>
-        </Col>
-        <Col lg={6} className="d-flex align-items-center">
-          <ImageSection
-            imageUrl={
-              // @ts-ignore
-              teamAdvantagesSection?.attributes.field_image_url?.[0]?.uri
-            }
-          />
-        </Col>
-      </Row>
+          </Col>
+          <Col lg={6} className="d-flex align-items-center">
+            <ImageSection
+              imageUrl={
+                // @ts-ignore
+                teamAdvantagesSection?.attributes.field_image_url?.[0]?.uri
+              }
+            />
+          </Col>
+        </Row>
+      </Container>
 
       {/* Transition Section */}
-      <section className="transition py-5 bg-dark text-white">
-        <Container>
-          <Row className="text-center">
-            <Col>
-              <h2>{transitionSection?.attributes?.field_title?.[0]?.value}</h2>
-              <p>
-                {transitionSection?.attributes?.field_transition_paragraph?.[0]
-                  ?.split("\n")
-                  .map((line, index) => (
-                    <span key={index}>
-                      {line}
-                      <br />
+      <Container fluid className="py-5 bg-black text-white">
+        <Row className="pt-2 text-center">
+          <Col>
+            <h2>{transitionSection?.attributes?.field_title?.[0]?.value}</h2>
+            <p className="p-5">
+              {transitionSection?.attributes?.field_transition_paragraph?.[0]
+                ?.split("\n")
+                .map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+            </p>
+          </Col>
+        </Row>
+        <Row className="px-5 d-flex align-items-center">
+          <Col md={6}>
+            <ImageSection
+              imageUrl={
+                // @ts-ignore
+                transitionSection?.attributes.field_image_url?.[0]?.uri
+              }
+            />
+          </Col>
+          <Col>
+            <ListGroup>
+              {transitionSection?.attributes.field_transition_steps?.map(
+                (step, index) => (
+                  <ListGroup.Item
+                    key={index}
+                    className="p-4 bg-transparent border-0 text-white"
+                  >
+                    <span className="p-2" style={{ color: "red" }}>
+                      &rarr;
                     </span>
-                  ))}
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={4} className="d-flex justify-content-start">
-              <ImageSection
-                imageUrl={
-                  // @ts-ignore
-                  transitionSection?.attributes.field_image_url?.[0]?.uri
-                }
-              />
-            </Col>
-            <Col md={8} className="mx-auto">
-              <ListGroup>
-                {transitionSection?.attributes.field_transition_steps?.map(
-                  (step, index) => (
-                    <ListGroup.Item
-                      key={index}
-                      className="bg-transparent border-0 text-white"
-                    >
-                      {step}
-                    </ListGroup.Item>
-                  )
-                )}
-              </ListGroup>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+                    {step}
+                  </ListGroup.Item>
+                )
+              )}
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
 
       {/* Web Solutions Section */}
       <section className="web-solutions py-5">
         <Container>
-          <Row className="mb-4">
+          <Row className="mt-5">
             <Col className="text-center">
               <SectionTitle
                 title={webSolutionsSection?.attributes.field_title?.[0]?.value}
@@ -283,7 +286,10 @@ const Maintenance: React.FC = () => {
           </Row>
           {webSolutionsSection?.attributes.field_web_solution_description?.map(
             (desc, index) => (
-              <Row key={index} className="mb-4 align-items-center">
+              <Row
+                key={index}
+                className="my-5 align-items-center justify-content-center"
+              >
                 <Col md={2} className="text-center">
                   <ImageSection
                     imageUrl={
@@ -293,7 +299,7 @@ const Maintenance: React.FC = () => {
                     }
                   />
                 </Col>
-                <Col md={10}>
+                <Col md={10} className="">
                   <p>{desc}</p>
                 </Col>
               </Row>

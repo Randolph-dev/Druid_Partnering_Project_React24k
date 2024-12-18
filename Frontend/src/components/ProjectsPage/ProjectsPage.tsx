@@ -149,10 +149,10 @@ const ProjectsPage: React.FC = () => {
 
       <Container
         fluid
-        className="mt-5 pb-5"
+        className="mt-5 pb-5 border-bottom border-white"
         style={{ backgroundColor: "#000000" }}
       >
-        <Row className="gy-5 py-5 mx-5">
+        <Row className="gy-5 py-5 mx-5 ">
           <h1 className="my-5 text-center text-light">
             {field_title && field_title.length > 0
               ? field_title[0]

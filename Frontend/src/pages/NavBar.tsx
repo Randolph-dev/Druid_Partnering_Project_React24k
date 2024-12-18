@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { NavDropdown } from "react-bootstrap";
-import logo from "../assets/images/logo.webp"
+import logo from "../assets/images/logo.webp";
 
 const NavBar: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -13,15 +13,23 @@ const NavBar: React.FC = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // reusable navlink component. make it DRY and easier to change style
   function NavLink({ path, children }: { path: string; children: ReactNode }) {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
       <Nav.Link
         as={Link}
         to={path}
         onClick={handleClose}
-        className="text-light mb-3"
-        style={{ fontSize: "26px" }}
+        className="mb-3"
+        style={{
+          fontSize: "26px",
+          color: isHovered ? "#FF6F61" : "white",
+          textDecoration: "none",
+          transition: "color 0.3s ease",
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {children}
       </Nav.Link>
@@ -31,8 +39,8 @@ const NavBar: React.FC = () => {
   return (
     <Navbar
       expand={false}
-      className="bg-white m-0"
-      style={{ borderBottom: "0.5px solid #000" }}
+      className="bg-white m-0 shadow-sm"
+      style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
@@ -54,9 +62,9 @@ const NavBar: React.FC = () => {
           placement="end"
           show={show}
           onHide={handleClose}
-          className="bg-dark text-light"
+          className="bg-black text-light"
         >
-          <Offcanvas.Header className="bg-dark text-light">
+          <Offcanvas.Header className="bg-black text-light">
             <button
               type="button"
               className="btn-close btn-close-white"
@@ -76,7 +84,6 @@ const NavBar: React.FC = () => {
               style={{ fontSize: "26px" }}
             >
               {/* this is a dropdown list for service pages including: projects, maintenance and consultation */}
-              {/* TODO: style this */}
               <NavLink path="/">Home</NavLink>
               <NavLink path="/about-us">About Us</NavLink>
               <NavDropdown title="Services" id="basic-nav-dropdown">
