@@ -16,7 +16,7 @@ export default function AboutCompany(props: AboutCompanyProps) {
 
   return (
     <Container fluid className="my-5 py-5 bg-light text-dark">
-      <Row className="d-flex justify-content-center">
+      <Row className="d-flex justify-content-center gap-5">
         <Col md={5} className="d-flex align-items-center">
           <div>
             {titles.map((title, index) => (

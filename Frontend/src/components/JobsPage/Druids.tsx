@@ -27,7 +27,7 @@ export default function Druids(props: DruidsProps) {
   }
 
   return (
-    <Container className="my-5 py-5 bg-dark text-light" fluid>
+    <Container className="my-5 py-5 bg-black text-light" fluid>
       {titles.map((title, index) => (
         <h1
           className="py-5 text-center"
