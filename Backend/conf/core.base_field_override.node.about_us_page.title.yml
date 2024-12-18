@@ -1,0 +1,18 @@
+uuid: e71cd3a2-b302-424e-985c-890d8d78d5ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.about_us_page
+id: node.about_us_page.title
+field_name: title
+entity_type: node
+bundle: about_us_page
+label: 'About us'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

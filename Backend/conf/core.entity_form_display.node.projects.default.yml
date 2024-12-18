@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.projects.field_about_project
     - field.field.node.projects.field_category
     - field.field.node.projects.field_image_url
     - field.field.node.projects.field_link
@@ -13,6 +14,7 @@ dependencies:
   module:
     - link
     - path
+    - text
 id: node.projects.default
 targetEntityType: node
 bundle: projects
@@ -23,6 +25,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_about_project:
+    type: text_textarea
+    weight: 133
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_category:
     type: entity_reference_autocomplete

@@ -1,0 +1,24 @@
+uuid: 30976cc1-b006-4082-8baa-ef5938bf965b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_second_section_header
+    - filter.format.basic_html
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_second_section_header
+field_name: field_second_section_header
+entity_type: node
+bundle: about_us_page
+label: second_section_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

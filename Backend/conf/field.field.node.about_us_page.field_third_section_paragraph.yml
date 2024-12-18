@@ -1,0 +1,22 @@
+uuid: 882a337f-2ea2-4937-a21c-9b9c8280e1ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_third_section_paragraph
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_third_section_paragraph
+field_name: field_third_section_paragraph
+entity_type: node
+bundle: about_us_page
+label: third_section_paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

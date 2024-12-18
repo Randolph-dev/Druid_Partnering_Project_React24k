@@ -1,0 +1,20 @@
+uuid: bff91b72-9736-4165-b279-027f0f0f0cab
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_fourth_section_header
+field_name: field_fourth_section_header
+entity_type: node
+type: text
+settings:
+  max_length: 5000
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

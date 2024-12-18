@@ -1,0 +1,22 @@
+uuid: 3a129554-6f52-454c-a281-5586742c46cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fifth_section_header
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_fifth_section_header
+field_name: field_fifth_section_header
+entity_type: node
+bundle: about_us_page
+label: fifth_section_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text
