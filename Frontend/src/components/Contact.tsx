@@ -6,14 +6,23 @@ import { useAppSelector } from "../hooks/hooks";
 import ContactForm from "./ContactForm";
 import { Col, Container, Row } from "react-bootstrap";
 import ContactPageTeam from "./ContactPageTeam";
+import { useLocation } from "react-router-dom";
 
 const Contact: React.FC = () => {
   const jsonApiLinks = useAppSelector((state) => state.drupal.jsonApiLinks);
   const jsonApiLinksLoading = useAppSelector((state) => state.drupal.isLoading);
-  const [contactPageData, setContactPageData] =
-    useState<JsonApiDataAttributes | null>(null);
-  const [teamMembersData, setTeamMembersData] =
-    useState<JsonApiDataAttributes | null>(null);
+  const [contactPageData, setContactPageData] = useState<JsonApiDataAttributes | null>(null);
+  const [teamMembersData, setTeamMembersData] = useState<JsonApiDataAttributes | null>(null);
+  const [messageSent, setMessageSent] = useState<boolean>(false);
+  const { search } = useLocation();
+  const isContacted = localStorage.getItem("contactInProgress") === "true";
+
+  useEffect(() => {
+    if (search == "?messageSent") {
+      setMessageSent(true);
+      localStorage.setItem("contactInProgress", "true");
+    }
+  }, [search]);
 
   useEffect(() => {
     if (!jsonApiLinksLoading) {
@@ -54,6 +63,16 @@ const Contact: React.FC = () => {
   return (
     <Container fluid className="p-0">
       <Container className="py-5 d-flex flex-column">
+        {messageSent ? (
+          <p className="text-center" style={{ color: "green" }}>
+            Thank you for your message. We will get back to you soon!
+          </p>
+        ) : isContacted ? (
+          <p className="text-center" style={{ color: "green" }}>
+            We are still processing your contact message. Please check your inbox in a couple days!
+          </p>
+        ) : null
+        }
         <h1 className="my-3 gap-2">
           {field_first_section_header.map(
             (span: ContactPageField, index: number) => (
