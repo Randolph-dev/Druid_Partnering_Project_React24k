@@ -1,0 +1,22 @@
+uuid: ba024a99-11aa-4675-bc95-45ad208d8dc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_second_subheader
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_second_subheader
+field_name: field_second_subheader
+entity_type: node
+bundle: about_us_page
+label: second_subheader
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

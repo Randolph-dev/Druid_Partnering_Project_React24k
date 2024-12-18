@@ -1,0 +1,24 @@
+uuid: 22f49bad-fec1-49d9-b1d8-eb3d82c4cf82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_paragraph
+    - filter.format.plain_text
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_section_paragraph
+field_name: field_section_paragraph
+entity_type: node
+bundle: about_us_page
+label: section_paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

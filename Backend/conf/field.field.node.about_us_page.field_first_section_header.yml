@@ -1,0 +1,24 @@
+uuid: e9fc803e-cfd4-439c-9ec6-f0cf60d86041
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_section_header
+    - filter.format.basic_html
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_first_section_header
+field_name: field_first_section_header
+entity_type: node
+bundle: about_us_page
+label: first_section_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text
