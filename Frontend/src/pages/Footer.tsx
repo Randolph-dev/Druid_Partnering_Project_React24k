@@ -2,18 +2,16 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-5">
+    <footer className="bg-black text-white py-5">
       <Container>
         <Row className="d-flex align-items-center">
-          {/* Title Column */}
-          <Col md={3}>
+          <Col md={3} sm={12} className="mb-4 text-center text-md-start">
             <h4>
               Call or send us a <br /> message
             </h4>
           </Col>
 
-          {/* Navigation Links Column */}
-          <Col md={3}>
+          <Col md={3} sm={12} className="mb-4 text-center text-md-start">
             <Nav className="flex-column">
               <Nav.Link href="#about" className="text-white">
                 About Us
@@ -35,7 +33,7 @@ function Footer() {
 
           <Col></Col>
 
-          <Col md={5}>
+          <Col md={5} sm={12}>
             <Col className="d-flex justify-content-between">
               <div>
                 <p>
