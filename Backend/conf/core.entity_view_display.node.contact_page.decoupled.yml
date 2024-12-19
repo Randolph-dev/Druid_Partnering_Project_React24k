@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.decoupled
     - field.field.node.contact_page.field_first_section_header
     - field.field.node.contact_page.field_first_section_paragraph
+    - field.field.node.contact_page.field_info_description
+    - field.field.node.contact_page.field_info_section_heading
+    - field.field.node.contact_page.field_info_title
     - field.field.node.contact_page.field_second_section_header
     - field.field.node.contact_page.field_second_section_paragraph
     - node.type.contact_page
@@ -24,5 +27,8 @@ content:
 hidden:
   field_first_section_header: true
   field_first_section_paragraph: true
+  field_info_description: true
+  field_info_section_heading: true
+  field_info_title: true
   field_second_section_header: true
   field_second_section_paragraph: true

@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.node.contact_page.field_first_section_header
     - field.field.node.contact_page.field_first_section_paragraph
+    - field.field.node.contact_page.field_info_description
+    - field.field.node.contact_page.field_info_section_heading
+    - field.field.node.contact_page.field_info_title
     - field.field.node.contact_page.field_second_section_header
     - field.field.node.contact_page.field_second_section_paragraph
     - node.type.contact_page
@@ -33,6 +36,30 @@ content:
   field_first_section_paragraph:
     type: text_textfield
     weight: 122
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_info_description:
+    type: text_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_info_section_heading:
+    type: text_textfield
+    weight: 127
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_info_title:
+    type: text_textfield
+    weight: 125
     region: content
     settings:
       size: 60

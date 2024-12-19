@@ -1,15 +1,24 @@
+<<<<<<<< HEAD:Backend/conf/field.storage.paragraph.field_transition_steps.yml
+uuid: 7e3e1091-ad8c-429a-a2f2-d3baabb3ed8a
+========
 uuid: efd017db-5b48-4610-8bea-2e80d3856c51
+>>>>>>>> dev:Backend/conf/field.storage.paragraph.field_contact_hours.yml
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
+<<<<<<<< HEAD:Backend/conf/field.storage.paragraph.field_transition_steps.yml
+id: paragraph.field_transition_steps
+field_name: field_transition_steps
+========
 id: paragraph.field_contact_hours
 field_name: field_contact_hours
+>>>>>>>> dev:Backend/conf/field.storage.paragraph.field_contact_hours.yml
 entity_type: paragraph
 type: string
 settings:
-  max_length: 255
+  max_length: 350
   case_sensitive: false
   is_ascii: false
 module: core

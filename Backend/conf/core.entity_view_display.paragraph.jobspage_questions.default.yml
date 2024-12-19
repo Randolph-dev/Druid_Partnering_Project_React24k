@@ -1,0 +1,33 @@
+uuid: 7962719f-aae4-425a-9f19-65990ef0865f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_questions.field_jobspage_questions
+    - field.field.paragraph.jobspage_questions.field_title
+    - paragraphs.paragraphs_type.jobspage_questions
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.jobspage_questions.default
+targetEntityType: paragraph
+bundle: jobspage_questions
+mode: default
+content:
+  field_jobspage_questions:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

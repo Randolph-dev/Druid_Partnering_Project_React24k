@@ -1,0 +1,22 @@
+uuid: 87b51bbe-f878-49f7-9617-e2c951f99902
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_third_section_header
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_third_section_header
+field_name: field_third_section_header
+entity_type: node
+bundle: about_us_page
+label: third_section_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

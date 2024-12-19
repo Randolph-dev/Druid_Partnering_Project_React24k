@@ -1,10 +1,92 @@
 # Druid_Partnering_Project_React24k
+A decoupled full-stack company website features React, Drupal, Mautic analytic tool and Content personalization system. 
+
 This is a team project from the company Druid about creating a new website for their business as a final assignment for Business College Helsinki students.
 
 ## Live site
 - Live client site: [https://druid-project.alextran.dev](https://druid-project.alextran.dev)
 - Drupal backend: [https://dev-druid-partnering-project-react24k.pantheonsite.io/](https://dev-druid-partnering-project-react24k.pantheonsite.io/)
 - Mautic analytics dashboard: [https://mautic.alextran.cloud/](https://mautic.alextran.cloud/)
+
+## Functions:
+- Different pages based on client's need
+- Client can use the Drupal page builder to change page contents, add new sections, move and update existed sections, etc.
+- Analytic tool collect user activities, data and categorize user into segments
+- Content personalization system help boosting conversion rate of the site
+- The React frontend client is lighning fast, lightweight, responsive and mobile friendly
+- The Drupal backend server is robust, well-structured and secured
+
+## Technologies used
+
+Languages:
+- JavaScript
+- PHP
+
+Frontend:
+- Redux
+- Bootstrap
+
+Backend:
+- Drush
+- Drupal Paragraphs
+- Drupal Rest Entity Recursive
+- Drupal Json Api Extras
+- Drupal Key Auth
+- Drupal Require Login
+- Drupal Entity clone
+- Mautic Api Library
+- Drupal Mautic Paragraph
+- Composer patches
+
+Analytic:
+- Mautic
+
+## Setup and usage
+**To host project locally**
+- Clone the project
+- Change working directory ```cd Druid_Partnering_Project_React24k```
+
+**TODO**
+Setup the Drupal Backend:
+_Make sure your local environment have Lando and Docker Desktop_
+- Change working directory: `cd Backend/`
+- Install dependencies: `lando composer install`
+- Start the local container in Docker desktio: `lando start`
+- Import the database: `lando db-import 2.0.gz`
+- Import Drupal config: `lando drush cim`
+
+Setup the React Frontend:
+_Make sure your local environment have node version 22 or later_
+- Change working directory: `cd ../Frontend/` or `cd Frontend/`
+- Install dependencies: `npm install`
+- Create an .env file in the Frontend folder: `touch .env.local`
+- Add nessessary env variable to the newly created file in this format: 
+```shell
+VITE_DRUPAL_URL=http://druidpartneringapp.lndo.site/api/
+VITE_MAUTIC_URL=LINK_TO_YOUR_MAUTIC_INSTANCE
+VITE_DRUPAL_REST=https://druidpartneringapp.lndo.site/api/
+VITE_MAUTIC_API_TOKEN=YOUR_MAUTIC_API_TOKEN
+```
+- Start the dev server: `npm run dev`
+- Check the port in the terminal to access the frontend page
+
+Setup a local Mautic instance for activities tracking:
+- Follow the official Mautic guide [here](https://github.com/mautic/mautic)
+- Remember to update the .env.local file with the nessessary variable after setting up Mautic instance
+
+## Screenshot
+**Homepage Screenshot**
+![Homepage Screenshot](./Frontend/Screenshots/homepage_screenshot.png)
+
+**Mautic**
+![Mautic Screenshot](./Frontend/Screenshots/mautic_screenshot.png)
+
+## Acknowledgment
+- Special thanks to our client [Druid](https://druid.fi) for this wonderful project.
+
+- Big thanks to our teacher at Helsinki Business College for the best guidance, teaching and to be our mentor for this project: [Margit Tennosaar 🦊](https://github.com/margittennosaar) & [Santosh Kalwar](https://github.com/kalwar)
+
+- Thank you [Laurie](https://github.com/laurielim/), [Oscar](https://github.com/OscarJonasson) and other Druids for all the help during development.
 
 ## For development team
 ### Setup the dev environment

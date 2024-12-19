@@ -1,0 +1,22 @@
+uuid: e974448d-3799-41bf-a39d-16e591c5dd7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_header
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_sub_header
+field_name: field_sub_header
+entity_type: node
+bundle: about_us_page
+label: sub_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

@@ -1,0 +1,75 @@
+uuid: 34e73448-f5f0-4f39-a570-7fec2d70bba2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.consultation_page.field_first_section_header
+    - field.field.node.consultation_page.field_image_url
+    - field.field.node.consultation_page.field_second_section_header
+    - field.field.node.consultation_page.field_second_section_paragraph
+    - field.field.node.consultation_page.field_section_paragraph
+    - field.field.node.consultation_page.field_title
+    - node.type.consultation_page
+  module:
+    - link
+    - text
+    - user
+id: node.consultation_page.default
+targetEntityType: node
+bundle: consultation_page
+mode: default
+content:
+  field_first_section_header:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_second_section_header:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_second_section_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_section_paragraph:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -9,6 +9,9 @@ import { RootState } from "../store/store";
 import Hero from "./JobsPage/Hero";
 import Benefits from "./JobsPage/Benefits";
 import AboutCompany from "./JobsPage/AboutCompany";
+import Questions from "./JobsPage/Questions";
+import Druids from "./JobsPage/Druids";
+import Careers from "./JobsPage/Careers";
 
 export default function Jobs() {
   const drupalUrl: string = import.meta.env.VITE_DRUPAL_URL;
@@ -37,7 +40,7 @@ export default function Jobs() {
     if (!jobsPageData) {
       fetchData();
     }
-  }, [jobsPageData, dispatch]);
+  }, []);
 
   if (!jobsPageData) {
     return <p>Loading...</p>;
@@ -54,6 +57,12 @@ export default function Jobs() {
             return <Benefits key={key} section={section} />;
           case "jobspage_about_company":
             return <AboutCompany key={key} section={section} />;
+          case "jobspage_questions":
+            return <Questions key={key} section={section} />;
+          case "jobspage_team_members":
+            return <Druids key={key} section={section} />;
+          case "jobspage_careers":
+            return <Careers key={key} section={section} />;
           default:
             return null;
         }
@@ -61,44 +70,3 @@ export default function Jobs() {
     </Container>
   );
 }
-
-/*
-
- <Container className="p-0" fluid>
-    hero section...
-
-    benefits section...
-
-      <Container className="my-5 py-5 bg-dark text-light" fluid>
-        <h2 className="pb-5 text-center">Meet the druids</h2>
-        <Row className="justify-content-center">
-          <Col xs="auto" className="d-flex justify-content-center mb-4">
-            <div
-              className="d-flex, justify-content-center, align-items-center rounded-pill"
-              style={{
-                width: "180px",
-                height: "180px",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM="
-                alt="Profile 1"
-                roundedCircle
-                fluid
-              />
-            </div>
-          </Col>
-        </Row>
-        <Col>
-          <Button
-            className="p-3 px-5 rounded-pill border-0"
-            style={{ backgroundColor: "#EF3428" }}
-          >
-            More people
-          </Button>
-        </Col>
-      </Container>
-    </Container>
-
-*/

@@ -274,6 +274,8 @@ display:
       display_description: ''
       display_extenders: {  }
       path: api/frontpage
+      auth:
+        - key_auth
     cache_metadata:
       max-age: -1
       contexts:

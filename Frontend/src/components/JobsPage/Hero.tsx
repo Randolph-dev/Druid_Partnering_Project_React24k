@@ -22,10 +22,7 @@ export default function Hero(props: HeroProps) {
 
   return (
     <Container className="p-0" fluid>
-      <Container
-        className="d-flex align-items-center"
-        style={{ height: "90vh" }}
-      >
+      <Container className="d-flex align-items-center my-5 py-5">
         <Row className="d-flex justify-content-between">
           <Col md={6}>
             {titles.map((title, index) => (
@@ -44,7 +41,7 @@ export default function Hero(props: HeroProps) {
               ))}
             </div>
 
-            <Col className="mt-4">
+            <Col className="my-4">
               {links.map((link, index) => (
                 <Button
                   key={`${index}_${link.title}`}

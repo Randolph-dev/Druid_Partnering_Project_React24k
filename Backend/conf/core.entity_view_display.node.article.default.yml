@@ -4,15 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_author
+    - field.field.node.article.field_content
     - field.field.node.article.field_date
+    - field.field.node.article.field_h1
     - field.field.node.article.field_heading
     - field.field.node.article.field_image_url
+    - field.field.node.article.field_intro_paragraph
     - field.field.node.article.field_paragraph_description
     - field.field.node.article.field_technology
     - node.type.article
   module:
     - datetime
     - link
+    - text
     - user
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
@@ -29,6 +33,13 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
+  field_content:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
   field_date:
     type: datetime_default
     label: above
@@ -37,6 +48,14 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_h1:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_heading:
     type: string
@@ -58,6 +77,13 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_intro_paragraph:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
   field_paragraph_description:
     type: basic_string
     label: above
@@ -71,7 +97,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 107
+    weight: 109
     region: content
   links:
     settings: {  }

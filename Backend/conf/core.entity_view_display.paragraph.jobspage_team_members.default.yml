@@ -1,0 +1,47 @@
+uuid: 6ede5ddd-0ca0-45f8-a6e1-0b15acad2811
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.jobspage_team_members.field_jobspage_team_members
+    - field.field.paragraph.jobspage_team_members.field_link
+    - field.field.paragraph.jobspage_team_members.field_title
+    - paragraphs.paragraphs_type.jobspage_team_members
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.jobspage_team_members.default
+targetEntityType: paragraph
+bundle: jobspage_team_members
+mode: default
+content:
+  field_jobspage_team_members:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

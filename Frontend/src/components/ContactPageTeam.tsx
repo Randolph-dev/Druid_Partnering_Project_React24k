@@ -17,7 +17,7 @@ interface JsonApiTeamMemberData {
   field_member_title: string;
   field_phone: string;
   [key: string]: any;
-};
+}
 
 export default function ContactPageTeam(props: Props) {
   const { teamMembersData } = props;
@@ -25,14 +25,23 @@ export default function ContactPageTeam(props: Props) {
   if (!teamMembersData) return <p>Loading...</p>;
 
   return (
-    <Container fluid className="p-5">
-      <Row lg={4} className="gap-5">
+    <Container className="p-5">
+      <Row lg={4} md={2} className="gap-5">
         {teamMembersData.map((member: JsonApiTeamMemberData) => (
-          <Card key={member.drupal_internal__nid} style={{ width: '18rem', border: 0 }}>
-            <Card.Img variant="top" style={{ height: '20rem', objectFit: 'cover' }} src={member.field_avatar_url.uri} />
+          <Card
+            key={member.drupal_internal__nid}
+            style={{ width: "15rem", border: 0 }}
+          >
+            <Card.Img
+              variant="top"
+              style={{ height: "17rem", objectFit: "cover" }}
+              src={member.field_avatar_url.uri}
+            />
             <Card.Body>
               <Card.Title>{member.title}</Card.Title>
-              <Card.Text className="mb-0">{member.field_member_title}</Card.Text>
+              <Card.Text className="mb-0">
+                {member.field_member_title}
+              </Card.Text>
               <Card.Text className="mb-0">{member.field_email}</Card.Text>
               <Card.Text className="mb-0">{member.field_phone}</Card.Text>
             </Card.Body>
@@ -40,5 +49,5 @@ export default function ContactPageTeam(props: Props) {
         ))}
       </Row>
     </Container>
-  )
+  );
 }

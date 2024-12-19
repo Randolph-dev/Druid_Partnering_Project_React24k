@@ -8,11 +8,7 @@ interface AdvertiseProps {
 
 export default function Advertise(props: AdvertiseProps) {
   const { section } = props;
-  const {
-    field_title,
-    field_paragraph,
-    field_image_url,
-  } = section;
+  const { field_title, field_paragraph, field_image_url } = section;
 
   const titles = field_title as Field[];
   const paragraphs = field_paragraph as Field[];
@@ -20,12 +16,12 @@ export default function Advertise(props: AdvertiseProps) {
 
   if (!section) {
     return <p>Loading</p>;
-  };
+  }
 
   // console.log(section);
 
   return (
-    <Container fluid className="my-5 py-5 bg-dark text-light">
+    <Container fluid className="my-5 py-5 bg-black text-light">
       {titles.map((title, index) => (
         <h1
           key={generateFieldKey(title, index)}
@@ -51,5 +47,5 @@ export default function Advertise(props: AdvertiseProps) {
         </Col>
       </Row>
     </Container>
-  )
+  );
 }

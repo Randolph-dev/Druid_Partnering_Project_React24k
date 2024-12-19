@@ -1,0 +1,10 @@
+uuid: 6f274601-98be-4214-8e08-f55544c949c0
+langcode: en
+status: true
+dependencies: {  }
+id: jobspage_career
+label: jobspage_career
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

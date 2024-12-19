@@ -1,0 +1,19 @@
+uuid: 8ea46545-3b82-4bae-82d8-38c55fe81516
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.about_us_page
+id: node.about_us_page.field_title
+field_name: field_title
+entity_type: node
+bundle: about_us_page
+label: title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: ba41814c-837a-4a0d-a092-2d8742bd0ae7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_paragraph_2
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_section_paragraph_2
+field_name: field_section_paragraph_2
+entity_type: node
+bundle: about_us_page
+label: section_paragraph_2
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

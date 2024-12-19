@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.projects.field_about_project
     - field.field.node.projects.field_category
     - field.field.node.projects.field_image_url
+    - field.field.node.projects.field_link
     - field.field.node.projects.field_project_description
     - field.field.node.projects.field_project_tiltle
+    - field.field.node.projects.field_projects_categories
     - node.type.projects
   module:
     - user
@@ -22,7 +25,10 @@ content:
     weight: 100
     region: content
 hidden:
+  field_about_project: true
   field_category: true
   field_image_url: true
+  field_link: true
   field_project_description: true
   field_project_tiltle: true
+  field_projects_categories: true

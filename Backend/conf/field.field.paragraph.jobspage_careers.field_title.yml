@@ -1,0 +1,24 @@
+uuid: ab5cd7c1-8240-4e4e-8e7a-fda573e4d294
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.jobspage_careers
+  module:
+    - text
+id: paragraph.jobspage_careers.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: jobspage_careers
+label: title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

@@ -1,0 +1,32 @@
+<<<<<<<< HEAD:Backend/conf/field.storage.paragraph.field_phone.yml
+uuid: d132cd80-27d9-4329-921a-5bd91e6ed26e
+========
+uuid: eb989065-53c6-42d4-9cd3-1b5a724487e3
+>>>>>>>> dev:Backend/conf/field.storage.node.field_projects_categories.yml
+langcode: en
+status: true
+dependencies:
+  module:
+<<<<<<<< HEAD:Backend/conf/field.storage.paragraph.field_phone.yml
+    - paragraphs
+id: paragraph.field_phone
+field_name: field_phone
+entity_type: paragraph
+========
+    - node
+id: node.field_projects_categories
+field_name: field_projects_categories
+entity_type: node
+>>>>>>>> dev:Backend/conf/field.storage.node.field_projects_categories.yml
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

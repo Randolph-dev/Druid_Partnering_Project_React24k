@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import AboutUs from './components/AboutUs';
-import Services from './components/Services';
-import Contact from './components/Contact';
-import Layout from './pages/Layout';
-import fetchJsonApiLinksFromDrupal from './lib/drupal/drupal-api';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
-import Blog from './components/Blog';
-import Projects from './components/Projects';
-import Jobs from './components/Jobs';
-import Consultation from './components/Consultation';
-import Maintenance from './components/Maintenance';
-import { setLoading, setUserType } from './features/drupalData/drupalSlice';
-import { fetchUserSegments } from './lib/mautic/fetchUserSegments';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import Layout from "./pages/Layout";
+import fetchJsonApiLinksFromDrupal from "./lib/drupal/drupal-api";
+import { useAppDispatch, useAppSelector } from "./hooks/hooks";
+import Blog from "./components/BlogsPage/Blog";
+import Projects from "./components/Projects";
+import Jobs from "./components/Jobs";
+import Consultation from "./components/Consultation";
+import Maintenance from "./components/Maintenance";
+import { setLoading, setUserType } from "./features/drupalData/drupalSlice";
+import { fetchUserSegments } from "./lib/mautic/fetchUserSegments";
+import BlogPage from "./components/BlogsPage/BlogPage";
+import ProjectsPage from "./components/ProjectsPage/ProjectsPage";
+import ProjectDetailPage from "./components/ProjectsPage/ProjectDetailPage";
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -30,13 +33,22 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // find the user type from Mautic and store it in redux
+  // find and update the user segment in local storage
   useEffect(() => {
-    const setUserSegments = async () => {
-      const userSegment = await fetchUserSegments();
+    // find the userSegment in localstorage and set it in redux, it now found set the default 'Visitor'
+    const userSegment = localStorage.getItem("userSegment");
+    if (!userSegment) {
+      dispatch(setUserType("Visitor"));
+    } else {
       dispatch(setUserType(userSegment));
     }
-    setUserSegments();
+
+    // this will update the user segment in local storage in background to avoid slow down the initial loading
+    const updateUserSegments = async () => {
+      const updatedUserSegment = await fetchUserSegments();
+      localStorage.setItem("userSegment", updatedUserSegment);
+    };
+    updateUserSegments();
   }, []);
 
   return (
@@ -47,11 +59,13 @@ const App: React.FC = () => {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="services" element={<Services />} />
           {/* the next 3 routes belongs to types service pages */}
-          <Route path="projects" element={<Projects />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
           <Route path="maintenance" element={<Maintenance />} />
           <Route path="consultation" element={<Consultation />} />
           <Route path="jobs" element={<Jobs />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="article/:id" element={<BlogPage />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

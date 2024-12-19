@@ -1,0 +1,22 @@
+uuid: b4a17eb1-2ae3-4d6e-8952-187fa8b8917c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fifth_section_paragraph
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_fifth_section_paragraph
+field_name: field_fifth_section_paragraph
+entity_type: node
+bundle: about_us_page
+label: fifth_section_paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,22 @@
+uuid: 27a94b41-8868-433a-825f-eefaceccf3a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fourth_section_header
+    - node.type.about_us_page
+  module:
+    - text
+id: node.about_us_page.field_fourth_section_header
+field_name: field_fourth_section_header
+entity_type: node
+bundle: about_us_page
+label: fourth_section_header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text
