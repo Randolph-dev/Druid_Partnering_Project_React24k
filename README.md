@@ -75,7 +75,11 @@ Setup a local Mautic instance for activities tracking:
 - Remember to update the .env.local file with the nessessary variable after setting up Mautic instance
 
 ## Screenshot
-**TODO**
+**Homepage Screenshot**
+![Homepage Screenshot](./Frontend/Screenshots/homepage_screenshot.png)
+
+**Mautic**
+![Mautic Screenshot](./Frontend/Screenshots/mautic_screenshot.png)
 
 ## Acknowledgment
 - Special thanks to our client [Druid](https://druid.fi) for this wonderful project.
