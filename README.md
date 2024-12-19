@@ -48,8 +48,31 @@ Analytic:
 
 **TODO**
 Setup the Drupal Backend:
+_Make sure your local environment have Lando and Docker Desktop_
+- Change working directory: `cd Backend/`
+- Install dependencies: `lando composer install`
+- Start the local container in Docker desktio: `lando start`
+- Import the database: `lando db-import 2.0.gz`
+- Import Drupal config: `lando drush cim`
+
 Setup the React Frontend:
+_Make sure your local environment have node version 22 or later_
+- Change working directory: `cd ../Frontend/` or `cd Frontend/`
+- Install dependencies: `npm install`
+- Create an .env file in the Frontend folder: `touch .env.local`
+- Add nessessary env variable to the newly created file in this format: 
+```shell
+VITE_DRUPAL_URL=http://druidpartneringapp.lndo.site/api/
+VITE_MAUTIC_URL=LINK_TO_YOUR_MAUTIC_INSTANCE
+VITE_DRUPAL_REST=https://druidpartneringapp.lndo.site/api/
+VITE_MAUTIC_API_TOKEN=YOUR_MAUTIC_API_TOKEN
+```
+- Start the dev server: `npm run dev`
+- Check the port in the terminal to access the frontend page
+
 Setup a local Mautic instance for activities tracking:
+- Follow the official Mautic guide [here](https://github.com/mautic/mautic)
+- Remember to update the .env.local file with the nessessary variable after setting up Mautic instance
 
 ## Screenshot
 **TODO**
