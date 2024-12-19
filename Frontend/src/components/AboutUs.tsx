@@ -60,7 +60,7 @@ const AboutUs: React.FC = () => {
       </Container>
 
       <Container fluid className="bg-black text-light">
-        <Row fluid className="py-5 pb-4 p-5">
+        <Row className="py-5 pb-4 p-5">
           <h2>
             <b>{field_heading[1].split(",")[0]},</b>
             <br />
