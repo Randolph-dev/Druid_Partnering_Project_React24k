@@ -38,7 +38,7 @@ export default function Druids(props: DruidsProps) {
 
       {/* Team Members */}
       <Row className="d-flex justify-content-center">
-        {members.map((member, index) => (
+        {members.map((member) => (
           <Col
             md={3}
             sm={6}

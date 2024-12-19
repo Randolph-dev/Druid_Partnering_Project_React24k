@@ -8,7 +8,6 @@ import Layout from "./pages/Layout";
 import fetchJsonApiLinksFromDrupal from "./lib/drupal/drupal-api";
 import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import Blog from "./components/BlogsPage/Blog";
-import Projects from "./components/Projects";
 import Jobs from "./components/Jobs";
 import Consultation from "./components/Consultation";
 import Maintenance from "./components/Maintenance";
