@@ -100,7 +100,6 @@ const NavBar: React.FC = () => {
               <NavLink path="/jobs">Jobs</NavLink>
               <NavLink path="/blog">Blog</NavLink>
               <NavLink path="/contact">Contact</NavLink>
-              <NavLink path="#">english | suomi</NavLink>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
