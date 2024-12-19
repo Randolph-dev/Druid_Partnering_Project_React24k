@@ -59,6 +59,8 @@ export default function ContactForm() {
           id="mauticform_contactformclient"
           data-mautic-form="contactformclient"
           encType="multipart/form-data"
+          // prevent redirect to Mautic url and show 403 error
+          onSubmit={e => e.preventDefault()}
         >
           <div
             className="mauticform-error"
